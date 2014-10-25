@@ -33,7 +33,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view=['_{:view.backgroundColor = [UIColor colorWithRed:0.667 green:0.796 blue:0.655 alpha:1.0];
     
-    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg-7.jpg"]];
+    self.view.backgroundColor=[UIColor colorWithRed:0.933 green:0.953 blue:0.961 alpha:1];
     
     UIBarButtonItem* _sidebarButton = [[UIBarButtonItem alloc] initWithTitle:@"Menu"
                                                                        style:UIBarButtonItemStylePlain
@@ -51,7 +51,38 @@
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
     _sidebarButton.tintColor = [UIColor whiteColor];
+
+   
+    
+    
+    // Buttons
+    
+    _trackWater.layer.cornerRadius = 5;
+    _trackWater.layer.masksToBounds = YES;
+    _trackWater.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
+    
+    _trackVegetables.layer.cornerRadius = 5;
+    _trackVegetables.layer.masksToBounds = YES;
+    _trackVegetables.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
+    
+    _trackFruit.layer.cornerRadius = 5;
+    _trackFruit.layer.masksToBounds = YES;
+    _trackFruit.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
+    
+    
+    _trackProtein.layer.cornerRadius = 5;
+    _trackProtein.layer.masksToBounds = YES;
+    _trackProtein.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
+
+ 
+
+
+
 }
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FindJobsViewController : UIViewController
+@interface dailyChallengeViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 @end
