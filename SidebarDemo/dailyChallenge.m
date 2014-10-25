@@ -17,6 +17,13 @@
 @end
 
 @implementation dailyChallengeViewController
+NSString *date;
+
+
+
+
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,6 +51,69 @@
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
     _sidebarButton.tintColor = [UIColor whiteColor];
+    
+    
+    
+    _challenge.layer.borderWidth=5.0f;
+    _challenge.layer.borderColor=[[UIColor whiteColor] CGColor];
+    
+    _completeBtn.layer.cornerRadius = 5;
+    _completeBtn.layer.masksToBounds = YES;
+    _completeBtn.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
+    
+    // outputs day of week :)
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEEE"];
+   
+    
+    date = [dateFormatter stringFromDate:[NSDate date]];
+    
+// sets label to todays challenge based off day of the week
+  
+ NSLog(@"Today is %@", date);
+
+    
+    
+    if ([date  isEqual: @"Monday"]){
+      _challenge.text = @"Squats Time";
+        
+    }else if ([date isEqual:@"Tuesday"]){
+    
+    _challenge.text = @"Jumping Jacks";
+    
+    }else if([date isEqual:@"Wednesday"]){
+         _challenge.text = @"Sit ups";
+        
+    
+    }else if([date isEqual:@"Thursday"]){
+      _challenge.text = @"Burpees";
+        
+    }else if([date isEqual:@"Friday"]){
+         _challenge.text = @"Push Ups";
+        
+    }else if([date isEqual:@"Saturday"]){
+        _challenge.text = @"Lunges";
+        
+    }else if([date isEqual:@"Sunday"]){
+         NSLog(@"Rest");
+        
+        
+    }else{
+    
+        NSLog(@"Is your calander set on your phone? There seems to be a problem");
+    
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
