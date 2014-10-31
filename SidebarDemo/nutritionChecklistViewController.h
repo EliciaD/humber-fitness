@@ -13,9 +13,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *trackVegetables;
 @property (weak, nonatomic) IBOutlet UIButton *trackFruit;
 @property (weak, nonatomic) IBOutlet UIButton *trackProtein;
+@property (weak, nonatomic) IBOutlet UILabel *glassesOfWater;
 
 @property (weak, nonatomic) IBOutlet UILabel *gramsProtein;
 
+@property (weak, nonatomic) IBOutlet UILabel *gramsOfProtien;
 
 
 

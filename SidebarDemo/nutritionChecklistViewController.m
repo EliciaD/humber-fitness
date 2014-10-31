@@ -74,9 +74,39 @@
     _trackProtein.layer.masksToBounds = YES;
     _trackProtein.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
 
+   
  
+    NSNumber *weight = [[PFUser currentUser] objectForKey:@"weight"];
+    NSNumber *kgConvert = @2.2046;
+    NSNumber *mlConversion = @0.0043994;
+    
+    double x = [weight doubleValue];
+ NSLog(@"%f", x);
+    double y = [kgConvert doubleValue];
+     NSLog(@"%f", y);
+    
+    double calc_result = x / y;
 
+    
+    // calculates number ml of water should drink per day based on weight of user.
+    double ml = calc_result * 30;
+   
+    
+    // calculates number of cups of water user should drink per day based on weight of user.
+    int cups = ml * [mlConversion doubleValue];
+    
 
+  //outputs in textfield amount of water that user should drink daily
+    self.glassesOfWater.text = [NSString stringWithFormat:@"%d", cups];
+   
+    
+ 
+   
+    
+    
+    
+
+    
 
 }
 
