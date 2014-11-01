@@ -17,6 +17,8 @@
 - (IBAction)twoClicked:(id)sender;
 - (IBAction)threeClicked:(id)sender;
 - (IBAction)fourClicked:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *saveBtn;
 
+- (IBAction)saveFruitBtn:(id)sender;
 
 @end

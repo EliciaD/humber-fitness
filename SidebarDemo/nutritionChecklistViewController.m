@@ -2,7 +2,7 @@
 //  OngoingTasksViewController.m
 //  Farm Fresh Simcoe
 //
-//  Created by Stewart Emerson on 10/16/14.
+//  Created by
 //  Copyright (c) 2014 Appcoda. All rights reserved.
 //
 
@@ -34,6 +34,11 @@
     // Do any additional setup after loading the view=['_{:view.backgroundColor = [UIColor colorWithRed:0.667 green:0.796 blue:0.655 alpha:1.0];
     
     self.view.backgroundColor=[UIColor colorWithRed:0.933 green:0.953 blue:0.961 alpha:1];
+    self.title = @"Nutrition Must Haves";
+   // self.subtitle = @"for Healthy Living ";
+    [[UINavigationBar appearance] setBarTintColor:[UIColor yellowColor]];
+
+    
     
     UIBarButtonItem* _sidebarButton = [[UIBarButtonItem alloc] initWithTitle:@"Menu"
                                                                        style:UIBarButtonItemStylePlain
@@ -81,12 +86,12 @@
     NSNumber *mlConversion = @0.0043994;
     
     double x = [weight doubleValue];
- NSLog(@"%f", x);
     double y = [kgConvert doubleValue];
-     NSLog(@"%f", y);
-    
-    double calc_result = x / y;
 
+    
+    // calculates weight of user in kg
+    double calc_result = x / y;
+    NSLog(@"%f", calc_result);
     
     // calculates number ml of water should drink per day based on weight of user.
     double ml = calc_result * 30;
@@ -101,14 +106,73 @@
    
     
  
-   
-    
-    
-    
+
 
     
 
 }
+- (IBAction)sedentary:(id)sender {
+    
+    NSNumber *weight = [[PFUser currentUser] objectForKey:@"weight"];
+    NSNumber *kgConvert = @2.2046;
+ 
+    double x = [weight doubleValue];
+    double y = [kgConvert doubleValue];
+  
+    // calculates weight of user in kg
+    double calc_result = x / y;
+   
+    //calculates number of grams user should eat
+    int grams = calc_result * 0.8;
+    
+    //outputs number of grams
+    self.gramsOfProtien.text = [NSString stringWithFormat:@"%d", grams];
+
+    
+    
+}
+
+- (IBAction)moderatlyActive:(id)sender {
+    
+    NSNumber *weight = [[PFUser currentUser] objectForKey:@"weight"];
+    NSNumber *kgConvert = @2.2046;
+    
+    double x = [weight doubleValue];
+    double y = [kgConvert doubleValue];
+    
+    // calculates weight of user in kg
+    double calc_result = x / y;
+    
+    //calculates number of grams user should eat
+    int grams = calc_result * 1.28;
+    
+    //outputs number of grams
+    self.gramsOfProtien.text = [NSString stringWithFormat:@"%d", grams];
+    
+    
+    
+}
+
+- (IBAction)veryActive:(id)sender {
+    
+    NSNumber *weight = [[PFUser currentUser] objectForKey:@"weight"];
+    NSNumber *kgConvert = @2.2046;
+    
+    double x = [weight doubleValue];
+    double y = [kgConvert doubleValue];
+    
+    // calculates weight of user in kg
+    double calc_result = x / y;
+    
+    //calculates number of grams user should eat
+    int grams = calc_result * 1.88;
+    
+    //outputs number of grams
+    self.gramsOfProtien.text = [NSString stringWithFormat:@"%d", grams];
+    
+    
+}
+
 
 
 
@@ -130,5 +194,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+
+
 
 @end

@@ -20,13 +20,13 @@
      // Override point for customization after application launch.
 
     // Change the background color of navigation bar
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.114 green:0.114 blue:0.114 alpha:1.0]];
+   // [[UINavigationBar appearance] setBarTintColor:[UIColor clearColor]];
     
     
     
     // Change the font style of the navigation bar
     NSShadow *shadow = [[NSShadow alloc] init];
-    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    shadow.shadowColor = [UIColor clearColor];
     shadow.shadowOffset = CGSizeMake(0, 0);
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                           [UIColor whiteColor], NSForegroundColorAttributeName,

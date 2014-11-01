@@ -56,7 +56,9 @@
     _fourServings.layer.borderWidth=3.0f;
     _fourServings.layer.borderColor=[[UIColor whiteColor] CGColor];
     
-    
+    _saveBtn.layer.cornerRadius = 5;
+    _saveBtn.layer.masksToBounds = YES;
+    _saveBtn.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
     
     
     
@@ -101,6 +103,9 @@
 - (IBAction)fourClicked:(id)sender {
     _fourServings.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
     [_fourServings setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
+}
+
+- (IBAction)saveFruitBtn:(id)sender {
 }
 
 @end

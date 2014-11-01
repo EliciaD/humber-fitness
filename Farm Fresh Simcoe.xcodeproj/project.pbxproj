@@ -10,7 +10,6 @@
 		6354EE0E18FB9196001A3924 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6354EE0D18FB9196001A3924 /* Parse.framework */; };
 		6354EE1018FB9810001A3924 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6354EE0F18FB9810001A3924 /* CoreData.framework */; };
 		653CEA0E19F089F400E9A3FD /* helpr-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 653CEA0D19F089F400E9A3FD /* helpr-logo.png */; };
-		653CEA1119F092F800E9A3FD /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CEA1019F092F800E9A3FD /* ProfileViewController.m */; };
 		653CEA1419F0931900E9A3FD /* dailyChallenge.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CEA1319F0931900E9A3FD /* dailyChallenge.m */; };
 		653CEA1719F0933200E9A3FD /* nutritionChecklistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CEA1619F0933200E9A3FD /* nutritionChecklistViewController.m */; };
 		65A0AFA219F2E152006D83F4 /* we_are_fitness.png in Resources */ = {isa = PBXBuildFile; fileRef = 65A0AFA119F2E152006D83F4 /* we_are_fitness.png */; };
@@ -18,6 +17,8 @@
 		65CAF0DA19F720E100AD22CB /* hawk_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CAF0D919F720E100AD22CB /* hawk_logo.png */; };
 		65D06FD619FC063E00E500C8 /* trackVegetablesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D06FD519FC063E00E500C8 /* trackVegetablesViewController.m */; };
 		65D06FD919FC184E00E500C8 /* trackFruitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D06FD819FC184E00E500C8 /* trackFruitViewController.m */; };
+		65DC392E1A05680F00C2AB9A /* fitnessClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DC392D1A05680F00C2AB9A /* fitnessClassesViewController.m */; };
+		65DC39311A056FD700C2AB9A /* trackProteinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DC39301A056FD700C2AB9A /* trackProteinViewController.m */; };
 		973B257218FAF2CE00640F96 /* leftLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 973B257118FAF2CE00640F96 /* leftLogo.png */; };
 		973B257618FB023F00640F96 /* main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 973B257518FB023F00640F96 /* main.jpg */; };
 		973B257818FB192300640F96 /* savebtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 973B257718FB192300640F96 /* savebtn.png */; };
@@ -60,8 +61,6 @@
 		6354EE0D18FB9196001A3924 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = SidebarDemo/Parse.framework; sourceTree = "<group>"; };
 		6354EE0F18FB9810001A3924 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		653CEA0D19F089F400E9A3FD /* helpr-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "helpr-logo.png"; sourceTree = "<group>"; };
-		653CEA0F19F092F800E9A3FD /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
-		653CEA1019F092F800E9A3FD /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		653CEA1219F0931900E9A3FD /* dailyChallenge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dailyChallenge.h; sourceTree = "<group>"; };
 		653CEA1319F0931900E9A3FD /* dailyChallenge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dailyChallenge.m; sourceTree = "<group>"; };
 		653CEA1519F0933200E9A3FD /* nutritionChecklistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nutritionChecklistViewController.h; sourceTree = "<group>"; };
@@ -73,6 +72,10 @@
 		65D06FD519FC063E00E500C8 /* trackVegetablesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = trackVegetablesViewController.m; sourceTree = "<group>"; };
 		65D06FD719FC184E00E500C8 /* trackFruitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trackFruitViewController.h; sourceTree = "<group>"; };
 		65D06FD819FC184E00E500C8 /* trackFruitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = trackFruitViewController.m; sourceTree = "<group>"; };
+		65DC392C1A05680F00C2AB9A /* fitnessClassesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fitnessClassesViewController.h; path = ../fitnessClassesViewController.h; sourceTree = "<group>"; };
+		65DC392D1A05680F00C2AB9A /* fitnessClassesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = fitnessClassesViewController.m; path = ../fitnessClassesViewController.m; sourceTree = "<group>"; };
+		65DC392F1A056FD700C2AB9A /* trackProteinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trackProteinViewController.h; sourceTree = "<group>"; };
+		65DC39301A056FD700C2AB9A /* trackProteinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = trackProteinViewController.m; sourceTree = "<group>"; };
 		973B257118FAF2CE00640F96 /* leftLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftLogo.png; sourceTree = "<group>"; };
 		973B257518FB023F00640F96 /* main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = main.jpg; sourceTree = "<group>"; };
 		973B257718FB192300640F96 /* savebtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = savebtn.png; sourceTree = "<group>"; };
@@ -200,6 +203,8 @@
 		F4EECF17177C99F400778578 /* Farm Fresh Simcoe */ = {
 			isa = PBXGroup;
 			children = (
+				65DC392C1A05680F00C2AB9A /* fitnessClassesViewController.h */,
+				65DC392D1A05680F00C2AB9A /* fitnessClassesViewController.m */,
 				F4EECF20177C99F400778578 /* AppDelegate.h */,
 				F4EECF21177C99F400778578 /* AppDelegate.m */,
 				F4EECF29177C99F400778578 /* MainStoryboard.storyboard */,
@@ -209,8 +214,8 @@
 				65D06FD519FC063E00E500C8 /* trackVegetablesViewController.m */,
 				F4EECF48177DF87700778578 /* SidebarViewController.h */,
 				F4EECF49177DF87700778578 /* SidebarViewController.m */,
-				653CEA0F19F092F800E9A3FD /* ProfileViewController.h */,
-				653CEA1019F092F800E9A3FD /* ProfileViewController.m */,
+				65DC392F1A056FD700C2AB9A /* trackProteinViewController.h */,
+				65DC39301A056FD700C2AB9A /* trackProteinViewController.m */,
 				653CEA1219F0931900E9A3FD /* dailyChallenge.h */,
 				653CEA1319F0931900E9A3FD /* dailyChallenge.m */,
 				653CEA1519F0933200E9A3FD /* nutritionChecklistViewController.h */,
@@ -360,11 +365,12 @@
 				F4EECF1E177C99F400778578 /* main.m in Sources */,
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,
-				653CEA1119F092F800E9A3FD /* ProfileViewController.m in Sources */,
 				65D06FD619FC063E00E500C8 /* trackVegetablesViewController.m in Sources */,
 				F4EECF4A177DF87700778578 /* SidebarViewController.m in Sources */,
 				653CEA1719F0933200E9A3FD /* nutritionChecklistViewController.m in Sources */,
 				653CEA1419F0931900E9A3FD /* dailyChallenge.m in Sources */,
+				65DC39311A056FD700C2AB9A /* trackProteinViewController.m in Sources */,
+				65DC392E1A05680F00C2AB9A /* fitnessClassesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

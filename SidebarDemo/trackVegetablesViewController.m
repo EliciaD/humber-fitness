@@ -69,6 +69,10 @@
     _sixServings.layer.borderWidth=3.0f;
     _sixServings.layer.borderColor=[[UIColor whiteColor] CGColor];
     
+    _saveBtn.layer.cornerRadius = 5;
+    _saveBtn.layer.masksToBounds = YES;
+    _saveBtn.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
+    
 
     
     

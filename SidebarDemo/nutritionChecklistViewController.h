@@ -15,9 +15,15 @@
 @property (weak, nonatomic) IBOutlet UIButton *trackProtein;
 @property (weak, nonatomic) IBOutlet UILabel *glassesOfWater;
 
-@property (weak, nonatomic) IBOutlet UILabel *gramsProtein;
-
 @property (weak, nonatomic) IBOutlet UILabel *gramsOfProtien;
+
+- (IBAction)sedentary:(id)sender;
+- (IBAction)moderatlyActive:(id)sender;
+- (IBAction)veryActive:(id)sender;
+
+
+
+
 
 
 
