@@ -47,6 +47,13 @@
     _sidebarButton.tintColor = [UIColor whiteColor];
     
     
+    PFQuery *query = [PFQuery queryWithClassName:@"northSchedule"];
+    [query getObjectInBackgroundWithId:@"l3F1JmRSnw" block:^(PFObject *northSchedule, NSError *error) {
+        
+        NSLog(@"%@", northSchedule);
+    }];
+    
+    
     
     
     

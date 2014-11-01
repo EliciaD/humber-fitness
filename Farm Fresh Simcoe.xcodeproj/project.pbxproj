@@ -19,6 +19,8 @@
 		65D06FD919FC184E00E500C8 /* trackFruitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D06FD819FC184E00E500C8 /* trackFruitViewController.m */; };
 		65DC392E1A05680F00C2AB9A /* fitnessClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DC392D1A05680F00C2AB9A /* fitnessClassesViewController.m */; };
 		65DC39311A056FD700C2AB9A /* trackProteinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DC39301A056FD700C2AB9A /* trackProteinViewController.m */; };
+		65DC39351A0576BC00C2AB9A /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DC39331A0576BC00C2AB9A /* TableViewCell.m */; };
+		65DC39361A0576BC00C2AB9A /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65DC39341A0576BC00C2AB9A /* TableViewCell.xib */; };
 		973B257218FAF2CE00640F96 /* leftLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 973B257118FAF2CE00640F96 /* leftLogo.png */; };
 		973B257618FB023F00640F96 /* main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 973B257518FB023F00640F96 /* main.jpg */; };
 		973B257818FB192300640F96 /* savebtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 973B257718FB192300640F96 /* savebtn.png */; };
@@ -76,6 +78,9 @@
 		65DC392D1A05680F00C2AB9A /* fitnessClassesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = fitnessClassesViewController.m; path = ../fitnessClassesViewController.m; sourceTree = "<group>"; };
 		65DC392F1A056FD700C2AB9A /* trackProteinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trackProteinViewController.h; sourceTree = "<group>"; };
 		65DC39301A056FD700C2AB9A /* trackProteinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = trackProteinViewController.m; sourceTree = "<group>"; };
+		65DC39321A0576BC00C2AB9A /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewCell.h; path = ../TableViewCell.h; sourceTree = "<group>"; };
+		65DC39331A0576BC00C2AB9A /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewCell.m; path = ../TableViewCell.m; sourceTree = "<group>"; };
+		65DC39341A0576BC00C2AB9A /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TableViewCell.xib; path = ../TableViewCell.xib; sourceTree = "<group>"; };
 		973B257118FAF2CE00640F96 /* leftLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftLogo.png; sourceTree = "<group>"; };
 		973B257518FB023F00640F96 /* main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = main.jpg; sourceTree = "<group>"; };
 		973B257718FB192300640F96 /* savebtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = savebtn.png; sourceTree = "<group>"; };
@@ -203,6 +208,9 @@
 		F4EECF17177C99F400778578 /* Farm Fresh Simcoe */ = {
 			isa = PBXGroup;
 			children = (
+				65DC39321A0576BC00C2AB9A /* TableViewCell.h */,
+				65DC39331A0576BC00C2AB9A /* TableViewCell.m */,
+				65DC39341A0576BC00C2AB9A /* TableViewCell.xib */,
 				65DC392C1A05680F00C2AB9A /* fitnessClassesViewController.h */,
 				65DC392D1A05680F00C2AB9A /* fitnessClassesViewController.m */,
 				F4EECF20177C99F400778578 /* AppDelegate.h */,
@@ -344,6 +352,7 @@
 				9746E51A18F9AA85000755DE /* bglog.png in Resources */,
 				65B10F8519F5C70900DA8091 /* bkg-7.jpg in Resources */,
 				973B257618FB023F00640F96 /* main.jpg in Resources */,
+				65DC39361A0576BC00C2AB9A /* TableViewCell.xib in Resources */,
 				97C10EEE18F75ABB00D72764 /* season.png in Resources */,
 				F4EECF2B177C99F400778578 /* MainStoryboard.storyboard in Resources */,
 				97C10EEF18F75ABB00D72764 /* notseason.png in Resources */,
@@ -365,6 +374,7 @@
 				F4EECF1E177C99F400778578 /* main.m in Sources */,
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,
+				65DC39351A0576BC00C2AB9A /* TableViewCell.m in Sources */,
 				65D06FD619FC063E00E500C8 /* trackVegetablesViewController.m in Sources */,
 				F4EECF4A177DF87700778578 /* SidebarViewController.m in Sources */,
 				653CEA1719F0933200E9A3FD /* nutritionChecklistViewController.m in Sources */,
