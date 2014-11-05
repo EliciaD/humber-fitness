@@ -12,7 +12,13 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 @property (weak, nonatomic) IBOutlet UILabel *challenge;
 @property (weak, nonatomic) IBOutlet UIButton *completeBtn;
+
+
+
+
+
 @property(readonly, copy) NSDate *date;
 
+- (IBAction)complete:(id)sender;
 
 @end

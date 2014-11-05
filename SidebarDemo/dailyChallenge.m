@@ -18,6 +18,42 @@
 
 @implementation dailyChallengeViewController
 NSString *date;
+bool mybool;
+
+
+int complete = 0;
+
+
+
+- (IBAction)complete:(id)sender {
+    
+    NSLog(@"button has been clicked");
+ complete++;
+  //  NSLog(@"%d", complete);
+    
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Way to go!" message:@"You successfully finished today's daily challenge!" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil]; [alert show];
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {
+      
+        PFUser *currentUser = [PFUser currentUser];
+       
+        PFObject *completedChallenge = [PFObject objectWithClassName:@"dailyChallenge"];
+       completedChallenge[@"Completed"] = @YES;
+        
+        completedChallenge[@"email"] =  currentUser.email;
+       
+        [completedChallenge saveInBackground];
+        
+        _completeBtn.hidden=TRUE;
+        _challenge.text = @"Challenge Complete!";
+        
+     
+        
+    }}
 
 
 
@@ -53,6 +89,33 @@ NSString *date;
     _sidebarButton.action = @selector(revealToggle:);
     _sidebarButton.tintColor = [UIColor whiteColor];
     
+    // grabs the daily challenge if complete or not
+    PFUser *currentUser = [PFUser currentUser];
+
+    PFQuery *query = [PFQuery queryWithClassName:@"dailyChallenge"];
+    [query whereKey:@"email" equalTo:currentUser.email];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d scores.", objects.count);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                NSLog(@"%@", object[@"Completed"]);
+                
+                mybool = object[@"Completed"];
+                
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
+    
+    
+    
+    
     
     
     _challenge.layer.borderWidth=5.0f;
@@ -77,45 +140,82 @@ NSString *date;
     
     
     if ([date  isEqual: @"Monday"]){
-      _challenge.text = @"Squats Time";
+        if(mybool == YES){
+            _completeBtn.hidden=TRUE;
+            _challenge.text = @"Challenge Complete!";
+            
+            
+        }if(mybool == NO){
+             _challenge.text = @"Squats";
+        }
+
         
     }else if ([date isEqual:@"Tuesday"]){
+        if(mybool == YES){
+            _completeBtn.hidden=TRUE;
+            _challenge.text = @"Challenge Complete!";
+            
     
-    _challenge.text = @"Jumping Jacks";
+        }if(mybool == NO){
+            _challenge.text = @"Planks";
+        }
     
     }else if([date isEqual:@"Wednesday"]){
-         _challenge.text = @"Sit ups";
         
+        if(mybool == YES){
+            _completeBtn.hidden=TRUE;
+            _challenge.text = @"Challenge Complete!";
+            
+            
+        }if(mybool == NO){
+             _challenge.text = @"Crunches";
+        }
+
+       
     
     }else if([date isEqual:@"Thursday"]){
-      _challenge.text = @"Burpees";
+     
+        if(mybool == YES){
+            _completeBtn.hidden=TRUE;
+            _challenge.text = @"Challenge Complete!";
+            
+            
+        }if(mybool == NO){
+             _challenge.text = @"Push-ups";
+        }
+
+ 
         
     }else if([date isEqual:@"Friday"]){
-         _challenge.text = @"Push Ups";
+        if(mybool == YES){
+            _completeBtn.hidden=TRUE;
+            _challenge.text = @"Challenge Complete!";
+            
+            
+        }if(mybool == NO){
+            _challenge.text = @"Seated or bent over row";
+        }
+    
         
     }else if([date isEqual:@"Saturday"]){
-        _challenge.text = @"Lunges";
+        _challenge.text = @"Rest";
+          _completeBtn.hidden=TRUE;
         
     }else if([date isEqual:@"Sunday"]){
-         NSLog(@"Rest");
-        
+         _completeBtn.hidden=TRUE;
+        _challenge.text = @"Rest";
         
     }else{
     
-        NSLog(@"Is your calander set on your phone? There seems to be a problem");
     
     
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
