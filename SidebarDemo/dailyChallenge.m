@@ -16,44 +16,11 @@
 
 @end
 
-@implementation dailyChallengeViewController
+@implementation dailyChallengeViewController{
+int complete;
+}
 NSString *date;
 bool mybool;
-
-
-int complete = 0;
-
-
-
-- (IBAction)complete:(id)sender {
-    
-    NSLog(@"button has been clicked");
- complete++;
-  //  NSLog(@"%d", complete);
-    
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Way to go!" message:@"You successfully finished today's daily challenge!" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil]; [alert show];
-    
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex == 0) {
-      
-        PFUser *currentUser = [PFUser currentUser];
-       
-        PFObject *completedChallenge = [PFObject objectWithClassName:@"dailyChallenge"];
-       completedChallenge[@"Completed"] = @YES;
-        
-        completedChallenge[@"email"] =  currentUser.email;
-       
-        [completedChallenge saveInBackground];
-        
-        _completeBtn.hidden=TRUE;
-        _challenge.text = @"Challenge Complete!";
-        
-     
-        
-    }}
 
 
 
@@ -101,8 +68,8 @@ int complete = 0;
             NSLog(@"Successfully retrieved %d scores.", objects.count);
             // Do something with the found objects
             for (PFObject *object in objects) {
-                NSLog(@"%@", object[@"Completed"]);
-                
+              //  NSLog(@"%@", object[@"challengeCount"]);
+            //    complete = object[@"challengeCount"];
                 mybool = object[@"Completed"];
                 
             }
@@ -211,6 +178,50 @@ int complete = 0;
     
     }
 }
+
+
+
+- (IBAction)complete:(id)sender {
+    
+    
+    NSLog(@"button has been clicked");
+    PFUser *currentUser = [PFUser currentUser];
+    
+    PFObject *completedChallenge = [PFObject objectWithClassName:@"dailyChallenge"];
+    completedChallenge[@"Completed"] = @YES;
+    
+    completedChallenge[@"email"] =  currentUser.email;
+    //completedChallenge[@"challengeCount"] = [complete intValue];
+    
+    [completedChallenge saveInBackground];
+    
+    complete++;
+    
+    
+    if(complete == 100){
+        NSLog(@"100 times!");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You did it!" message:@"You finished the 100 day challenge!" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil]; [alert show];
+    }else{
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Way to go!" message:@"You successfully finished today's daily challenge!" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil]; [alert show];
+        
+    }
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {
+        
+        
+        
+        _completeBtn.hidden=TRUE;
+        _challenge.text = @"Challenge Complete!";
+        
+        
+    }}
+
+
+
 
 
 
