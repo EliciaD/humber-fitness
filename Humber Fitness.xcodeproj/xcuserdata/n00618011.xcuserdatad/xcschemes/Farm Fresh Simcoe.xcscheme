@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F4EECF0D177C99F400778578"
                BuildableName = "Farm Fresh Simcoe.app"
-               BlueprintName = "Farm Fresh Simcoe"
-               ReferencedContainer = "container:Farm Fresh Simcoe.xcodeproj">
+               BlueprintName = "Humber Fitness"
+               ReferencedContainer = "container:Humber Fitness.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F4EECF0D177C99F400778578"
             BuildableName = "Farm Fresh Simcoe.app"
-            BlueprintName = "Farm Fresh Simcoe"
-            ReferencedContainer = "container:Farm Fresh Simcoe.xcodeproj">
+            BlueprintName = "Humber Fitness"
+            ReferencedContainer = "container:Humber Fitness.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -53,8 +53,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F4EECF0D177C99F400778578"
             BuildableName = "Farm Fresh Simcoe.app"
-            BlueprintName = "Farm Fresh Simcoe"
-            ReferencedContainer = "container:Farm Fresh Simcoe.xcodeproj">
+            BlueprintName = "Humber Fitness"
+            ReferencedContainer = "container:Humber Fitness.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,8 +71,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F4EECF0D177C99F400778578"
             BuildableName = "Farm Fresh Simcoe.app"
-            BlueprintName = "Farm Fresh Simcoe"
-            ReferencedContainer = "container:Farm Fresh Simcoe.xcodeproj">
+            BlueprintName = "Humber Fitness"
+            ReferencedContainer = "container:Humber Fitness.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

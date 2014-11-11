@@ -17,7 +17,6 @@
 		65CAF0DA19F720E100AD22CB /* hawk_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CAF0D919F720E100AD22CB /* hawk_logo.png */; };
 		65D06FD619FC063E00E500C8 /* trackVegetablesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D06FD519FC063E00E500C8 /* trackVegetablesViewController.m */; };
 		65D06FD919FC184E00E500C8 /* trackFruitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D06FD819FC184E00E500C8 /* trackFruitViewController.m */; };
-		65DC392E1A05680F00C2AB9A /* fitnessClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DC392D1A05680F00C2AB9A /* fitnessClassesViewController.m */; };
 		65DC39311A056FD700C2AB9A /* trackProteinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DC39301A056FD700C2AB9A /* trackProteinViewController.m */; };
 		65DC39351A0576BC00C2AB9A /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DC39331A0576BC00C2AB9A /* TableViewCell.m */; };
 		65DC39361A0576BC00C2AB9A /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65DC39341A0576BC00C2AB9A /* TableViewCell.xib */; };
@@ -74,8 +73,6 @@
 		65D06FD519FC063E00E500C8 /* trackVegetablesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = trackVegetablesViewController.m; sourceTree = "<group>"; };
 		65D06FD719FC184E00E500C8 /* trackFruitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trackFruitViewController.h; sourceTree = "<group>"; };
 		65D06FD819FC184E00E500C8 /* trackFruitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = trackFruitViewController.m; sourceTree = "<group>"; };
-		65DC392C1A05680F00C2AB9A /* fitnessClassesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fitnessClassesViewController.h; path = ../fitnessClassesViewController.h; sourceTree = "<group>"; };
-		65DC392D1A05680F00C2AB9A /* fitnessClassesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = fitnessClassesViewController.m; path = ../fitnessClassesViewController.m; sourceTree = "<group>"; };
 		65DC392F1A056FD700C2AB9A /* trackProteinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trackProteinViewController.h; sourceTree = "<group>"; };
 		65DC39301A056FD700C2AB9A /* trackProteinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = trackProteinViewController.m; sourceTree = "<group>"; };
 		65DC39321A0576BC00C2AB9A /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewCell.h; path = ../TableViewCell.h; sourceTree = "<group>"; };
@@ -107,14 +104,14 @@
 		97C10EED18F75ABB00D72764 /* notseason.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notseason.png; sourceTree = "<group>"; };
 		F4D9AD1D1871725500E2D912 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		F4D9AD1E1871725500E2D912 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		F4EECF0E177C99F400778578 /* Farm Fresh Simcoe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farm Fresh Simcoe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4EECF0E177C99F400778578 /* Humber Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Humber Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EECF11177C99F400778578 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F4EECF13177C99F400778578 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F4EECF15177C99F400778578 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		F4EECF19177C99F400778578 /* Farm Fresh Simcoe-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Farm Fresh Simcoe-Info.plist"; sourceTree = "<group>"; };
+		F4EECF19177C99F400778578 /* Humber Fitness-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Humber Fitness-Info.plist"; sourceTree = "<group>"; };
 		F4EECF1B177C99F400778578 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F4EECF1D177C99F400778578 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F4EECF1F177C99F400778578 /* Farm Fresh Simcoe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Farm Fresh Simcoe-Prefix.pch"; sourceTree = "<group>"; };
+		F4EECF1F177C99F400778578 /* Humber Fitness-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Humber Fitness-Prefix.pch"; sourceTree = "<group>"; };
 		F4EECF20177C99F400778578 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F4EECF21177C99F400778578 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F4EECF23177C99F400778578 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -169,7 +166,7 @@
 		F4EECF05177C99F400778578 = {
 			isa = PBXGroup;
 			children = (
-				F4EECF17177C99F400778578 /* Farm Fresh Simcoe */,
+				F4EECF17177C99F400778578 /* Humber Fitness */,
 				F4EECF10177C99F400778578 /* Frameworks */,
 				F4EECF0F177C99F400778578 /* Products */,
 			);
@@ -178,7 +175,7 @@
 		F4EECF0F177C99F400778578 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F4EECF0E177C99F400778578 /* Farm Fresh Simcoe.app */,
+				F4EECF0E177C99F400778578 /* Humber Fitness.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -205,14 +202,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F4EECF17177C99F400778578 /* Farm Fresh Simcoe */ = {
+		F4EECF17177C99F400778578 /* Humber Fitness */ = {
 			isa = PBXGroup;
 			children = (
 				65DC39321A0576BC00C2AB9A /* TableViewCell.h */,
 				65DC39331A0576BC00C2AB9A /* TableViewCell.m */,
 				65DC39341A0576BC00C2AB9A /* TableViewCell.xib */,
-				65DC392C1A05680F00C2AB9A /* fitnessClassesViewController.h */,
-				65DC392D1A05680F00C2AB9A /* fitnessClassesViewController.m */,
 				F4EECF20177C99F400778578 /* AppDelegate.h */,
 				F4EECF21177C99F400778578 /* AppDelegate.m */,
 				F4EECF29177C99F400778578 /* MainStoryboard.storyboard */,
@@ -238,7 +233,7 @@
 				F4EECF34177C9A1E00778578 /* Library */,
 				F4EECF18177C99F400778578 /* Supporting Files */,
 			);
-			name = "Farm Fresh Simcoe";
+			name = "Humber Fitness";
 			path = SidebarDemo;
 			sourceTree = "<group>";
 		};
@@ -247,10 +242,10 @@
 			children = (
 				9746E52018F9BECB000755DE /* Kingthings_Exeter.ttf */,
 				F4EECF53177F37CB00778578 /* Images */,
-				F4EECF19177C99F400778578 /* Farm Fresh Simcoe-Info.plist */,
+				F4EECF19177C99F400778578 /* Humber Fitness-Info.plist */,
 				F4EECF1A177C99F400778578 /* InfoPlist.strings */,
 				F4EECF1D177C99F400778578 /* main.m */,
-				F4EECF1F177C99F400778578 /* Farm Fresh Simcoe-Prefix.pch */,
+				F4EECF1F177C99F400778578 /* Humber Fitness-Prefix.pch */,
 				F4EECF23177C99F400778578 /* Default.png */,
 				F4EECF25177C99F400778578 /* Default@2x.png */,
 				F4EECF27177C99F400778578 /* Default-568h@2x.png */,
@@ -288,9 +283,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F4EECF0D177C99F400778578 /* Farm Fresh Simcoe */ = {
+		F4EECF0D177C99F400778578 /* Humber Fitness */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F4EECF31177C99F400778578 /* Build configuration list for PBXNativeTarget "Farm Fresh Simcoe" */;
+			buildConfigurationList = F4EECF31177C99F400778578 /* Build configuration list for PBXNativeTarget "Humber Fitness" */;
 			buildPhases = (
 				F4EECF0A177C99F400778578 /* Sources */,
 				F4EECF0B177C99F400778578 /* Frameworks */,
@@ -300,9 +295,9 @@
 			);
 			dependencies = (
 			);
-			name = "Farm Fresh Simcoe";
+			name = "Humber Fitness";
 			productName = SidebarDemo;
-			productReference = F4EECF0E177C99F400778578 /* Farm Fresh Simcoe.app */;
+			productReference = F4EECF0E177C99F400778578 /* Humber Fitness.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -314,7 +309,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Appcoda;
 			};
-			buildConfigurationList = F4EECF09177C99F400778578 /* Build configuration list for PBXProject "Farm Fresh Simcoe" */;
+			buildConfigurationList = F4EECF09177C99F400778578 /* Build configuration list for PBXProject "Humber Fitness" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -326,7 +321,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F4EECF0D177C99F400778578 /* Farm Fresh Simcoe */,
+				F4EECF0D177C99F400778578 /* Humber Fitness */,
 			);
 		};
 /* End PBXProject section */
@@ -380,7 +375,6 @@
 				653CEA1719F0933200E9A3FD /* nutritionChecklistViewController.m in Sources */,
 				653CEA1419F0931900E9A3FD /* dailyChallenge.m in Sources */,
 				65DC39311A056FD700C2AB9A /* trackProteinViewController.m in Sources */,
-				65DC392E1A05680F00C2AB9A /* fitnessClassesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,10 +479,10 @@
 					"$(PROJECT_DIR)/SidebarDemo",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SidebarDemo/Farm Fresh Simcoe-Prefix.pch";
-				INFOPLIST_FILE = "SidebarDemo/Farm Fresh Simcoe-Info.plist";
+				GCC_PREFIX_HEADER = "SidebarDemo/Humber Fitness-Prefix.pch";
+				INFOPLIST_FILE = "SidebarDemo/Humber Fitness-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "Farm Fresh Simcoe";
+				PRODUCT_NAME = "Humber Fitness";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -508,10 +502,10 @@
 					"$(PROJECT_DIR)/SidebarDemo",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SidebarDemo/Farm Fresh Simcoe-Prefix.pch";
-				INFOPLIST_FILE = "SidebarDemo/Farm Fresh Simcoe-Info.plist";
+				GCC_PREFIX_HEADER = "SidebarDemo/Humber Fitness-Prefix.pch";
+				INFOPLIST_FILE = "SidebarDemo/Humber Fitness-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "Farm Fresh Simcoe";
+				PRODUCT_NAME = "Humber Fitness";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -519,7 +513,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F4EECF09177C99F400778578 /* Build configuration list for PBXProject "Farm Fresh Simcoe" */ = {
+		F4EECF09177C99F400778578 /* Build configuration list for PBXProject "Humber Fitness" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4EECF2F177C99F400778578 /* Debug */,
@@ -528,7 +522,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F4EECF31177C99F400778578 /* Build configuration list for PBXNativeTarget "Farm Fresh Simcoe" */ = {
+		F4EECF31177C99F400778578 /* Build configuration list for PBXNativeTarget "Humber Fitness" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4EECF32177C99F400778578 /* Debug */,
