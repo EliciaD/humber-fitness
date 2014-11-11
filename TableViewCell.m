@@ -1,8 +1,8 @@
 //
 //  TableViewCell.m
-//  Farm Fresh Simcoe
+//  Humber Fitness
 //
-//  Created by Stewart Emerson on 11/1/14.
+//  Created by Emerson Stewart on 2014-11-11.
 //  Copyright (c) 2014 Appcoda. All rights reserved.
 //
 
@@ -20,16 +20,6 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
 }
 
 @end

@@ -1,5 +1,5 @@
 //
-//  TableViewCell.h
+//  fitnessClassesTableViewController.h
 //  Humber Fitness
 //
 //  Created by Emerson Stewart on 2014-11-11.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TableViewCell : UITableViewCell
+@interface fitnessClassesTableViewController : UITableViewController
 
 @end
