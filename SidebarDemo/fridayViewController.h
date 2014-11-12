@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface fridayViewController : UIViewController
+@interface fridayViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) NSMutableArray *titlesArray;
+@property (strong, nonatomic) NSMutableArray *dateArray;
+@property (strong, nonatomic) NSMutableArray *timeArray;
+@property (strong, nonatomic) NSMutableArray *descriptionArray;
+@property (strong, nonatomic) NSMutableArray *locationArray;
+@property(nonatomic,strong)NSMutableArray *contentArray;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+
 
 @end
