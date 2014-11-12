@@ -9,6 +9,19 @@
 #import "TableViewCell.h"
 
 @implementation TableViewCell
+@synthesize titleLabel = _titleLabel;
+@synthesize timeLabel = _timeLabel;
+@synthesize locationLabel = _locationLabel;
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        // Initialization code
+    }
+    return self;
+}
+
 
 - (void)awakeFromNib
 {

@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		6354EE0E18FB9196001A3924 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6354EE0D18FB9196001A3924 /* Parse.framework */; };
 		6354EE1018FB9810001A3924 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6354EE0F18FB9810001A3924 /* CoreData.framework */; };
-		636D6CD61A12BEA400D0AC73 /* fitnessClassesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636D6CD51A12BEA400D0AC73 /* fitnessClassesTableViewController.m */; };
 		636D6CDA1A12C06D00D0AC73 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636D6CD81A12C06C00D0AC73 /* TableViewCell.m */; };
 		636D6CDB1A12C06D00D0AC73 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636D6CD91A12C06C00D0AC73 /* TableViewCell.xib */; };
+		636D6CE71A12E7B400D0AC73 /* fitnessClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636D6CE61A12E7B400D0AC73 /* fitnessClassesViewController.m */; };
 		653CEA0E19F089F400E9A3FD /* helpr-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 653CEA0D19F089F400E9A3FD /* helpr-logo.png */; };
 		653CEA1419F0931900E9A3FD /* dailyChallenge.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CEA1319F0931900E9A3FD /* dailyChallenge.m */; };
 		653CEA1719F0933200E9A3FD /* nutritionChecklistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CEA1619F0933200E9A3FD /* nutritionChecklistViewController.m */; };
@@ -62,11 +62,11 @@
 /* Begin PBXFileReference section */
 		6354EE0D18FB9196001A3924 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = SidebarDemo/Parse.framework; sourceTree = "<group>"; };
 		6354EE0F18FB9810001A3924 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		636D6CD41A12BEA400D0AC73 /* fitnessClassesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fitnessClassesTableViewController.h; path = ../fitnessClassesTableViewController.h; sourceTree = "<group>"; };
-		636D6CD51A12BEA400D0AC73 /* fitnessClassesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = fitnessClassesTableViewController.m; path = ../fitnessClassesTableViewController.m; sourceTree = "<group>"; };
 		636D6CD71A12C06C00D0AC73 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewCell.h; path = ../TableViewCell.h; sourceTree = "<group>"; };
 		636D6CD81A12C06C00D0AC73 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewCell.m; path = ../TableViewCell.m; sourceTree = "<group>"; };
 		636D6CD91A12C06C00D0AC73 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TableViewCell.xib; path = ../TableViewCell.xib; sourceTree = "<group>"; };
+		636D6CE51A12E7B400D0AC73 /* fitnessClassesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fitnessClassesViewController.h; sourceTree = "<group>"; };
+		636D6CE61A12E7B400D0AC73 /* fitnessClassesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fitnessClassesViewController.m; sourceTree = "<group>"; };
 		653CEA0D19F089F400E9A3FD /* helpr-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "helpr-logo.png"; sourceTree = "<group>"; };
 		653CEA1219F0931900E9A3FD /* dailyChallenge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dailyChallenge.h; sourceTree = "<group>"; };
 		653CEA1319F0931900E9A3FD /* dailyChallenge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dailyChallenge.m; sourceTree = "<group>"; };
@@ -211,8 +211,8 @@
 				636D6CD91A12C06C00D0AC73 /* TableViewCell.xib */,
 				636D6CD81A12C06C00D0AC73 /* TableViewCell.m */,
 				636D6CD71A12C06C00D0AC73 /* TableViewCell.h */,
-				636D6CD41A12BEA400D0AC73 /* fitnessClassesTableViewController.h */,
-				636D6CD51A12BEA400D0AC73 /* fitnessClassesTableViewController.m */,
+				636D6CE51A12E7B400D0AC73 /* fitnessClassesViewController.h */,
+				636D6CE61A12E7B400D0AC73 /* fitnessClassesViewController.m */,
 				F4EECF20177C99F400778578 /* AppDelegate.h */,
 				F4EECF21177C99F400778578 /* AppDelegate.m */,
 				F4EECF29177C99F400778578 /* MainStoryboard.storyboard */,
@@ -368,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				978ED69B18F8C0120062D5F7 /* loginViewController.m in Sources */,
+				636D6CE71A12E7B400D0AC73 /* fitnessClassesViewController.m in Sources */,
 				978ED69E18F8C02D0062D5F7 /* signUpViewController.m in Sources */,
 				F4D9AD1F1871725500E2D912 /* SWRevealViewController.m in Sources */,
 				65D06FD919FC184E00E500C8 /* trackFruitViewController.m in Sources */,
@@ -375,7 +376,6 @@
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,
 				636D6CDA1A12C06D00D0AC73 /* TableViewCell.m in Sources */,
-				636D6CD61A12BEA400D0AC73 /* fitnessClassesTableViewController.m in Sources */,
 				65D06FD619FC063E00E500C8 /* trackVegetablesViewController.m in Sources */,
 				F4EECF4A177DF87700778578 /* SidebarViewController.m in Sources */,
 				653CEA1719F0933200E9A3FD /* nutritionChecklistViewController.m in Sources */,

@@ -10,4 +10,8 @@
 
 @interface TableViewCell : UITableViewCell
 
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+@property (nonatomic, weak) IBOutlet UILabel *timeLabel;
+@property (nonatomic, weak) IBOutlet UILabel *locationLabel;
+
 @end
