@@ -753,7 +753,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Monday" id="YRr-i2-WYO">
-                                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="dGG-5o-rym"/>
+                                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="dGG-5o-rym">
+                                            <connections>
+                                                <segue destination="8cK-rX-fAc" kind="push" id="mv5-JT-BpU"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title=">" id="8WT-M0-fKN">
                                             <connections>
                                                 <segue destination="Ng7-GO-M9p" kind="push" id="Ton-VF-YLY"/>
@@ -791,7 +795,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Friday" id="XF9-e4-Jad">
-                                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="gRp-5z-gkr"/>
+                                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="gRp-5z-gkr">
+                                            <connections>
+                                                <segue destination="3Ps-Vz-dNJ" kind="push" id="hBT-l9-rhI"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title=">" id="vE2-Ow-fHU">
                                             <connections>
                                                 <segue destination="8z8-T9-fgc" kind="push" id="qIw-sq-Clr"/>
@@ -1117,8 +1125,10 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="pbR-UC-xfk"/>
-        <segue reference="PIc-Bn-FxU"/>
-        <segue reference="OEg-lH-Jto"/>
+        <segue reference="hBT-l9-rhI"/>
+        <segue reference="mv5-JT-BpU"/>
         <segue reference="qIw-sq-Clr"/>
+        <segue reference="Ton-VF-YLY"/>
+        <segue reference="PIc-Bn-FxU"/>
     </inferredMetricsTieBreakers>
 </document>
