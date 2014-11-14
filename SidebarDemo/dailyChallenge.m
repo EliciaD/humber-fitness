@@ -65,9 +65,11 @@ int count;
             for (PFObject *object in objects) {
        
                 mybool = object[@"Completed"];
+               
+                
+                count = 0;
                 count = count+1;
                 NSLog(@"%d",count);
-                
             }
         } else {
             // Log details of the failure
@@ -152,6 +154,7 @@ int count;
         
     }else if([date isEqual:@"Friday"]){
         if(mybool == YES){
+            
             _completeBtn.hidden=TRUE;
             _challenge.text = @"Challenge Complete!";
             
@@ -180,6 +183,7 @@ int count;
 
 - (IBAction)complete:(id)sender {
     
+ 
     
     NSLog(@"button has been clicked");
     PFUser *currentUser = [PFUser currentUser];
@@ -200,6 +204,8 @@ int count;
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You did it!" message:@"You finished the 100 day challenge!" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil]; [alert show];
         count = 0;
         // needs to email leanne at this point
+        count = count+1;
+        NSLog(@"%d",count);
         
         
     }else{
@@ -212,9 +218,7 @@ int count;
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0) {
-        
-        
-        
+       
         _completeBtn.hidden=TRUE;
         _challenge.text = @"Challenge Complete!";
         

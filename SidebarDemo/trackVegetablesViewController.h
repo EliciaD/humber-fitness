@@ -21,6 +21,7 @@
 - (IBAction)fourClicked:(id)sender;
 - (IBAction)fiveClicked:(id)sender;
 - (IBAction)sixClicked:(id)sender;
+- (IBAction)save:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIButton *saveBtn;
 

@@ -12,6 +12,7 @@
 		636D6CDA1A12C06D00D0AC73 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636D6CD81A12C06C00D0AC73 /* TableViewCell.m */; };
 		636D6CDB1A12C06D00D0AC73 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636D6CD91A12C06C00D0AC73 /* TableViewCell.xib */; };
 		636D6CE71A12E7B400D0AC73 /* fitnessClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636D6CE61A12E7B400D0AC73 /* fitnessClassesViewController.m */; };
+		63A05C7C1A16B698005A0CA0 /* trackWaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A05C7B1A16B698005A0CA0 /* trackWaterViewController.m */; };
 		63A11B3B1A13170B00394389 /* tuesdayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A11B3A1A13170B00394389 /* tuesdayViewController.m */; };
 		63A11B3E1A13172500394389 /* wednesdayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A11B3D1A13172500394389 /* wednesdayViewController.m */; };
 		63A11B411A13173600394389 /* thursdayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A11B401A13173600394389 /* thursdayViewController.m */; };
@@ -71,6 +72,8 @@
 		636D6CD91A12C06C00D0AC73 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TableViewCell.xib; path = ../TableViewCell.xib; sourceTree = "<group>"; };
 		636D6CE51A12E7B400D0AC73 /* fitnessClassesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fitnessClassesViewController.h; sourceTree = "<group>"; };
 		636D6CE61A12E7B400D0AC73 /* fitnessClassesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fitnessClassesViewController.m; sourceTree = "<group>"; };
+		63A05C7A1A16B698005A0CA0 /* trackWaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trackWaterViewController.h; sourceTree = "<group>"; };
+		63A05C7B1A16B698005A0CA0 /* trackWaterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = trackWaterViewController.m; sourceTree = "<group>"; };
 		63A11B391A13170B00394389 /* tuesdayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tuesdayViewController.h; sourceTree = "<group>"; };
 		63A11B3A1A13170B00394389 /* tuesdayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tuesdayViewController.m; sourceTree = "<group>"; };
 		63A11B3C1A13172500394389 /* wednesdayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wednesdayViewController.h; sourceTree = "<group>"; };
@@ -236,6 +239,8 @@
 				63A11B3A1A13170B00394389 /* tuesdayViewController.m */,
 				F4EECF21177C99F400778578 /* AppDelegate.m */,
 				F4EECF29177C99F400778578 /* MainStoryboard.storyboard */,
+				63A05C7A1A16B698005A0CA0 /* trackWaterViewController.h */,
+				63A05C7B1A16B698005A0CA0 /* trackWaterViewController.m */,
 				65D06FD719FC184E00E500C8 /* trackFruitViewController.h */,
 				65D06FD819FC184E00E500C8 /* trackFruitViewController.m */,
 				65D06FD419FC063E00E500C8 /* trackVegetablesViewController.h */,
@@ -396,6 +401,7 @@
 				F4EECF1E177C99F400778578 /* main.m in Sources */,
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,
 				63A11B3E1A13172500394389 /* wednesdayViewController.m in Sources */,
+				63A05C7C1A16B698005A0CA0 /* trackWaterViewController.m in Sources */,
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,
 				636D6CDA1A12C06D00D0AC73 /* TableViewCell.m in Sources */,
 				65D06FD619FC063E00E500C8 /* trackVegetablesViewController.m in Sources */,
