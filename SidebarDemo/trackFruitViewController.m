@@ -14,6 +14,8 @@
 
 @implementation trackFruitViewController
 
+int fruitCount;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -86,26 +88,34 @@
     
     _oneServing.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
     [_oneServing setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
+    fruitCount = fruitCount + 1;
     
 }
 
 - (IBAction)twoClicked:(id)sender {
     _twoServings.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
     [_twoServings setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
-    
+      fruitCount = fruitCount + 1;
 }
 
 - (IBAction)threeClicked:(id)sender {
     _threeServings.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
     [_threeServings setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
+      fruitCount = fruitCount + 1;
 }
 
 - (IBAction)fourClicked:(id)sender {
     _fourServings.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
     [_fourServings setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
+      fruitCount = fruitCount + 1;
 }
 
 - (IBAction)saveFruitBtn:(id)sender {
+    if(fruitCount == 4){
+        NSLog(@"your a healthy one");
+    }
+
 }
+
 
 @end

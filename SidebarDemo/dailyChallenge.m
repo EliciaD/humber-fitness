@@ -198,7 +198,7 @@ int count;
     if(count == 100){
         NSLog(@"100 times!");
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You did it!" message:@"You finished the 100 day challenge!" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil]; [alert show];
-        
+        count = 0;
         // needs to email leanne at this point
         
         

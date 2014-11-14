@@ -778,6 +778,40 @@
             </objects>
             <point key="canvasLocation" x="306" y="-1122"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="6F4-ha-8OV">
+            <objects>
+                <viewController id="Azm-zt-edJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lzj-Ht-CTt"/>
+                        <viewControllerLayoutGuide type="bottom" id="3ST-9P-wEw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RxD-Zf-VD2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDJ-47-Vk5">
+                                <rect key="frame" x="121" y="191" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="North">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTv-Ry-5Tg">
+                                <rect key="frame" x="105" y="246" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Lakeshore">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YLy-U1-Mck" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-33" y="-667"/>
+        </scene>
         <!--Friday View Controller-->
         <scene sceneID="qg8-Ck-zNf">
             <objects>
@@ -1125,10 +1159,10 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="pbR-UC-xfk"/>
-        <segue reference="hBT-l9-rhI"/>
-        <segue reference="mv5-JT-BpU"/>
-        <segue reference="qIw-sq-Clr"/>
+        <segue reference="g8w-bA-eOO"/>
         <segue reference="Ton-VF-YLY"/>
+        <segue reference="mv5-JT-BpU"/>
+        <segue reference="hBT-l9-rhI"/>
         <segue reference="PIc-Bn-FxU"/>
     </inferredMetricsTieBreakers>
 </document>
