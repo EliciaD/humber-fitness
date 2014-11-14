@@ -14,9 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *completeBtn;
 
 
-
-
-
 @property(readonly, copy) NSDate *date;
 
 - (IBAction)complete:(id)sender;

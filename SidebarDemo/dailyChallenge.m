@@ -21,7 +21,7 @@ int complete;
 }
 NSString *date;
 bool mybool;
-
+int count;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -60,13 +60,13 @@ bool mybool;
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %d scores.", objects.count);
+          
             // Do something with the found objects
             for (PFObject *object in objects) {
-              //  NSLog(@"%@", object[@"challengeCount"]);
-            //    complete = object[@"challengeCount"];
+       
                 mybool = object[@"Completed"];
+                count = count+1;
+                NSLog(@"%d",count);
                 
             }
         } else {
@@ -75,6 +75,7 @@ bool mybool;
         }
     }];
     
+
     
     
     
@@ -106,7 +107,7 @@ bool mybool;
         if(mybool == YES){
             _completeBtn.hidden=TRUE;
             _challenge.text = @"Challenge Complete!";
-            
+     
             
         }if(mybool == NO){
              _challenge.text = @"Squats";
@@ -187,16 +188,20 @@ bool mybool;
     completedChallenge[@"Completed"] = @YES;
     
     completedChallenge[@"email"] =  currentUser.email;
-    //completedChallenge[@"challengeCount"] = [complete intValue];
+   
     
     [completedChallenge saveInBackground];
     
-    complete++;
+
     
     
-    if(complete == 100){
+    if(count == 100){
         NSLog(@"100 times!");
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You did it!" message:@"You finished the 100 day challenge!" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil]; [alert show];
+        
+        // needs to email leanne at this point
+        
+        
     }else{
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Way to go!" message:@"You successfully finished today's daily challenge!" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil]; [alert show];
