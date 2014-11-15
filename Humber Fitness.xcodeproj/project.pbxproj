@@ -17,6 +17,7 @@
 		63A11B3E1A13172500394389 /* wednesdayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A11B3D1A13172500394389 /* wednesdayViewController.m */; };
 		63A11B411A13173600394389 /* thursdayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A11B401A13173600394389 /* thursdayViewController.m */; };
 		63A11B441A13174200394389 /* fridayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A11B431A13174200394389 /* fridayViewController.m */; };
+		63AA5AF61A17E5D800383A03 /* northorLakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AA5AF51A17E5D800383A03 /* northorLakeViewController.m */; };
 		653CEA0E19F089F400E9A3FD /* helpr-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 653CEA0D19F089F400E9A3FD /* helpr-logo.png */; };
 		653CEA1419F0931900E9A3FD /* dailyChallenge.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CEA1319F0931900E9A3FD /* dailyChallenge.m */; };
 		653CEA1719F0933200E9A3FD /* nutritionChecklistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CEA1619F0933200E9A3FD /* nutritionChecklistViewController.m */; };
@@ -82,6 +83,8 @@
 		63A11B401A13173600394389 /* thursdayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = thursdayViewController.m; sourceTree = "<group>"; };
 		63A11B421A13174200394389 /* fridayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fridayViewController.h; sourceTree = "<group>"; };
 		63A11B431A13174200394389 /* fridayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fridayViewController.m; sourceTree = "<group>"; };
+		63AA5AF41A17E5D800383A03 /* northorLakeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = northorLakeViewController.h; sourceTree = "<group>"; };
+		63AA5AF51A17E5D800383A03 /* northorLakeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = northorLakeViewController.m; sourceTree = "<group>"; };
 		653CEA0D19F089F400E9A3FD /* helpr-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "helpr-logo.png"; sourceTree = "<group>"; };
 		653CEA1219F0931900E9A3FD /* dailyChallenge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dailyChallenge.h; sourceTree = "<group>"; };
 		653CEA1319F0931900E9A3FD /* dailyChallenge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dailyChallenge.m; sourceTree = "<group>"; };
@@ -170,6 +173,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63AA5AF21A17E52700383A03 /* Humber North Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				63A11B3C1A13172500394389 /* wednesdayViewController.h */,
+				63A11B3D1A13172500394389 /* wednesdayViewController.m */,
+				63A11B3F1A13173600394389 /* thursdayViewController.h */,
+				63A11B401A13173600394389 /* thursdayViewController.m */,
+				63A11B421A13174200394389 /* fridayViewController.h */,
+				63A11B431A13174200394389 /* fridayViewController.m */,
+				63A11B391A13170B00394389 /* tuesdayViewController.h */,
+				63A11B3A1A13170B00394389 /* tuesdayViewController.m */,
+				636D6CE51A12E7B400D0AC73 /* fitnessClassesViewController.h */,
+				636D6CE61A12E7B400D0AC73 /* fitnessClassesViewController.m */,
+			);
+			name = "Humber North Schedule";
+			sourceTree = "<group>";
+		};
+		63AA5AF31A17E56D00383A03 /* Humber Lakeshore Schedule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Humber Lakeshore Schedule";
+			sourceTree = "<group>";
+		};
 		653CEA0A19F085DB00E9A3FD /* assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,21 +251,15 @@
 			isa = PBXGroup;
 			children = (
 				636D6CD91A12C06C00D0AC73 /* TableViewCell.xib */,
+				63AA5AF31A17E56D00383A03 /* Humber Lakeshore Schedule */,
+				63AA5AF21A17E52700383A03 /* Humber North Schedule */,
 				636D6CD81A12C06C00D0AC73 /* TableViewCell.m */,
 				636D6CD71A12C06C00D0AC73 /* TableViewCell.h */,
-				636D6CE51A12E7B400D0AC73 /* fitnessClassesViewController.h */,
-				636D6CE61A12E7B400D0AC73 /* fitnessClassesViewController.m */,
 				F4EECF20177C99F400778578 /* AppDelegate.h */,
-				63A11B3C1A13172500394389 /* wednesdayViewController.h */,
-				63A11B3D1A13172500394389 /* wednesdayViewController.m */,
-				63A11B3F1A13173600394389 /* thursdayViewController.h */,
-				63A11B401A13173600394389 /* thursdayViewController.m */,
-				63A11B421A13174200394389 /* fridayViewController.h */,
-				63A11B431A13174200394389 /* fridayViewController.m */,
-				63A11B391A13170B00394389 /* tuesdayViewController.h */,
-				63A11B3A1A13170B00394389 /* tuesdayViewController.m */,
 				F4EECF21177C99F400778578 /* AppDelegate.m */,
 				F4EECF29177C99F400778578 /* MainStoryboard.storyboard */,
+				63AA5AF41A17E5D800383A03 /* northorLakeViewController.h */,
+				63AA5AF51A17E5D800383A03 /* northorLakeViewController.m */,
 				63A05C7A1A16B698005A0CA0 /* trackWaterViewController.h */,
 				63A05C7B1A16B698005A0CA0 /* trackWaterViewController.m */,
 				65D06FD719FC184E00E500C8 /* trackFruitViewController.h */,
@@ -402,6 +423,7 @@
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,
 				63A11B3E1A13172500394389 /* wednesdayViewController.m in Sources */,
 				63A05C7C1A16B698005A0CA0 /* trackWaterViewController.m in Sources */,
+				63AA5AF61A17E5D800383A03 /* northorLakeViewController.m in Sources */,
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,
 				636D6CDA1A12C06D00D0AC73 /* TableViewCell.m in Sources */,
 				65D06FD619FC063E00E500C8 /* trackVegetablesViewController.m in Sources */,

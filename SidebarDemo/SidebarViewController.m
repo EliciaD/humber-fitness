@@ -35,9 +35,9 @@
     self.tableView.separatorColor = [UIColor whiteColor];
     
     
-   [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1]];
-      // [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:1 green:0.824 blue:0 alpha:1]];
-    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
+   
+  
     
     
 

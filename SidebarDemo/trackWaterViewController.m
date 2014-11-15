@@ -15,7 +15,8 @@
 @end
 
 @implementation trackWaterViewController
-
+double xposition = 50.0;
+double yposition = 120.0;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -28,8 +29,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+ 
+    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg-7.jpg"]];
+
     // Do any additional setup after loading the view.
-    
+[self.view addSubview:_button];
     NSNumber *weight = [[PFUser currentUser] objectForKey:@"weight"];
     NSNumber *kgConvert = @2.2046;
     NSNumber *mlConversion = @0.0043994;
@@ -45,6 +49,8 @@
     // calculates number ml of water should drink per day based on weight of user.
     double ml = calc_result * 30;
     
+    // set position
+   
     
     // calculates number of cups of water user should drink per day based on weight of user.
     int cups = ml * [mlConversion doubleValue];
@@ -52,20 +58,31 @@
     NSLog(@"%d",numofBtns);
    
     for( int i = 0; i <numofBtns; i++ ) {
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [button setTitle:@"Press Me" forState:UIControlStateNormal];
-        [button sizeToFit];
-        button.center = CGPointMake(100, 50);
+    
         
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [button addTarget:self
+        action:@selector(aMethod:)
+        forControlEvents:UIControlEventTouchUpInside];
+        [button setTitle:@"3" forState:UIControlStateNormal];
+        button.frame = CGRectMake(50.0, 50.0, 50.0, 50.0);
+        button.layer.cornerRadius = 25;
+        button.layer.masksToBounds = YES;
+        button.layer.borderWidth=3.0f;
+        button.layer.borderColor=[[UIColor whiteColor] CGColor];
+        button.center = CGPointMake(xposition++, yposition++);
+        
+        [self.view addSubview:button];
+        
+    
     }
+    
+    
+    
+      
     
 }
 
-// my buttons
-- (void)buttonClicked:(UIButton*)button
-{
-    NSLog(@"Button %ld clicked.", (long int)[button tag]);
-}
 
 
 
