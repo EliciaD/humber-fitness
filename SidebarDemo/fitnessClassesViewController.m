@@ -63,9 +63,15 @@
     _sidebarButton.tintColor = [UIColor whiteColor];
     
     
-    PFQuery *updateTableArray = [PFQuery queryWithClassName:@"northSchedule"];
     
-     [updateTableArray findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:
+                              @"day == 'Monday'"
+                              ];
+    PFQuery *updateTableArray = [PFQuery queryWithClassName:@"northSchedule" predicate:predicate];
+    
+    
+    
+    [updateTableArray findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             
             // Do something with the found objects

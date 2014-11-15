@@ -1,26 +1,28 @@
 //
-//  wednesdayViewController.m
+//  lakeshoreFitnessClassesViewController.m
 //  Humber Fitness
 //
-//  Created by Emerson Stewart on 2014-11-11.
+//  Created by Emerson Stewart on 2014-11-15.
 //  Copyright (c) 2014 Appcoda. All rights reserved.
 //
+
+#import "lakeshoreFitnessClassesViewController.h"
 #import "TableViewCell.h"
 #import <Parse/Parse.h>
-#import "wednesdayViewController.h"
 
-@interface wednesdayViewController ()
+
+@interface lakeshoreFitnessClassesViewController ()
 
 @end
 
-@implementation wednesdayViewController
-
+@implementation lakeshoreFitnessClassesViewController
 @synthesize titlesArray;
 @synthesize dateArray;
 @synthesize timeArray;
 @synthesize locationArray;
 @synthesize descriptionArray;
 @synthesize contentArray;
+
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -61,17 +63,15 @@
     _sidebarButton.tintColor = [UIColor whiteColor];
     
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:
-                              @"day == 'Wednesday'"
-                              ];
-    PFQuery *updateTableArray = [PFQuery queryWithClassName:@"northSchedule" predicate:predicate];
+    PFQuery *updateTableArray = [PFQuery queryWithClassName:@"lakeshoreSchedule"];
+    
     [updateTableArray findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %d objects.", objects.count);
+            
             // Do something with the found objects
             for (PFObject *object in objects) {
                 //Init variables from parse
+                
                 NSString *titleString = object[@"workoutName"];
                 NSString *dateString = object[@"day"];
                 NSString *timeString = object[@"time"];
@@ -85,6 +85,8 @@
                 [self.timeArray addObject:timeString];
                 [self.locationArray addObject:locationString];
                 [self.descriptionArray addObject:descriptionString];
+                
+                
             }
             [self.tableView reloadData];
         } else {
@@ -104,13 +106,15 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"Number of cells: %lu", (unsigned long)self.titlesArray.count);
+    
     return [self.titlesArray count];
+    
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     static NSString *jobCellIdentifier = @"TableViewCell";
     
     TableViewCell *cell = (TableViewCell *)[tableView dequeueReusableCellWithIdentifier:jobCellIdentifier];
@@ -125,7 +129,10 @@
     cell.locationLabel.text = [self.locationArray objectAtIndex:indexPath.row];
     
     return cell;
+    
 }
+
+
 
 // Tap on table Row
 - (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath {

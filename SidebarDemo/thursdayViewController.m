@@ -62,7 +62,11 @@
     _sidebarButton.action = @selector(revealToggle:);
     _sidebarButton.tintColor = [UIColor whiteColor];
     
-    PFQuery *updateTableArray = [PFQuery queryWithClassName:@"northSchedule"];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:
+                              @"day == 'Thursday'"
+                              ];
+    PFQuery *updateTableArray = [PFQuery queryWithClassName:@"northSchedule" predicate:predicate];
     [updateTableArray findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             // The find succeeded.
