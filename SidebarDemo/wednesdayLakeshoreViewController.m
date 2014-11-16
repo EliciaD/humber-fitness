@@ -1,21 +1,21 @@
 //
-//  lakeshoreFitnessClassesViewController.m
+//  wednesdayLakeshoreViewController.m
 //  Humber Fitness
 //
-//  Created by Emerson Stewart on 2014-11-15.
+//  Created by Emerson Stewart on 2014-11-16.
 //  Copyright (c) 2014 Appcoda. All rights reserved.
 //
 
-#import "lakeshoreFitnessClassesViewController.h"
+#import "wednesdayLakeshoreViewController.h"
 #import "TableViewCell.h"
 #import <Parse/Parse.h>
 
-
-@interface lakeshoreFitnessClassesViewController ()
+@interface wednesdayLakeshoreViewController ()
 
 @end
 
-@implementation lakeshoreFitnessClassesViewController
+
+@implementation wednesdayLakeshoreViewController
 @synthesize titlesArray;
 @synthesize dateArray;
 @synthesize timeArray;
@@ -64,10 +64,9 @@
     
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:
-                              @"day == 'Monday'"
+                              @"day == 'Wednesday'"
                               ];
     PFQuery *updateTableArray = [PFQuery queryWithClassName:@"lakeshoreSchedule" predicate:predicate];
-    
     [updateTableArray findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             

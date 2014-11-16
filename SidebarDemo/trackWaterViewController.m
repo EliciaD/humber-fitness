@@ -54,33 +54,28 @@ double yposition = 120.0;
     
     // calculates number of cups of water user should drink per day based on weight of user.
     int cups = ml * [mlConversion doubleValue];
-    int numofBtns = cups / 3;
-    NSLog(@"%d",numofBtns);
+
+    NSLog(@"%d",cups);
    
-    for( int i = 0; i <numofBtns; i++ ) {
-    
+    for( int i = 0; i <cups; i++ ) {
         
+              if(i){
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [button addTarget:self
         action:@selector(aMethod:)
         forControlEvents:UIControlEventTouchUpInside];
         [button setTitle:@"3" forState:UIControlStateNormal];
-        button.frame = CGRectMake(50.0, 50.0, 50.0, 50.0);
-        button.layer.cornerRadius = 25;
-        button.layer.masksToBounds = YES;
-        button.layer.borderWidth=3.0f;
-        button.layer.borderColor=[[UIColor whiteColor] CGColor];
-        button.center = CGPointMake(xposition++, yposition++);
+        button.frame = CGRectMake((10.0+60*i), 90.0, 50.0, 50.0);
+  
         
         [self.view addSubview:button];
-        
-    
-    }
-    
-    
+            break;
+              }
     
       
     
+}
+
 }
 
 
