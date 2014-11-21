@@ -18,7 +18,11 @@
 
 @implementation dailyChallengeViewController{
 int complete;
+int challengesCompleted;
 }
+- (IBAction)trackReps:(id)sender {
+}
+
 NSString *date;
 bool mybool;
 int count;
@@ -67,9 +71,7 @@ int count;
                 mybool = object[@"Completed"];
                
                 
-                count = 0;
-                count = count+1;
-                NSLog(@"%d",count);
+              
             }
         } else {
             // Log details of the failure
@@ -91,6 +93,11 @@ int count;
     _completeBtn.layer.masksToBounds = YES;
     _completeBtn.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
     
+    _trackReps.layer.cornerRadius = 5;
+    _trackReps.layer.masksToBounds = YES;
+    _trackReps.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
+    
+    
     // outputs day of week :)
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -109,7 +116,9 @@ int count;
         if(mybool == YES){
             _completeBtn.hidden=TRUE;
             _challenge.text = @"Challenge Complete!";
-     
+            
+            count = count+1;
+            NSLog(@"%d",count);
             
         }if(mybool == NO){
              _challenge.text = @"Squats";
@@ -121,6 +130,9 @@ int count;
             _completeBtn.hidden=TRUE;
             _challenge.text = @"Challenge Complete!";
             
+            count = count+1;
+            NSLog(@"%d",count);
+            
     
         }if(mybool == NO){
             _challenge.text = @"Planks";
@@ -129,6 +141,9 @@ int count;
     }else if([date isEqual:@"Wednesday"]){
         
         if(mybool == YES){
+            
+            count = count+1;
+            NSLog(@"%d",count);
             _completeBtn.hidden=TRUE;
             _challenge.text = @"Challenge Complete!";
             
@@ -142,6 +157,9 @@ int count;
     }else if([date isEqual:@"Thursday"]){
      
         if(mybool == YES){
+            
+            count = count+1;
+            NSLog(@"%d",count);
             _completeBtn.hidden=TRUE;
             _challenge.text = @"Challenge Complete!";
             
@@ -180,31 +198,40 @@ int count;
 }
 
 
-
 - (IBAction)complete:(id)sender {
+
+     PFUser *currentUser = [PFUser currentUser];
     
- 
+    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+    [query whereKey:@"email" equalTo:currentUser.email];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d objects.", objects.count);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                challengesCompleted = object[@"challenges"];
+                challengesCompleted = challengesCompleted + 1;
+                object[@"challenges"] = @"%i", challengesCompleted;
+                [object saveInBackground];
+                
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
+    
     
     NSLog(@"button has been clicked");
-    PFUser *currentUser = [PFUser currentUser];
-    
-    PFObject *completedChallenge = [PFObject objectWithClassName:@"dailyChallenge"];
-    completedChallenge[@"Completed"] = @YES;
-    
-    completedChallenge[@"email"] =  currentUser.email;
-   
-    
-    [completedChallenge saveInBackground];
-    
-
-    
     
     if(count == 100){
         NSLog(@"100 times!");
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You did it!" message:@"You finished the 100 day challenge!" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil]; [alert show];
         count = 0;
         // needs to email leanne at this point
-        count = count+1;
+     
         NSLog(@"%d",count);
         
         

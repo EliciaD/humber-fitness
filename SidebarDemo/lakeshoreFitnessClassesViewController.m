@@ -145,7 +145,7 @@
     [self.contentArray addObject:[self.timeArray objectAtIndex:indexPath.row]];
     [self.contentArray addObject:[self.locationArray objectAtIndex:indexPath.row]];
     [self.contentArray addObject:[self.descriptionArray objectAtIndex:indexPath.row]];
-    
+    [self performSegueWithIdentifier: @"addClass" sender: self];
 }
 
 

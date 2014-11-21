@@ -16,6 +16,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *glassesOfWater;
 
 @property (weak, nonatomic) IBOutlet UILabel *gramsOfProtien;
+@property (strong, nonatomic) IBOutlet UIButton *sedentary;
+@property (strong, nonatomic) IBOutlet UIButton *moderatlyActive;
+@property (strong, nonatomic) IBOutlet UIButton *veryActive;
 
 - (IBAction)sedentary:(id)sender;
 - (IBAction)moderatlyActive:(id)sender;

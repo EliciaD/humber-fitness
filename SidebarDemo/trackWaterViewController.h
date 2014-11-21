@@ -12,5 +12,4 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *button;
 
-- (IBAction)button:(id)sender;
 @end

@@ -105,10 +105,6 @@
     self.glassesOfWater.text = [NSString stringWithFormat:@"%d", cups];
    
     
- 
-
-
-    
 
 }
 - (IBAction)sedentary:(id)sender {

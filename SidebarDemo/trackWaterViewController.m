@@ -17,6 +17,7 @@
 @implementation trackWaterViewController
 double xposition = 50.0;
 double yposition = 120.0;
+int fruitCount;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,6 +35,7 @@ double yposition = 120.0;
 
     // Do any additional setup after loading the view.
 [self.view addSubview:_button];
+    
     NSNumber *weight = [[PFUser currentUser] objectForKey:@"weight"];
     NSNumber *kgConvert = @2.2046;
     NSNumber *mlConversion = @0.0043994;
@@ -57,29 +59,94 @@ double yposition = 120.0;
 
     NSLog(@"%d",cups);
    
-    for( int i = 0; i <cups; i++ ) {
+    for( int i = 0; i < cups; i++ ) {
+        //set cup titles
+        NSString *cupTitle = [NSString stringWithFormat:@"%d",i+1];
         
-              if(i){
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [button addTarget:self
-        action:@selector(aMethod:)
-        forControlEvents:UIControlEventTouchUpInside];
-        [button setTitle:@"3" forState:UIControlStateNormal];
-        button.frame = CGRectMake((10.0+60*i), 90.0, 50.0, 50.0);
-  
+        //cups from 1 to 5
+        if ( i < 5 ) {
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+            [button addTarget:self action:@selector(myCustomFunction:) forControlEvents:UIControlEventTouchUpInside];
+
+            [button setTitle:cupTitle forState:UIControlStateNormal];
+            button.frame = CGRectMake((10.0+60*i), 90.0, 50.0, 50.0);
+            button.layer.cornerRadius = 25;
+            button.layer.masksToBounds = YES;
+            button.layer.borderWidth=3.0f;
+            button.layer.borderColor=[[UIColor whiteColor] CGColor];
+            
+            [self.view addSubview:button];
+            
+        }
+        //cups from 5 to 10
+        else if ( i < 10 && i > 4 ) {
+            
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+            [button addTarget:self action:@selector(myCustomFunction:) forControlEvents:UIControlEventTouchUpInside];
+
+            [button setTitle:cupTitle forState:UIControlStateNormal];
+            button.frame = CGRectMake(((10.0+60*i)-300), 160.0, 50.0, 50.0);
+            button.layer.cornerRadius = 25;
+            button.layer.masksToBounds = YES;
+            button.layer.borderWidth=3.0f;
+            button.layer.borderColor=[[UIColor whiteColor] CGColor];
+            
+            [self.view addSubview:button];
+
+        }
+        // cups from 10 to 15
+        else if (i < 15 && i > 9){
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+            [button addTarget:self action:@selector(myCustomFunction:) forControlEvents:UIControlEventTouchUpInside];
+
+            [button setTitle:cupTitle forState:UIControlStateNormal];
+            button.frame = CGRectMake(((10.0+60*i)-600), 230.0, 50.0, 50.0);
+            button.layer.cornerRadius = 25;
+            button.layer.masksToBounds = YES;
+            button.layer.borderWidth=3.0f;
+            button.layer.borderColor=[[UIColor whiteColor] CGColor];
+            
+            [self.view addSubview:button];
+
+        }
+        // if more than 15 cups are required
+        else {
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+            //[button addTarget:self
+                   //    action:@selector(aMethod:)
+             //forControlEvents:UIControlEventTouchUpInside];
+            [button addTarget:self action:@selector(myCustomFunction:) forControlEvents:UIControlEventTouchUpInside];
+            
+            [button setTitle:cupTitle forState:UIControlStateNormal];
+            button.frame = CGRectMake(((10.0+60*i)-900), 300.0, 50.0, 50.0);
+            button.layer.cornerRadius = 25;
+            button.layer.masksToBounds = YES;
+            button.layer.borderWidth=3.0f;
+            button.layer.borderColor=[[UIColor whiteColor] CGColor];
+            
+            [self.view addSubview:button];
+            
+        }
         
-        [self.view addSubview:button];
-            break;
-              }
+        
+    }
     
-      
+    //[_button sendActionsForControlEvents:UIControlEventTouchUpInside];
     
+
+
 }
 
+
+    
+
+
+- (void)myCustomFunction:(id)sender{
+    NSLog(@"button was clicked");
+    _button.layer.borderColor=[[UIColor redColor] CGColor];
+    fruitCount = fruitCount + 1;
+    NSLog(@"%d", fruitCount);
 }
-
-
-
 
 
 - (void)didReceiveMemoryWarning

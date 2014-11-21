@@ -12,6 +12,9 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
 @property (weak, nonatomic) IBOutlet UILabel *challenge;
 @property (weak, nonatomic) IBOutlet UIButton *completeBtn;
+@property (nonatomic, assign) int challengesCompleted;
+@property (strong, nonatomic) IBOutlet UIButton *trackReps;
+- (IBAction)trackReps:(id)sender;
 
 
 @property(readonly, copy) NSDate *date;
