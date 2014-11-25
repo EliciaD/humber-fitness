@@ -26,6 +26,7 @@
 		63AAC79A1A1907A6002EA809 /* wednesdayLakeshoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AAC7991A1907A6002EA809 /* wednesdayLakeshoreViewController.m */; };
 		63AAC79D1A190807002EA809 /* thursdayLakeshoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AAC79C1A190807002EA809 /* thursdayLakeshoreViewController.m */; };
 		63AAC7A01A190830002EA809 /* fridayLakeshoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AAC79F1A190830002EA809 /* fridayLakeshoreViewController.m */; };
+		6510C6C11A240F660036F90C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6510C6C01A240F660036F90C /* MessageUI.framework */; };
 		653CEA0E19F089F400E9A3FD /* helpr-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 653CEA0D19F089F400E9A3FD /* helpr-logo.png */; };
 		653CEA1419F0931900E9A3FD /* dailyChallenge.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CEA1319F0931900E9A3FD /* dailyChallenge.m */; };
 		653CEA1719F0933200E9A3FD /* nutritionChecklistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CEA1619F0933200E9A3FD /* nutritionChecklistViewController.m */; };
@@ -109,6 +110,7 @@
 		63AAC79C1A190807002EA809 /* thursdayLakeshoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = thursdayLakeshoreViewController.m; sourceTree = "<group>"; };
 		63AAC79E1A190830002EA809 /* fridayLakeshoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fridayLakeshoreViewController.h; sourceTree = "<group>"; };
 		63AAC79F1A190830002EA809 /* fridayLakeshoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fridayLakeshoreViewController.m; sourceTree = "<group>"; };
+		6510C6C01A240F660036F90C /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		653CEA0D19F089F400E9A3FD /* helpr-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "helpr-logo.png"; sourceTree = "<group>"; };
 		653CEA1219F0931900E9A3FD /* dailyChallenge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dailyChallenge.h; sourceTree = "<group>"; };
 		653CEA1319F0931900E9A3FD /* dailyChallenge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dailyChallenge.m; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6510C6C11A240F660036F90C /* MessageUI.framework in Frameworks */,
 				6354EE1018FB9810001A3924 /* CoreData.framework in Frameworks */,
 				9761211318F9968E00609BEB /* SystemConfiguration.framework in Frameworks */,
 				9761211118F9968500609BEB /* StoreKit.framework in Frameworks */,
@@ -262,6 +265,7 @@
 		F4EECF10177C99F400778578 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6510C6C01A240F660036F90C /* MessageUI.framework */,
 				6354EE0D18FB9196001A3924 /* Parse.framework */,
 				6354EE0F18FB9810001A3924 /* CoreData.framework */,
 				9761211218F9968E00609BEB /* SystemConfiguration.framework */,

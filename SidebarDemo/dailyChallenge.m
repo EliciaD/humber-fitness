@@ -25,6 +25,7 @@
 NSString *date;
 bool mybool;
 int count;
+int thisChallenger;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -185,9 +186,35 @@ int count;
     
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error){
         NSNumber *challengeTemp = [object objectForKey:@"challenges"];
-        int thisChallenger = [challengeTemp integerValue] + 1;
-        object[@"challenges"] = @(thisChallenger);
-        [object saveInBackground];
+        self.thisChallenger = [challengeTemp integerValue] + 1;
+        
+        if (self.thisChallenger >= 100){
+            
+            //creation of email
+            // Email Subject
+            NSString *emailTitle = @"100 Challenges Complete";
+            // Email Content
+            NSString *messageBody = @"I've completed the 100 daily challenges from the Humber Fitness app!";
+            // To address
+            NSArray *toRecipents = [NSArray arrayWithObject:@"humberfitness@gmail.com"];
+            
+            MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+            mc.mailComposeDelegate = self;
+            [mc setSubject:emailTitle];
+            [mc setMessageBody:messageBody isHTML:NO];
+            [mc setToRecipients:toRecipents];
+            
+            // Present mail view controller on screen
+            [self presentViewController:mc animated:YES completion:NULL];
+            object[@"challenges"] = @0;
+            [object saveInBackground];
+            
+        } else {
+            object[@"challenges"] = @(self.thisChallenger);
+            [object saveInBackground];
+        }
+        
+        
     }];
     
     
@@ -211,6 +238,33 @@ int count;
     
 }
 
+
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
+    
+    // Close the Mail Interface
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 0) {
        
@@ -229,3 +283,4 @@ int count;
 
 
 @end
+

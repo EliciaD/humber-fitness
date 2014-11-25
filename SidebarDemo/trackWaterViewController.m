@@ -143,8 +143,13 @@ int waterCount;
 
 - (void)myCustomFunction:(id)sender{
     NSLog(@"button was clicked");
-    _button.layer.borderColor=[[UIColor redColor] CGColor];
+    UIButton *btn = (UIButton*)sender;
+    btn.layer.borderColor=[[UIColor redColor] CGColor];
     waterCount = waterCount + 1;
+    btn.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
+    [btn setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
+    
+
     NSLog(@"%d", waterCount);
 }
 
