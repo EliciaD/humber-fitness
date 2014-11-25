@@ -37,6 +37,8 @@
 {
     [super viewDidLoad];
     
+    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
+    
     self.titlesArray = [[NSMutableArray alloc] init];
     self.dateArray = [[NSMutableArray alloc] init];
     self.timeArray = [[NSMutableArray alloc] init];

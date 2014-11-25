@@ -194,9 +194,9 @@ int thisChallenger;
             // Email Subject
             NSString *emailTitle = @"100 Challenges Complete";
             // Email Content
-            NSString *messageBody = @"I've completed the 100 daily challenges from the Humber Fitness app!";
+            NSString *messageBody = @"I've completed the 100 day daily challenges from the Humber Fitness app!";
             // To address
-            NSArray *toRecipents = [NSArray arrayWithObject:@"humberfitness@gmail.com"];
+            NSArray *toRecipents = [NSArray arrayWithObject:@"leanne.henwoodadam@humber.ca"];
             
             MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
             mc.mailComposeDelegate = self;

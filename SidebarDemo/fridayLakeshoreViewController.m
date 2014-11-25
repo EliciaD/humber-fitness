@@ -42,6 +42,8 @@
 {
     [super viewDidLoad];
     
+    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
+    
     self.title = @"";
     self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg-7.jpg"]];
     // Do any additional setup after loading the view=['_{:view.backgroundColor = [UIColor colorWithRed:0.667 green:0.796 blue:0.655 alpha:1.0];

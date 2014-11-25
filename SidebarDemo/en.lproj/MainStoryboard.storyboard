@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="WEs-t0-tjJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="WEs-t0-tjJ">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -806,7 +806,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kvm-ba-PJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1342" y="227"/>
+            <point key="canvasLocation" x="1316" y="227"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3J5-cK-eh6">
@@ -825,7 +825,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lBX-Ry-LDZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1681" y="239"/>
+            <point key="canvasLocation" x="1655" y="227"/>
         </scene>
         <!--Track Water View Controller-->
         <scene sceneID="ObS-ce-R8m">
@@ -912,7 +912,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EEw-Yw-G67" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="189" y="-2715"/>
+            <point key="canvasLocation" x="2095" y="-2695"/>
         </scene>
         <!--Tuesday Lakeshore View Controller-->
         <scene sceneID="v15-IS-dlD">
@@ -1652,17 +1652,17 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="2Mb-wj-9nA"/>
-        <segue reference="KtR-Yh-JDj"/>
-        <segue reference="iJ8-CR-wDM"/>
-        <segue reference="3BT-DX-gzV"/>
-        <segue reference="61c-J2-hji"/>
-        <segue reference="6l4-aR-Yso"/>
-        <segue reference="B8K-2J-L6U"/>
-        <segue reference="OEg-lH-Jto"/>
-        <segue reference="upQ-vz-IBd"/>
         <segue reference="Q5s-fo-o3D"/>
-        <segue reference="2CJ-rt-x3k"/>
         <segue reference="ffz-2m-rLf"/>
+        <segue reference="2CJ-rt-x3k"/>
+        <segue reference="8MG-ml-HBr"/>
+        <segue reference="mu5-kH-H4D"/>
+        <segue reference="PIc-Bn-FxU"/>
+        <segue reference="6l4-aR-Yso"/>
+        <segue reference="Ton-VF-YLY"/>
+        <segue reference="qIw-sq-Clr"/>
+        <segue reference="mv5-JT-BpU"/>
+        <segue reference="iJ8-CR-wDM"/>
+        <segue reference="KtR-Yh-JDj"/>
     </inferredMetricsTieBreakers>
 </document>

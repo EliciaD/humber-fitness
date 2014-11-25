@@ -127,8 +127,7 @@ int waterCount;
             [self.view addSubview:button];
             
         }
-        
-        
+
     }
     
     //[_button sendActionsForControlEvents:UIControlEventTouchUpInside];
