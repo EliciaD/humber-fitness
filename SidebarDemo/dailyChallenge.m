@@ -17,9 +17,7 @@
 @end
 
 @implementation dailyChallengeViewController{
-int complete;
-    int count;
-int challengesCompleted;
+
 }
 - (IBAction)trackReps:(id)sender {
 }
@@ -59,33 +57,6 @@ int count;
     
     // grabs the daily challenge if complete or not
     PFUser *currentUser = [PFUser currentUser];
-
-    PFQuery *query = [PFQuery queryWithClassName:@"dailyChallenge"];
-    [query whereKey:@"email" equalTo:currentUser.email];
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-          
-            // Do something with the found objects
-            for (PFObject *object in objects) {
-       
-                mybool = object[@"Completed"];
-               
-                
-              
-            }
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
-    
-
-    
-    
-    
-    
-    
     
     _challenge.layer.borderWidth=5.0f;
     _challenge.layer.borderColor=[[UIColor whiteColor] CGColor];
@@ -207,28 +178,16 @@ int count;
 
 
 - (IBAction)complete:(id)sender {
-
-     PFUser *currentUser = [PFUser currentUser];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"User"];
-    [query whereKey:@"email" equalTo:currentUser.email];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %d objects.", objects.count);
-            // Do something with the found objects
-            for (PFObject *object in objects) {
-                count = count+1;
-                challengesCompleted = object[@"challenges"];
-                challengesCompleted = challengesCompleted + 1;
-                object[@"challenges"] = @"%i", challengesCompleted;
-                [object saveInBackground];
-                
-            }
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
+    PFQuery *query= [PFUser query];
+    
+    [query whereKey:@"username" equalTo:[[PFUser currentUser]username]];
+    
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error){
+        NSNumber *challengeTemp = [object objectForKey:@"challenges"];
+        int thisChallenger = [challengeTemp integerValue] + 1;
+        object[@"challenges"] = @(thisChallenger);
+        [object saveInBackground];
     }];
     
     
@@ -258,14 +217,8 @@ int count;
         _completeBtn.hidden=TRUE;
         _challenge.text = @"Challenge Complete!";
         
-        
-    }}
-
-
-
-
-
-
+    }
+}
 
 
 - (void)didReceiveMemoryWarning
@@ -274,14 +227,5 @@ int count;
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 @end
