@@ -19,7 +19,7 @@
 		63A11B441A13174200394389 /* fridayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A11B431A13174200394389 /* fridayViewController.m */; };
 		63A1CE061A1EEBC20079F5EF /* addClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A1CE051A1EEBC20079F5EF /* addClassViewController.m */; };
 		63A8775C1A2908CD00905C4D /* trackRepsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A8775B1A2908CD00905C4D /* trackRepsViewController.m */; };
-		63A8775F1A2EA7FF00905C4D /* addClass2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A8775E1A2EA7FF00905C4D /* addClass2ViewController.m */; };
+		63A877621A2EDADD00905C4D /* myWorkoutsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A877611A2EDADD00905C4D /* myWorkoutsViewController.m */; };
 		63AA5AF61A17E5D800383A03 /* northorLakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AA5AF51A17E5D800383A03 /* northorLakeViewController.m */; };
 		63AA5AF91A17EF9000383A03 /* lakeshoreFitnessClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AA5AF81A17EF9000383A03 /* lakeshoreFitnessClassesViewController.m */; };
 		63AAC7971A190767002EA809 /* tuesdayLakeshoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AAC7961A190767002EA809 /* tuesdayLakeshoreViewController.m */; };
@@ -95,8 +95,8 @@
 		63A1CE051A1EEBC20079F5EF /* addClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addClassViewController.m; sourceTree = "<group>"; };
 		63A8775A1A2908CD00905C4D /* trackRepsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trackRepsViewController.h; sourceTree = "<group>"; };
 		63A8775B1A2908CD00905C4D /* trackRepsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = trackRepsViewController.m; sourceTree = "<group>"; };
-		63A8775D1A2EA7FF00905C4D /* addClass2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addClass2ViewController.h; sourceTree = "<group>"; };
-		63A8775E1A2EA7FF00905C4D /* addClass2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addClass2ViewController.m; sourceTree = "<group>"; };
+		63A877601A2EDADD00905C4D /* myWorkoutsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myWorkoutsViewController.h; sourceTree = "<group>"; };
+		63A877611A2EDADD00905C4D /* myWorkoutsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myWorkoutsViewController.m; sourceTree = "<group>"; };
 		63AA5AF41A17E5D800383A03 /* northorLakeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = northorLakeViewController.h; sourceTree = "<group>"; };
 		63AA5AF51A17E5D800383A03 /* northorLakeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = northorLakeViewController.m; sourceTree = "<group>"; };
 		63AA5AF71A17EF9000383A03 /* lakeshoreFitnessClassesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lakeshoreFitnessClassesViewController.h; sourceTree = "<group>"; };
@@ -286,8 +286,6 @@
 			children = (
 				63A1CE041A1EEBC20079F5EF /* addClassViewController.h */,
 				63A1CE051A1EEBC20079F5EF /* addClassViewController.m */,
-				63A8775D1A2EA7FF00905C4D /* addClass2ViewController.h */,
-				63A8775E1A2EA7FF00905C4D /* addClass2ViewController.m */,
 				636D6CD91A12C06C00D0AC73 /* TableViewCell.xib */,
 				63AA5AF31A17E56D00383A03 /* Humber Lakeshore Schedule */,
 				63AA5AF21A17E52700383A03 /* Humber North Schedule */,
@@ -296,6 +294,8 @@
 				F4EECF20177C99F400778578 /* AppDelegate.h */,
 				F4EECF21177C99F400778578 /* AppDelegate.m */,
 				F4EECF29177C99F400778578 /* MainStoryboard.storyboard */,
+				63A877601A2EDADD00905C4D /* myWorkoutsViewController.h */,
+				63A877611A2EDADD00905C4D /* myWorkoutsViewController.m */,
 				63A8775A1A2908CD00905C4D /* trackRepsViewController.h */,
 				63A8775B1A2908CD00905C4D /* trackRepsViewController.m */,
 				63AA5AF41A17E5D800383A03 /* northorLakeViewController.h */,
@@ -465,6 +465,7 @@
 				63AAC7971A190767002EA809 /* tuesdayLakeshoreViewController.m in Sources */,
 				63A11B3E1A13172500394389 /* wednesdayViewController.m in Sources */,
 				63A05C7C1A16B698005A0CA0 /* trackWaterViewController.m in Sources */,
+				63A877621A2EDADD00905C4D /* myWorkoutsViewController.m in Sources */,
 				63AA5AF91A17EF9000383A03 /* lakeshoreFitnessClassesViewController.m in Sources */,
 				63AA5AF61A17E5D800383A03 /* northorLakeViewController.m in Sources */,
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,
@@ -473,7 +474,6 @@
 				63A1CE061A1EEBC20079F5EF /* addClassViewController.m in Sources */,
 				65D06FD619FC063E00E500C8 /* trackVegetablesViewController.m in Sources */,
 				63A11B3B1A13170B00394389 /* tuesdayViewController.m in Sources */,
-				63A8775F1A2EA7FF00905C4D /* addClass2ViewController.m in Sources */,
 				63A8775C1A2908CD00905C4D /* trackRepsViewController.m in Sources */,
 				F4EECF4A177DF87700778578 /* SidebarViewController.m in Sources */,
 				653CEA1719F0933200E9A3FD /* nutritionChecklistViewController.m in Sources */,

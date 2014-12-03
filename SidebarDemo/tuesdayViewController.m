@@ -9,7 +9,7 @@
 #import "tuesdayViewController.h"
 #import "TableViewCell.h"
 #import <Parse/Parse.h>
-#import "addClass2ViewController.h"
+#import "addClassViewController.h"
 
 @interface tuesdayViewController ()
 
@@ -136,11 +136,11 @@
     [self.contentArray addObject:[self.timeArray objectAtIndex:indexPath.row]];
     [self.contentArray addObject:[self.locationArray objectAtIndex:indexPath.row]];
     [self.contentArray addObject:[self.descriptionArray objectAtIndex:indexPath.row]];
-    [self performSegueWithIdentifier: @"class2Clicked" sender: self];}
+    [self performSegueWithIdentifier: @"classClicked" sender: self];}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:@"class2Clicked"]) {
-        addClass2ViewController *transferViewController = segue.destinationViewController;
+    if([segue.identifier isEqualToString:@"classClicked"]) {
+        addClassViewController *transferViewController = segue.destinationViewController;
         transferViewController.passedArray = [[NSMutableArray alloc]init];
         transferViewController.passedArray = contentArray;
     }

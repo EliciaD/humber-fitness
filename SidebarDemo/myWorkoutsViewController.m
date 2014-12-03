@@ -1,26 +1,20 @@
 //
-//  addClassViewController.m
+//  myWorkoutsViewController.m
 //  Humber Fitness
 //
-//  Created by Emerson Stewart on 2014-11-20.
+//  Created by Emerson Stewart on 2014-12-03.
 //  Copyright (c) 2014 Appcoda. All rights reserved.
 //
 
-#import "addClassViewController.h"
-#import <Parse/Parse.h>
+#import "myWorkoutsViewController.h"
 #import "SWRevealViewController.h"
+#import <Parse/Parse.h>
 
-@interface addClassViewController ()
+@interface myWorkoutsViewController ()
 
 @end
 
-@implementation addClassViewController
-
-@synthesize titleLabel;
-@synthesize timeLabel;
-@synthesize descriptionLabel;
-@synthesize passedArray;
-
+@implementation myWorkoutsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,12 +43,6 @@
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
     _sidebarButton.tintColor = [UIColor whiteColor];
-    
-
-    titleLabel.text = [passedArray objectAtIndex:0];
-   descriptionLabel.text = [passedArray objectAtIndex:4];
-    timeLabel.text = [passedArray objectAtIndex:2];
-  
 
     // Do any additional setup after loading the view.
 }
