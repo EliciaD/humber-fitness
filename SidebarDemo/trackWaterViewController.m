@@ -17,7 +17,7 @@
 @implementation trackWaterViewController
 double xposition = 50.0;
 double yposition = 120.0;
-int fruitCount;
+int waterCount;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -144,8 +144,8 @@ int fruitCount;
 - (void)myCustomFunction:(id)sender{
     NSLog(@"button was clicked");
     _button.layer.borderColor=[[UIColor redColor] CGColor];
-    fruitCount = fruitCount + 1;
-    NSLog(@"%d", fruitCount);
+    waterCount = waterCount + 1;
+    NSLog(@"%d", waterCount);
 }
 
 
