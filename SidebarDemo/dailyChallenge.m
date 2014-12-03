@@ -18,6 +18,7 @@
 
 @implementation dailyChallengeViewController{
 int complete;
+    int count;
 int challengesCompleted;
 }
 - (IBAction)trackReps:(id)sender {
@@ -115,6 +116,7 @@ int count;
     if ([date  isEqual: @"Monday"]){
         if(mybool == YES){
             _completeBtn.hidden=TRUE;
+            _trackReps.hidden = true;
             _challenge.text = @"Challenge Complete!";
             
             count = count+1;
@@ -128,6 +130,7 @@ int count;
     }else if ([date isEqual:@"Tuesday"]){
         if(mybool == YES){
             _completeBtn.hidden=TRUE;
+            _trackReps.hidden = true;
             _challenge.text = @"Challenge Complete!";
             
             count = count+1;
@@ -145,6 +148,7 @@ int count;
             count = count+1;
             NSLog(@"%d",count);
             _completeBtn.hidden=TRUE;
+            _trackReps.hidden = true;
             _challenge.text = @"Challenge Complete!";
             
             
@@ -161,6 +165,7 @@ int count;
             count = count+1;
             NSLog(@"%d",count);
             _completeBtn.hidden=TRUE;
+            _trackReps.hidden = true;
             _challenge.text = @"Challenge Complete!";
             
             
@@ -174,6 +179,7 @@ int count;
         if(mybool == YES){
             
             _completeBtn.hidden=TRUE;
+            _trackReps.hidden = TRUE;
             _challenge.text = @"Challenge Complete!";
             
             
@@ -185,9 +191,11 @@ int count;
     }else if([date isEqual:@"Saturday"]){
         _challenge.text = @"Rest";
           _completeBtn.hidden=TRUE;
+        _trackReps.hidden = true;
         
     }else if([date isEqual:@"Sunday"]){
          _completeBtn.hidden=TRUE;
+        _trackReps.hidden = true;
         _challenge.text = @"Rest";
         
     }else{
@@ -210,6 +218,7 @@ int count;
             NSLog(@"Successfully retrieved %d objects.", objects.count);
             // Do something with the found objects
             for (PFObject *object in objects) {
+                count = count+1;
                 challengesCompleted = object[@"challenges"];
                 challengesCompleted = challengesCompleted + 1;
                 object[@"challenges"] = @"%i", challengesCompleted;

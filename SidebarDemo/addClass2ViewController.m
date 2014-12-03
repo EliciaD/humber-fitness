@@ -1,26 +1,23 @@
 //
-//  addClassViewController.m
+//  addClass2ViewController.m
 //  Humber Fitness
 //
-//  Created by Emerson Stewart on 2014-11-20.
+//  Created by Emerson Stewart on 2014-12-02.
 //  Copyright (c) 2014 Appcoda. All rights reserved.
 //
 
-#import "addClassViewController.h"
+#import "addClass2ViewController.h"
 #import <Parse/Parse.h>
 
-@interface addClassViewController ()
+@interface addClass2ViewController ()
 
 @end
 
-@implementation addClassViewController
-
+@implementation addClass2ViewController
 @synthesize titleLabel;
 @synthesize timeLabel;
 @synthesize descriptionLabel;
 @synthesize passedArray;
-
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,11 +31,8 @@
 {
     [super viewDidLoad];
     titleLabel.text = [passedArray objectAtIndex:0];
-   descriptionLabel.text = [passedArray objectAtIndex:4];
-    timeLabel.text = [passedArray objectAtIndex:2];
-  
-
-    // Do any additional setup after loading the view.
+    descriptionLabel.text = [passedArray objectAtIndex:4];
+    timeLabel.text = [passedArray objectAtIndex:2];    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning

@@ -9,6 +9,7 @@
 #import "fridayViewController.h"
 #import "TableViewCell.h"
 #import <Parse/Parse.h>
+#import "addClassViewController.h"
 
 @interface fridayViewController ()
 
@@ -136,8 +137,28 @@
     [self.contentArray addObject:[self.timeArray objectAtIndex:indexPath.row]];
     [self.contentArray addObject:[self.locationArray objectAtIndex:indexPath.row]];
     [self.contentArray addObject:[self.descriptionArray objectAtIndex:indexPath.row]];
+    [self performSegueWithIdentifier: @"classClicked" sender: self];
     
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"classClicked"]) {
+        addClassViewController *transferViewController = segue.destinationViewController;
+        transferViewController.passedArray = [[NSMutableArray alloc]init];
+        transferViewController.passedArray = contentArray;
+    }
+}
+- (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath
+{
+    
+    if(indexPath.row % 2 == 0){
+        cell.backgroundColor = [UIColor colorWithRed:0.976 green:0.976 blue:0.976 alpha:1]; /*#f9f9f9*/
+    }
+    else{
+        cell.backgroundColor = [UIColor whiteColor];
+    }
+}
+
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
