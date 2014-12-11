@@ -7,8 +7,9 @@
 //
 
 #import "addClassViewController.h"
-#import <Parse/Parse.h>
 #import "SWRevealViewController.h"
+#import <Parse/Parse.h>
+
 
 @interface addClassViewController ()
 
@@ -36,19 +37,6 @@
     [super viewDidLoad];
     self.title = @"";
     self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg-7.jpg"]];
-    // Do any additional setup after loading the view=['_{:view.backgroundColor = [UIColor colorWithRed:0.667 green:0.796 blue:0.655 alpha:1.0];
-    UIBarButtonItem* _sidebarButton = [[UIBarButtonItem alloc] initWithTitle:@"Menu"
-                                                                       style:UIBarButtonItemStylePlain
-                                                                      target:self
-                                                                      action:@selector(infoButtonSelected:)];
-    self.navigationItem.leftBarButtonItem = _sidebarButton;
-    
-    
-    
-    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
-    _sidebarButton.target = self.revealViewController;
-    _sidebarButton.action = @selector(revealToggle:);
-    _sidebarButton.tintColor = [UIColor whiteColor];
     
 
     titleLabel.text = [passedArray objectAtIndex:0];
@@ -76,4 +64,10 @@
 }
 */
 
+- (IBAction)exit:(id)sender {
+
+[self dismissViewControllerAnimated:YES completion:nil];
+    
+
+}
 @end

@@ -30,5 +30,6 @@
 - (IBAction)track8:(id)sender;
 - (IBAction)track9:(id)sender;
 - (IBAction)track10:(id)sender;
+- (IBAction)clear:(id)sender;
 
 @end

@@ -78,6 +78,10 @@
     _trackProtein.layer.cornerRadius = 5;
     _trackProtein.layer.masksToBounds = YES;
     _trackProtein.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
+    
+    _sedentary.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
+    _moderatlyActive.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
+    _veryActive.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
 
    
  
@@ -122,7 +126,7 @@
     int grams = calc_result * 0.8;
     
     //outputs number of grams
-    self.gramsOfProtien.text = [NSString stringWithFormat:@"%d", grams];
+      self.gramsOfProtien.text = [NSString stringWithFormat:@"%d%@", grams, @" grams of protein"];
 
     
     
@@ -143,8 +147,7 @@
     int grams = calc_result * 1.28;
     
     //outputs number of grams
-    self.gramsOfProtien.text = [NSString stringWithFormat:@"%d", grams];
-    
+    self.gramsOfProtien.text = [NSString stringWithFormat:@"%d%@", grams, @" grams of protein"];
     
     
 }
@@ -164,7 +167,7 @@
     int grams = calc_result * 1.88;
     
     //outputs number of grams
-    self.gramsOfProtien.text = [NSString stringWithFormat:@"%d", grams];
+       self.gramsOfProtien.text = [NSString stringWithFormat:@"%d%@", grams, @" grams of protein"];
     
     
 }

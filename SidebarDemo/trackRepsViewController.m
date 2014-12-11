@@ -28,7 +28,7 @@ int trackCount;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
- 
+   
     
     self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg-7.jpg"]];
   // style buttons
@@ -369,5 +369,11 @@ int trackCount;
     _oneHundred.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
     [_oneHundred setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
     trackCount = trackCount + 1;
+}
+
+- (IBAction)clear:(id)sender {
+    trackCount = 0;
+    [self viewDidLoad];
+       
 }
 @end

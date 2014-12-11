@@ -70,9 +70,7 @@
     PFQuery *updateTableArray = [PFQuery queryWithClassName:@"northSchedule" predicate:predicate];
     [updateTableArray findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %d objects.", objects.count);
-            // Do something with the found objects
+           
             for (PFObject *object in objects) {
                 //Init variables from parse
                 NSString *titleString = object[@"workoutName"];

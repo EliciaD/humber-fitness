@@ -51,7 +51,7 @@
 
     self.title = @"";
     self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg-7.jpg"]];
-    // Do any additional setup after loading the view=['_{:view.backgroundColor = [UIColor colorWithRed:0.667 green:0.796 blue:0.655 alpha:1.0];
+   
     UIBarButtonItem* _sidebarButton = [[UIBarButtonItem alloc] initWithTitle:@"Menu"
                                                                        style:UIBarButtonItemStylePlain
                                                                       target:self
@@ -104,7 +104,6 @@
         }
     }];
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -115,15 +114,18 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
+    NSLog(@"Number of cells: %lu", (unsigned long)self.titlesArray.count);
     return [self.titlesArray count];
+}
 
-    }
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+   
+    [self.tableView reloadData]; // to reload selected cell
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
     static NSString *jobCellIdentifier = @"TableViewCell";
     
     TableViewCell *cell = (TableViewCell *)[tableView dequeueReusableCellWithIdentifier:jobCellIdentifier];
@@ -132,17 +134,13 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TableViewCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-
-        cell.titleLabel.text = [self.titlesArray objectAtIndex:indexPath.row];
-        cell.timeLabel.text = [self.timeArray objectAtIndex:indexPath.row];
-        cell.locationLabel.text = [self.locationArray objectAtIndex:indexPath.row];
     
-    NSLog(@"%@", contentArray);
+    cell.titleLabel.text = [self.titlesArray objectAtIndex:indexPath.row];
+    cell.timeLabel.text = [self.timeArray objectAtIndex:indexPath.row];
+    cell.locationLabel.text = [self.locationArray objectAtIndex:indexPath.row];
+    
     return cell;
-
 }
-
-
 
 // Tap on table Row
 - (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath {
@@ -152,9 +150,7 @@
     [self.contentArray addObject:[self.timeArray objectAtIndex:indexPath.row]];
     [self.contentArray addObject:[self.locationArray objectAtIndex:indexPath.row]];
     [self.contentArray addObject:[self.descriptionArray objectAtIndex:indexPath.row]];
-    [self performSegueWithIdentifier: @"classClicked" sender: self];
-    
-}
+    [self performSegueWithIdentifier: @"classClicked" sender: self];}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"classClicked"]) {
@@ -179,7 +175,5 @@
 {
     return 101;
 }
-
-
 
 @end

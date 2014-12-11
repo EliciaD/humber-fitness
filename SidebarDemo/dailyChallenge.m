@@ -60,7 +60,7 @@ int thisChallenger;
     PFUser *currentUser = [PFUser currentUser];
     
     _challenge.layer.borderWidth=5.0f;
-    _challenge.layer.borderColor=[[UIColor whiteColor] CGColor];
+    _challenge.layer.borderColor=[[UIColor blackColor] CGColor];
     
     _completeBtn.layer.cornerRadius = 5;
     _completeBtn.layer.masksToBounds = YES;
