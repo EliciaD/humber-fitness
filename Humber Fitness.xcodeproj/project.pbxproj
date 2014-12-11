@@ -13,6 +13,7 @@
 		636D6CDA1A12C06D00D0AC73 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636D6CD81A12C06C00D0AC73 /* TableViewCell.m */; };
 		636D6CDB1A12C06D00D0AC73 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636D6CD91A12C06C00D0AC73 /* TableViewCell.xib */; };
 		636D6CE71A12E7B400D0AC73 /* fitnessClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636D6CE61A12E7B400D0AC73 /* fitnessClassesViewController.m */; };
+		639D6BF01A396C7A00E0A8FE /* wearefitness.png in Resources */ = {isa = PBXBuildFile; fileRef = 639D6BEF1A396C7A00E0A8FE /* wearefitness.png */; };
 		63A05C7C1A16B698005A0CA0 /* trackWaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A05C7B1A16B698005A0CA0 /* trackWaterViewController.m */; };
 		63A11B3B1A13170B00394389 /* tuesdayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A11B3A1A13170B00394389 /* tuesdayViewController.m */; };
 		63A11B3E1A13172500394389 /* wednesdayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A11B3D1A13172500394389 /* wednesdayViewController.m */; };
@@ -28,10 +29,8 @@
 		63AAC79D1A190807002EA809 /* thursdayLakeshoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AAC79C1A190807002EA809 /* thursdayLakeshoreViewController.m */; };
 		63AAC7A01A190830002EA809 /* fridayLakeshoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AAC79F1A190830002EA809 /* fridayLakeshoreViewController.m */; };
 		6510C6C11A240F660036F90C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6510C6C01A240F660036F90C /* MessageUI.framework */; };
-		653CEA0E19F089F400E9A3FD /* helpr-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 653CEA0D19F089F400E9A3FD /* helpr-logo.png */; };
 		653CEA1419F0931900E9A3FD /* dailyChallenge.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CEA1319F0931900E9A3FD /* dailyChallenge.m */; };
 		653CEA1719F0933200E9A3FD /* nutritionChecklistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CEA1619F0933200E9A3FD /* nutritionChecklistViewController.m */; };
-		65A0AFA219F2E152006D83F4 /* we_are_fitness.png in Resources */ = {isa = PBXBuildFile; fileRef = 65A0AFA119F2E152006D83F4 /* we_are_fitness.png */; };
 		65B10F8519F5C70900DA8091 /* bkg-7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65B10F8419F5C70900DA8091 /* bkg-7.jpg */; };
 		65CAF0DA19F720E100AD22CB /* hawk_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CAF0D919F720E100AD22CB /* hawk_logo.png */; };
 		65D06FD619FC063E00E500C8 /* trackVegetablesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D06FD519FC063E00E500C8 /* trackVegetablesViewController.m */; };
@@ -84,6 +83,7 @@
 		636D6CD91A12C06C00D0AC73 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TableViewCell.xib; path = ../TableViewCell.xib; sourceTree = "<group>"; };
 		636D6CE51A12E7B400D0AC73 /* fitnessClassesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fitnessClassesViewController.h; sourceTree = "<group>"; };
 		636D6CE61A12E7B400D0AC73 /* fitnessClassesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fitnessClassesViewController.m; sourceTree = "<group>"; };
+		639D6BEF1A396C7A00E0A8FE /* wearefitness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wearefitness.png; sourceTree = "<group>"; };
 		63A05C7A1A16B698005A0CA0 /* trackWaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trackWaterViewController.h; sourceTree = "<group>"; };
 		63A05C7B1A16B698005A0CA0 /* trackWaterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = trackWaterViewController.m; sourceTree = "<group>"; };
 		63A11B391A13170B00394389 /* tuesdayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tuesdayViewController.h; sourceTree = "<group>"; };
@@ -113,12 +113,10 @@
 		63AAC79E1A190830002EA809 /* fridayLakeshoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fridayLakeshoreViewController.h; sourceTree = "<group>"; };
 		63AAC79F1A190830002EA809 /* fridayLakeshoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fridayLakeshoreViewController.m; sourceTree = "<group>"; };
 		6510C6C01A240F660036F90C /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		653CEA0D19F089F400E9A3FD /* helpr-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "helpr-logo.png"; sourceTree = "<group>"; };
 		653CEA1219F0931900E9A3FD /* dailyChallenge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dailyChallenge.h; sourceTree = "<group>"; };
 		653CEA1319F0931900E9A3FD /* dailyChallenge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dailyChallenge.m; sourceTree = "<group>"; };
 		653CEA1519F0933200E9A3FD /* nutritionChecklistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nutritionChecklistViewController.h; sourceTree = "<group>"; };
 		653CEA1619F0933200E9A3FD /* nutritionChecklistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nutritionChecklistViewController.m; sourceTree = "<group>"; };
-		65A0AFA119F2E152006D83F4 /* we_are_fitness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = we_are_fitness.png; sourceTree = "<group>"; };
 		65B10F8419F5C70900DA8091 /* bkg-7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bkg-7.jpg"; sourceTree = "<group>"; };
 		65CAF0D919F720E100AD22CB /* hawk_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hawk_logo.png; sourceTree = "<group>"; };
 		65D06FD419FC063E00E500C8 /* trackVegetablesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trackVegetablesViewController.h; sourceTree = "<group>"; };
@@ -239,10 +237,9 @@
 		653CEA0A19F085DB00E9A3FD /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				639D6BEF1A396C7A00E0A8FE /* wearefitness.png */,
 				65CAF0D919F720E100AD22CB /* hawk_logo.png */,
 				65B10F8419F5C70900DA8091 /* bkg-7.jpg */,
-				65A0AFA119F2E152006D83F4 /* we_are_fitness.png */,
-				653CEA0D19F089F400E9A3FD /* helpr-logo.png */,
 			);
 			name = assets;
 			sourceTree = "<group>";
@@ -432,8 +429,8 @@
 				F4EECF1C177C99F400778578 /* InfoPlist.strings in Resources */,
 				973B257818FB192300640F96 /* savebtn.png in Resources */,
 				973CD5D418F9A75B00CB0831 /* login.png in Resources */,
+				639D6BF01A396C7A00E0A8FE /* wearefitness.png in Resources */,
 				978ED69818F8B0EA0062D5F7 /* Logofarm-1.png in Resources */,
-				653CEA0E19F089F400E9A3FD /* helpr-logo.png in Resources */,
 				9746E51C18F9ACA8000755DE /* signUp.png in Resources */,
 				9746E51E18F9AE93000755DE /* backbtn.png in Resources */,
 				973B257218FAF2CE00640F96 /* leftLogo.png in Resources */,
@@ -450,7 +447,6 @@
 				97C10EEE18F75ABB00D72764 /* season.png in Resources */,
 				F4EECF2B177C99F400778578 /* MainStoryboard.storyboard in Resources */,
 				97C10EEF18F75ABB00D72764 /* notseason.png in Resources */,
-				65A0AFA219F2E152006D83F4 /* we_are_fitness.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

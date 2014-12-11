@@ -47,6 +47,18 @@
     _sidebarButton.tintColor = [UIColor whiteColor];
 
     // Do any additional setup after loading the view.
+
+    PFQuery *query = [PFQuery queryWithClassName:@"myWorkouts"];
+    [query getObjectInBackgroundWithId:@"xWMyZ4YEGZ" block:^(PFObject *gameScore, NSError *error) {
+        
+        
+        
+        
+        
+        
+    }];
+
+
 }
 
 - (void)didReceiveMemoryWarning

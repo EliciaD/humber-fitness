@@ -72,7 +72,7 @@ int thisChallenger;
     
     
     // outputs day of week :)
-    
+
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"EEEE"];
    

@@ -774,17 +774,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Humber Fitness" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHT-Yz-bEt">
-                                <rect key="frame" x="30" y="156" width="259" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="we_are_fitness.png" translatesAutoresizingMaskIntoConstraints="NO" id="1rf-YU-p7z">
-                                <rect key="frame" x="110" y="98" width="98" height="84"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wearefitness.png" translatesAutoresizingMaskIntoConstraints="NO" id="1rf-YU-p7z">
+                                <rect key="frame" x="11" y="79" width="298" height="256"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ab-az-lN4">
-                                <rect key="frame" x="75" y="382" width="167" height="30"/>
+                                <rect key="frame" x="77" y="382" width="167" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Visit our Facebook Page">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -915,7 +910,7 @@
                                     <navigationItem id="pXJ-kw-zit">
                                         <barButtonItem key="leftBarButtonItem" title="&lt;" id="HTq-w3-7F2">
                                             <connections>
-                                                <action selector="exit:" destination="coz-c6-GNV" id="5pT-KT-jC5"/>
+                                                <action selector="exit:" destination="coz-c6-GNV" id="b0t-ug-kS2"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1755,7 +1750,7 @@
     </scenes>
     <resources>
         <image name="hawk_logo.png" width="150" height="153"/>
-        <image name="we_are_fitness.png" width="150" height="83"/>
+        <image name="wearefitness.png" width="640" height="387"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -1764,17 +1759,17 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Q5s-fo-o3D"/>
-        <segue reference="mv5-JT-BpU"/>
-        <segue reference="upQ-vz-IBd"/>
-        <segue reference="Ton-VF-YLY"/>
+        <segue reference="pbR-UC-xfk"/>
+        <segue reference="NoP-E2-foB"/>
         <segue reference="B8K-2J-L6U"/>
+        <segue reference="Ton-VF-YLY"/>
+        <segue reference="upQ-vz-IBd"/>
+        <segue reference="mv5-JT-BpU"/>
         <segue reference="6l4-aR-Yso"/>
-        <segue reference="sNc-Zn-Af6"/>
         <segue reference="8MG-ml-HBr"/>
         <segue reference="mEo-TQ-QWD"/>
-        <segue reference="2CJ-rt-x3k"/>
-        <segue reference="mB3-f4-gUS"/>
+        <segue reference="JQb-h8-k02"/>
         <segue reference="iJ8-CR-wDM"/>
+        <segue reference="G7s-MP-aXS"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -154,7 +154,8 @@
     weightNum = [NSNumber numberWithInteger: [weightString intValue]];
 
     
-    if ([username length] == 0 || [password length] == 0 || [email length] == 0 || weightNum == 0 ) {
+    if ([username length] == 0 || [password length] == 0 || [email length] == 0 || [weightString length] == 0) {
+      
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!"
                                                             message:@"Make sure you enter a username, password, email address and your weight!"
                                                            delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -166,23 +167,10 @@
         newUser.password = password;
         newUser.email = email;
         
-       // NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-       // [numberFormatter numberFromString:@"weight"];
         
 
     [newUser setObject:weightNum forKey:@"weight"];
         
-        
-      /*  PFObject *weight= [PFObject objectWithClassName:@"weight"];
-        [addValues setObject: weight forKey:@"weight"];
-        [addValues saveInBackground];
-    */
-       
-        
-        
-      
-        
-       //[newUser setObject:@"weight" forKey:@"weight"];
         
       
         

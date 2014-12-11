@@ -74,6 +74,16 @@
     [myWorkouts saveInBackground];
     
    }
+- (IBAction)exit:(id)sender {
+    //clear fields
+    titleLabel.text = @"";
+    descriptionLabel.text = @"";
+    timeLabel.text = @"";
+    [self dismissViewControllerAnimated:YES completion:nil];
+   
+}
+
+
 
 /*
 #pragma mark - Navigation
