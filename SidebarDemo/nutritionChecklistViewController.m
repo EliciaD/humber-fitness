@@ -62,21 +62,17 @@
     
     // Buttons
     
-    _trackWater.layer.cornerRadius = 5;
-    _trackWater.layer.masksToBounds = YES;
+
     _trackWater.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
     
-    _trackVegetables.layer.cornerRadius = 5;
-    _trackVegetables.layer.masksToBounds = YES;
+
     _trackVegetables.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
     
-    _trackFruit.layer.cornerRadius = 5;
-    _trackFruit.layer.masksToBounds = YES;
+   
     _trackFruit.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
     
     
-    _trackProtein.layer.cornerRadius = 5;
-    _trackProtein.layer.masksToBounds = YES;
+
     _trackProtein.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
     
     _sedentary.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
