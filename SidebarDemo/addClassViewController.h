@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (strong, nonatomic) NSMutableArray *passedArray;
 - (IBAction)exit:(id)sender;
+- (IBAction)addWorkout:(id)sender;
 
 @end

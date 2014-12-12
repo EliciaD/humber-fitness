@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UIViewController
+- (IBAction)facebookPg:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *facebookLink;
 
 @end

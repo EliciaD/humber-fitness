@@ -48,4 +48,6 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)facebookPg:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.facebook.com/pages/Humber-College-Fitness-North-Campus/106426832746406"]];}
 @end

@@ -81,14 +81,11 @@ int thisChallenger;
     
 // sets label to todays challenge based off day of the week
   
- NSLog(@"Today is %@", date);
-
-    
     
     if ([date  isEqual: @"Monday"]){
         if(mybool == YES){
             _completeBtn.hidden=TRUE;
-            _trackReps.hidden = true;
+            _trackReps.hidden = TRUE;
             _challenge.text = @"Challenge Complete!";
             
             count = count+1;
@@ -102,7 +99,7 @@ int thisChallenger;
     }else if ([date isEqual:@"Tuesday"]){
         if(mybool == YES){
             _completeBtn.hidden=TRUE;
-            _trackReps.hidden = true;
+            _trackReps.hidden = TRUE;
             _challenge.text = @"Challenge Complete!";
             
             count = count+1;
@@ -120,7 +117,7 @@ int thisChallenger;
             count = count+1;
             NSLog(@"%d",count);
             _completeBtn.hidden=TRUE;
-            _trackReps.hidden = true;
+            _trackReps.hidden = TRUE;
             _challenge.text = @"Challenge Complete!";
             
             
@@ -137,7 +134,7 @@ int thisChallenger;
             count = count+1;
             NSLog(@"%d",count);
             _completeBtn.hidden=TRUE;
-            _trackReps.hidden = true;
+            _trackReps.hidden = TRUE;
             _challenge.text = @"Challenge Complete!";
             
             
@@ -163,11 +160,11 @@ int thisChallenger;
     }else if([date isEqual:@"Saturday"]){
         _challenge.text = @"Rest";
           _completeBtn.hidden=TRUE;
-        _trackReps.hidden = true;
+        _trackReps.hidden = TRUE;
         
     }else if([date isEqual:@"Sunday"]){
          _completeBtn.hidden=TRUE;
-        _trackReps.hidden = true;
+        _trackReps.hidden = TRUE;
         _challenge.text = @"Rest";
         
     }else{

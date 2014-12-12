@@ -94,6 +94,11 @@
         }
     }];
 }
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData]; // to reload selected cell
+}
 
 - (void)didReceiveMemoryWarning
 {
