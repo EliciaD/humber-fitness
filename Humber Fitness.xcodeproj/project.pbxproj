@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		630E19ED1A3AA9A0006A7800 /* workoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 630E19EB1A3AA9A0006A7800 /* workoutTableViewCell.xib */; };
 		6354EE0E18FB9196001A3924 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6354EE0D18FB9196001A3924 /* Parse.framework */; };
 		6354EE1018FB9810001A3924 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6354EE0F18FB9810001A3924 /* CoreData.framework */; };
 		636D6CDA1A12C06D00D0AC73 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636D6CD81A12C06C00D0AC73 /* TableViewCell.m */; };
@@ -75,6 +76,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		630E19EB1A3AA9A0006A7800 /* workoutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = workoutTableViewCell.xib; sourceTree = "<group>"; };
 		6354EE0D18FB9196001A3924 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = SidebarDemo/Parse.framework; sourceTree = "<group>"; };
 		6354EE0F18FB9810001A3924 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		636D6CD71A12C06C00D0AC73 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewCell.h; path = ../TableViewCell.h; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				63A1CE041A1EEBC20079F5EF /* addClassViewController.h */,
 				63A1CE051A1EEBC20079F5EF /* addClassViewController.m */,
 				636D6CD91A12C06C00D0AC73 /* TableViewCell.xib */,
+				630E19EB1A3AA9A0006A7800 /* workoutTableViewCell.xib */,
 				63AA5AF31A17E56D00383A03 /* Humber Lakeshore Schedule */,
 				63AA5AF21A17E52700383A03 /* Humber North Schedule */,
 				636D6CD81A12C06C00D0AC73 /* TableViewCell.m */,
@@ -441,6 +444,7 @@
 				978ED69618F8A80F0062D5F7 /* index.png in Resources */,
 				9746E51A18F9AA85000755DE /* bglog.png in Resources */,
 				65B10F8519F5C70900DA8091 /* bkg-7.jpg in Resources */,
+				630E19ED1A3AA9A0006A7800 /* workoutTableViewCell.xib in Resources */,
 				973B257618FB023F00640F96 /* main.jpg in Resources */,
 				636D6CDB1A12C06D00D0AC73 /* TableViewCell.xib in Resources */,
 				97C10EEE18F75ABB00D72764 /* season.png in Resources */,

@@ -7,7 +7,6 @@
 //
 
 #import "addClassViewController.h"
-
 #import <Parse/Parse.h>
 
 
@@ -59,7 +58,7 @@
 }
 - (IBAction)addWorkout:(id)sender {
     UIAlertView* thanks = [[UIAlertView alloc] initWithTitle:@"Workout Added!"
-                                                     message:@"W" delegate:self cancelButtonTitle:@"Yeah, no Biggie." otherButtonTitles: nil];
+                                                     message:@"Way to go, keep on living healthy!" delegate:self cancelButtonTitle:@"OK." otherButtonTitles: nil];
     [thanks show];
     
 

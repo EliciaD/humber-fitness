@@ -34,6 +34,9 @@
                     </label>
                 </subviews>
             </tableViewCellContentView>
+            <accessibility key="accessibilityConfiguration">
+                <bool key="isElement" value="YES"/>
+            </accessibility>
             <connections>
                 <outlet property="locationLabel" destination="XeM-J8-lmw" id="lfp-6h-ZJM"/>
                 <outlet property="timeLabel" destination="TL6-ie-gmc" id="0Bv-6d-udO"/>
