@@ -7,7 +7,7 @@
 //
 
 #import "addClassViewController.h"
-#import "SWRevealViewController.h"
+
 #import <Parse/Parse.h>
 
 
@@ -37,8 +37,13 @@
     [super viewDidLoad];
     self.title = @"";
     self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg-7.jpg"]];
+   
+    //clear fields
+    titleLabel.text = @"";
+    descriptionLabel.text = @"";
+    timeLabel.text = @"";
     
-
+    
     titleLabel.text = [passedArray objectAtIndex:0];
    descriptionLabel.text = [passedArray objectAtIndex:4];
     timeLabel.text = [passedArray objectAtIndex:2];
@@ -52,6 +57,24 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)addWorkout:(id)sender {
+    UIAlertView* thanks = [[UIAlertView alloc] initWithTitle:@"Workout Added!"
+                                                     message:@"W" delegate:self cancelButtonTitle:@"Yeah, no Biggie." otherButtonTitles: nil];
+    [thanks show];
+    
+
+    
+    PFUser *currentUser = [PFUser currentUser];
+    
+    PFObject *myWorkouts = [PFObject objectWithClassName:@"myWorkouts"];
+    myWorkouts[@"workoutName"] = [passedArray objectAtIndex:0];
+    myWorkouts[@"day"] = [passedArray objectAtIndex:1];
+    myWorkouts[@"location"] = [passedArray objectAtIndex:2];
+    myWorkouts[@"time"] = [passedArray objectAtIndex:3];
+    myWorkouts[@"description"] = [passedArray objectAtIndex:4];
+    [myWorkouts saveInBackground];
+    
+   }
 
 /*
 #pragma mark - Navigation
@@ -64,13 +87,4 @@
 }
 */
 
-- (IBAction)exit:(id)sender {
-
-[self dismissViewControllerAnimated:YES completion:nil];
-    
-
-}
-
-- (IBAction)addWorkout:(id)sender {
-}
 @end
