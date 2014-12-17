@@ -7,6 +7,7 @@
 //
 
 #import "trackFruitViewController.h"
+#import <Parse/Parse.h>
 
 @interface trackFruitViewController ()
 
@@ -62,6 +63,42 @@ int fruitCount;
     _saveBtn.layer.masksToBounds = YES;
     _saveBtn.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
     
+    //set current user
+    PFUser *currentUser = [PFUser currentUser];
+    
+    //get todays date
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
+    NSString *dateString = [dateFormat stringFromDate:today];
+    NSLog(@"date: %@", dateString);
+    
+    //change modification date
+    PFQuery *query = [PFQuery queryWithClassName:@"ModificationDates"];
+    [query whereKey:@"userEmail" equalTo:currentUser.email];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d scores.", objects.count);
+            if (objects.count>0) {
+                for (PFObject *object in objects) {
+                    NSString *lastModDate = object[@"fruitDate"];
+                    if ([lastModDate isEqualToString:dateString]) {
+                        //do not clear information
+                    }else{
+                        //clear selected water
+                        fruitCount = 0;
+                    }
+                }
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
+    
+    
     if(fruitCount == 1){
         _oneServing.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
         [_oneServing setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
@@ -115,6 +152,48 @@ int fruitCount;
 
 - (IBAction)oneClicked:(id)sender {
     
+    //set current user
+    PFUser *currentUser = [PFUser currentUser];
+    
+    //get todays date
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
+    NSString *dateString = [dateFormat stringFromDate:today];
+    NSLog(@"date: %@", dateString);
+    
+    //change modification date
+    PFQuery *query = [PFQuery queryWithClassName:@"ModificationDates"];
+    [query whereKey:@"userEmail" equalTo:currentUser.email];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d scores.", objects.count);
+            
+            //if there is no modification date, create one
+            if (objects.count == 0) {
+                PFObject *modDate = [PFObject objectWithClassName:@"ModificationDates"];
+                modDate[@"userEmail"] = currentUser.email;
+                modDate[@"waterDate"] = @"";
+                modDate[@"fruitDate"] = dateString;
+                modDate[@"vegDate"] = @"";
+                modDate[@"proDate"] = @"";
+                modDate[@"challengeDate"] = @"";
+                [modDate saveInBackground];
+            } else { // alter mod date
+                for (PFObject *object in objects) {
+                    object[@"fruitDate"] = dateString;
+                    [object saveInBackground];
+                }
+            }
+            
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
+    
     _oneServing.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
     [_oneServing setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
     fruitCount = fruitCount + 1;
@@ -122,18 +201,143 @@ int fruitCount;
 }
 
 - (IBAction)twoClicked:(id)sender {
+        
+        //set current user
+        PFUser *currentUser = [PFUser currentUser];
+        
+        //get todays date
+        NSDate *today = [NSDate date];
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"dd/MM/yyyy"];
+        NSString *dateString = [dateFormat stringFromDate:today];
+        NSLog(@"date: %@", dateString);
+        
+        //change modification date
+        PFQuery *query = [PFQuery queryWithClassName:@"ModificationDates"];
+        [query whereKey:@"userEmail" equalTo:currentUser.email];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                // The find succeeded.
+                NSLog(@"Successfully retrieved %d scores.", objects.count);
+                
+                //if there is no modification date, create one
+                if (objects.count == 0) {
+                    PFObject *modDate = [PFObject objectWithClassName:@"ModificationDates"];
+                    modDate[@"userEmail"] = currentUser.email;
+                    modDate[@"waterDate"] = @"";
+                    modDate[@"fruitDate"] = dateString;
+                    modDate[@"vegDate"] = @"";
+                    modDate[@"proDate"] = @"";
+                    modDate[@"challengeDate"] = @"";
+                    [modDate saveInBackground];
+                } else { // alter mod date
+                    for (PFObject *object in objects) {
+                        object[@"fruitDate"] = dateString;
+                        [object saveInBackground];
+                    }
+                }
+                
+            } else {
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
+    
     _twoServings.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
     [_twoServings setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
       fruitCount = fruitCount + 1;
 }
 
 - (IBAction)threeClicked:(id)sender {
+        
+        //set current user
+        PFUser *currentUser = [PFUser currentUser];
+        
+        //get todays date
+        NSDate *today = [NSDate date];
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"dd/MM/yyyy"];
+        NSString *dateString = [dateFormat stringFromDate:today];
+        NSLog(@"date: %@", dateString);
+        
+        //change modification date
+        PFQuery *query = [PFQuery queryWithClassName:@"ModificationDates"];
+        [query whereKey:@"userEmail" equalTo:currentUser.email];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                // The find succeeded.
+                NSLog(@"Successfully retrieved %d scores.", objects.count);
+                
+                //if there is no modification date, create one
+                if (objects.count == 0) {
+                    PFObject *modDate = [PFObject objectWithClassName:@"ModificationDates"];
+                    modDate[@"userEmail"] = currentUser.email;
+                    modDate[@"waterDate"] = @"";
+                    modDate[@"fruitDate"] = dateString;
+                    modDate[@"vegDate"] = @"";
+                    modDate[@"proDate"] = @"";
+                    modDate[@"challengeDate"] = @"";
+                    [modDate saveInBackground];
+                } else { // alter mod date
+                    for (PFObject *object in objects) {
+                        object[@"fruitDate"] = dateString;
+                        [object saveInBackground];
+                    }
+                }
+                
+            } else {
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
     _threeServings.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
     [_threeServings setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
       fruitCount = fruitCount + 1;
 }
 
 - (IBAction)fourClicked:(id)sender {
+        
+        //set current user
+        PFUser *currentUser = [PFUser currentUser];
+        
+        //get todays date
+        NSDate *today = [NSDate date];
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"dd/MM/yyyy"];
+        NSString *dateString = [dateFormat stringFromDate:today];
+        NSLog(@"date: %@", dateString);
+        
+        //change modification date
+        PFQuery *query = [PFQuery queryWithClassName:@"ModificationDates"];
+        [query whereKey:@"userEmail" equalTo:currentUser.email];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                // The find succeeded.
+                NSLog(@"Successfully retrieved %d scores.", objects.count);
+                
+                //if there is no modification date, create one
+                if (objects.count == 0) {
+                    PFObject *modDate = [PFObject objectWithClassName:@"ModificationDates"];
+                    modDate[@"userEmail"] = currentUser.email;
+                    modDate[@"waterDate"] = @"";
+                    modDate[@"fruitDate"] = dateString;
+                    modDate[@"vegDate"] = @"";
+                    modDate[@"proDate"] = @"";
+                    modDate[@"challengeDate"] = @"";
+                    [modDate saveInBackground];
+                } else { // alter mod date
+                    for (PFObject *object in objects) {
+                        object[@"fruitDate"] = dateString;
+                        [object saveInBackground];
+                    }
+                }
+                
+            } else {
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
+        
     _fourServings.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
     [_fourServings setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
       fruitCount = fruitCount + 1;

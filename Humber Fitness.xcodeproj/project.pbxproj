@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		630E19ED1A3AA9A0006A7800 /* workoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 630E19EB1A3AA9A0006A7800 /* workoutTableViewCell.xib */; };
+		632205661A4B603400793FC9 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 632205651A4B603400793FC9 /* View.xib */; };
 		6354EE0E18FB9196001A3924 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6354EE0D18FB9196001A3924 /* Parse.framework */; };
 		6354EE1018FB9810001A3924 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6354EE0F18FB9810001A3924 /* CoreData.framework */; };
 		636D6CDA1A12C06D00D0AC73 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 636D6CD81A12C06C00D0AC73 /* TableViewCell.m */; };
@@ -76,6 +77,7 @@
 
 /* Begin PBXFileReference section */
 		630E19EB1A3AA9A0006A7800 /* workoutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = workoutTableViewCell.xib; sourceTree = "<group>"; };
+		632205651A4B603400793FC9 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		6354EE0D18FB9196001A3924 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = SidebarDemo/Parse.framework; sourceTree = "<group>"; };
 		6354EE0F18FB9810001A3924 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		636D6CD71A12C06C00D0AC73 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewCell.h; path = ../TableViewCell.h; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 				653CEA0A19F085DB00E9A3FD /* assets */,
 				F4EECF34177C9A1E00778578 /* Library */,
 				F4EECF18177C99F400778578 /* Supporting Files */,
+				632205651A4B603400793FC9 /* View.xib */,
 			);
 			name = "Humber Fitness";
 			path = SidebarDemo;
@@ -426,6 +429,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				632205661A4B603400793FC9 /* View.xib in Resources */,
 				F4EECF1C177C99F400778578 /* InfoPlist.strings in Resources */,
 				973B257818FB192300640F96 /* savebtn.png in Resources */,
 				973CD5D418F9A75B00CB0831 /* login.png in Resources */,

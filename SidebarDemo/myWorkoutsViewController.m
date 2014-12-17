@@ -153,17 +153,17 @@
     [self.contentArray addObject:[self.timeArray objectAtIndex:indexPath.row]];
     [self.contentArray addObject:[self.locationArray objectAtIndex:indexPath.row]];
     [self.contentArray addObject:[self.descriptionArray objectAtIndex:indexPath.row]];
-    [self performSegueWithIdentifier: @"classClicked" sender: self];
+    [self performSegueWithIdentifier: @"classDetail" sender: self];
     
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:@"classClicked"]) {
-        addClassViewController *transferViewController = segue.destinationViewController;
-        transferViewController.passedArray = [[NSMutableArray alloc]init];
-        transferViewController.passedArray = contentArray;
-    }
-}
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//    if([segue.identifier isEqualToString:@"classDetail"]) {
+//        addClassViewController *transferViewController = segue.destinationViewController;
+//        transferViewController.passedArray = [[NSMutableArray alloc]init];
+//        transferViewController.passedArray = self.contentArray;
+//    }
+//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

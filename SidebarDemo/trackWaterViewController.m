@@ -18,6 +18,8 @@
 double xposition = 50.0;
 double yposition = 120.0;
 int waterCount;
+NSDate *lastDate;
+NSDate *today;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,7 +36,7 @@ int waterCount;
     self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg-7.jpg"]];
 
     // Do any additional setup after loading the view.
-[self.view addSubview:_button];
+    [self.view addSubview:_button];
     
     NSNumber *weight = [[PFUser currentUser] objectForKey:@"weight"];
     NSNumber *kgConvert = @2.2046;
@@ -51,12 +53,46 @@ int waterCount;
     // calculates number ml of water should drink per day based on weight of user.
     double ml = calc_result * 30;
     
-    // set position
-   
+    
+    //set current user
+    PFUser *currentUser = [PFUser currentUser];
+    
+    //get todays date
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
+    NSString *dateString = [dateFormat stringFromDate:today];
+    NSLog(@"date: %@", dateString);
+    
+    //change modification date
+    PFQuery *query = [PFQuery queryWithClassName:@"ModificationDates"];
+    [query whereKey:@"userEmail" equalTo:currentUser.email];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d scores.", objects.count);
+            if (objects.count>0) {
+                for (PFObject *object in objects) {
+                    NSString *lastModDate = object[@"waterDate"];
+                    if ([lastModDate isEqualToString:dateString]) {
+                        //do not clear information
+                    }else{
+                        //clear selected water
+                        waterCount = 1;
+                    }
+                }
+            }
+            } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
+
     
     // calculates number of cups of water user should drink per day based on weight of user.
     int cups = ml * [mlConversion doubleValue];
-
+    
     NSLog(@"%d",cups);
    
     for( int i = 0; i < cups; i++ ) {
@@ -133,7 +169,7 @@ int waterCount;
         }
     }
     
-    }
+}
 
 - (void)viewDidAppear:(BOOL)animated {
     //Style for waters already clicked
@@ -145,7 +181,7 @@ int waterCount;
 
     }
     
-    for(int i = 1; i < waterCount; i++){
+    for(int i = 1; i <= waterCount; i++){
         NSLog(@"TAG: %d", i);
         UIButton* btn = (UIButton*)[self.view viewWithTag:i];
         btn.layer.borderColor=[[UIColor redColor] CGColor];
@@ -155,7 +191,50 @@ int waterCount;
 }
 
 
-- (void)myCustomFunction:(id)sender{
+- (void)myCustomFunction:(id)sender {
+    
+    //set current user
+    PFUser *currentUser = [PFUser currentUser];
+    
+    //get todays date
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
+    NSString *dateString = [dateFormat stringFromDate:today];
+    NSLog(@"date: %@", dateString);
+    
+    //change modification date
+    PFQuery *query = [PFQuery queryWithClassName:@"ModificationDates"];
+    [query whereKey:@"userEmail" equalTo:currentUser.email];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d scores.", objects.count);
+            
+            //if there is no modification date, create one
+            if (objects.count == 0) {
+                PFObject *modDate = [PFObject objectWithClassName:@"ModificationDates"];
+                modDate[@"userEmail"] = currentUser.email;
+                modDate[@"waterDate"] = dateString;
+                modDate[@"fruitDate"] = @"";
+                modDate[@"vegDate"] = @"";
+                modDate[@"proDate"] = @"";
+                modDate[@"challengeDate"] = @"";
+                [modDate saveInBackground];
+            } else { // alter mod date
+                for (PFObject *object in objects) {
+                    object[@"waterDate"] = dateString;
+                    [object saveInBackground];
+                }
+            }
+            
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
+    
     NSLog(@"button was clicked");
     UIButton *btn = (UIButton*)sender;
     btn.layer.borderColor=[[UIColor redColor] CGColor];
