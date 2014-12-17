@@ -7,6 +7,7 @@
 //
 
 #import "trackRepsViewController.h"
+#import <Parse/Parse.h>
 
 
 @interface trackRepsViewController ()
@@ -97,6 +98,42 @@ int trackCount;
     _fifty.layer.borderColor=[[UIColor whiteColor] CGColor];
     
     _promptText.text = @"";
+    
+    
+    //set current user
+    PFUser *currentUser = [PFUser currentUser];
+    
+    //get todays date
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
+    NSString *dateString = [dateFormat stringFromDate:today];
+    NSLog(@"date: %@", dateString);
+    
+    //change modification date
+    PFQuery *query = [PFQuery queryWithClassName:@"ModificationDates"];
+    [query whereKey:@"userEmail" equalTo:currentUser.email];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d scores.", objects.count);
+            if (objects.count>0) {
+                for (PFObject *object in objects) {
+                    NSString *lastModDate = object[@"challengeDate"];
+                    if ([lastModDate isEqualToString:dateString]) {
+                        //do not clear information
+                    }else{
+                        //clear selected water
+                        trackCount = 0;
+                    }
+                }
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
     
     
     // saving
@@ -311,6 +348,48 @@ int trackCount;
 
 - (IBAction)track1:(id)sender {
     
+    //set current user
+    PFUser *currentUser = [PFUser currentUser];
+    
+    //get todays date
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
+    NSString *dateString = [dateFormat stringFromDate:today];
+    NSLog(@"date: %@", dateString);
+    
+    //change modification date
+    PFQuery *query = [PFQuery queryWithClassName:@"ModificationDates"];
+    [query whereKey:@"userEmail" equalTo:currentUser.email];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d scores.", objects.count);
+            
+            //if there is no modification date, create one
+            if (objects.count == 0) {
+                PFObject *modDate = [PFObject objectWithClassName:@"ModificationDates"];
+                modDate[@"userEmail"] = currentUser.email;
+                modDate[@"waterDate"] = @"";
+                modDate[@"fruitDate"] = @"";
+                modDate[@"vegDate"] = @"";
+                modDate[@"proDate"] = @"";
+                modDate[@"challengeDate"] = dateString;
+                [modDate saveInBackground];
+            } else { // alter mod date
+                for (PFObject *object in objects) {
+                    object[@"challengeDate"] = dateString;
+                    [object saveInBackground];
+                }
+            }
+            
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
+    
     _ten.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
     [_ten setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
     trackCount = trackCount + 1;
@@ -318,54 +397,432 @@ int trackCount;
 }
 
 - (IBAction)track2:(id)sender {
+    
+    //set current user
+    PFUser *currentUser = [PFUser currentUser];
+    
+    //get todays date
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
+    NSString *dateString = [dateFormat stringFromDate:today];
+    NSLog(@"date: %@", dateString);
+    
+    //change modification date
+    PFQuery *query = [PFQuery queryWithClassName:@"ModificationDates"];
+    [query whereKey:@"userEmail" equalTo:currentUser.email];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d scores.", objects.count);
+            
+            //if there is no modification date, create one
+            if (objects.count == 0) {
+                PFObject *modDate = [PFObject objectWithClassName:@"ModificationDates"];
+                modDate[@"userEmail"] = currentUser.email;
+                modDate[@"waterDate"] = @"";
+                modDate[@"fruitDate"] = @"";
+                modDate[@"vegDate"] = @"";
+                modDate[@"proDate"] = @"";
+                modDate[@"challengeDate"] = dateString;
+                [modDate saveInBackground];
+            } else { // alter mod date
+                for (PFObject *object in objects) {
+                    object[@"challengeDate"] = dateString;
+                    [object saveInBackground];
+                }
+            }
+            
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
     _twenty.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
     [_twenty setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
     trackCount = trackCount + 1;
 }
 
 - (IBAction)track3:(id)sender {
+    
+    //set current user
+    PFUser *currentUser = [PFUser currentUser];
+    
+    //get todays date
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
+    NSString *dateString = [dateFormat stringFromDate:today];
+    NSLog(@"date: %@", dateString);
+    
+    //change modification date
+    PFQuery *query = [PFQuery queryWithClassName:@"ModificationDates"];
+    [query whereKey:@"userEmail" equalTo:currentUser.email];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d scores.", objects.count);
+            
+            //if there is no modification date, create one
+            if (objects.count == 0) {
+                PFObject *modDate = [PFObject objectWithClassName:@"ModificationDates"];
+                modDate[@"userEmail"] = currentUser.email;
+                modDate[@"waterDate"] = @"";
+                modDate[@"fruitDate"] = @"";
+                modDate[@"vegDate"] = @"";
+                modDate[@"proDate"] = @"";
+                modDate[@"challengeDate"] = dateString;
+                [modDate saveInBackground];
+            } else { // alter mod date
+                for (PFObject *object in objects) {
+                    object[@"challengeDate"] = dateString;
+                    [object saveInBackground];
+                }
+            }
+            
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
     _thirty.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
     [_thirty setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
     trackCount = trackCount + 1;
 }
 
 - (IBAction)track4:(id)sender {
+    
+    //set current user
+    PFUser *currentUser = [PFUser currentUser];
+    
+    //get todays date
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
+    NSString *dateString = [dateFormat stringFromDate:today];
+    NSLog(@"date: %@", dateString);
+    
+    //change modification date
+    PFQuery *query = [PFQuery queryWithClassName:@"ModificationDates"];
+    [query whereKey:@"userEmail" equalTo:currentUser.email];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d scores.", objects.count);
+            
+            //if there is no modification date, create one
+            if (objects.count == 0) {
+                PFObject *modDate = [PFObject objectWithClassName:@"ModificationDates"];
+                modDate[@"userEmail"] = currentUser.email;
+                modDate[@"waterDate"] = @"";
+                modDate[@"fruitDate"] = @"";
+                modDate[@"vegDate"] = @"";
+                modDate[@"proDate"] = @"";
+                modDate[@"challengeDate"] = dateString;
+                [modDate saveInBackground];
+            } else { // alter mod date
+                for (PFObject *object in objects) {
+                    object[@"challengeDate"] = dateString;
+                    [object saveInBackground];
+                }
+            }
+            
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
     _fourty.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
     [_fourty setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
     trackCount = trackCount + 1;
 }
 
 - (IBAction)track5:(id)sender {
+    
+    //set current user
+    PFUser *currentUser = [PFUser currentUser];
+    
+    //get todays date
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
+    NSString *dateString = [dateFormat stringFromDate:today];
+    NSLog(@"date: %@", dateString);
+    
+    //change modification date
+    PFQuery *query = [PFQuery queryWithClassName:@"ModificationDates"];
+    [query whereKey:@"userEmail" equalTo:currentUser.email];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d scores.", objects.count);
+            
+            //if there is no modification date, create one
+            if (objects.count == 0) {
+                PFObject *modDate = [PFObject objectWithClassName:@"ModificationDates"];
+                modDate[@"userEmail"] = currentUser.email;
+                modDate[@"waterDate"] = @"";
+                modDate[@"fruitDate"] = @"";
+                modDate[@"vegDate"] = @"";
+                modDate[@"proDate"] = @"";
+                modDate[@"challengeDate"] = dateString;
+                [modDate saveInBackground];
+            } else { // alter mod date
+                for (PFObject *object in objects) {
+                    object[@"challengeDate"] = dateString;
+                    [object saveInBackground];
+                }
+            }
+            
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
     _fifty.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
     [_fifty setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
     trackCount = trackCount + 1;
 }
 
 - (IBAction)track6:(id)sender {
+    
+    //set current user
+    PFUser *currentUser = [PFUser currentUser];
+    
+    //get todays date
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
+    NSString *dateString = [dateFormat stringFromDate:today];
+    NSLog(@"date: %@", dateString);
+    
+    //change modification date
+    PFQuery *query = [PFQuery queryWithClassName:@"ModificationDates"];
+    [query whereKey:@"userEmail" equalTo:currentUser.email];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d scores.", objects.count);
+            
+            //if there is no modification date, create one
+            if (objects.count == 0) {
+                PFObject *modDate = [PFObject objectWithClassName:@"ModificationDates"];
+                modDate[@"userEmail"] = currentUser.email;
+                modDate[@"waterDate"] = @"";
+                modDate[@"fruitDate"] = @"";
+                modDate[@"vegDate"] = @"";
+                modDate[@"proDate"] = @"";
+                modDate[@"challengeDate"] = dateString;
+                [modDate saveInBackground];
+            } else { // alter mod date
+                for (PFObject *object in objects) {
+                    object[@"challengeDate"] = dateString;
+                    [object saveInBackground];
+                }
+            }
+            
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
     _sixty.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
     [_sixty setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
     trackCount = trackCount + 1;
 }
 
 - (IBAction)track7:(id)sender {
+    
+    //set current user
+    PFUser *currentUser = [PFUser currentUser];
+    
+    //get todays date
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
+    NSString *dateString = [dateFormat stringFromDate:today];
+    NSLog(@"date: %@", dateString);
+    
+    //change modification date
+    PFQuery *query = [PFQuery queryWithClassName:@"ModificationDates"];
+    [query whereKey:@"userEmail" equalTo:currentUser.email];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d scores.", objects.count);
+            
+            //if there is no modification date, create one
+            if (objects.count == 0) {
+                PFObject *modDate = [PFObject objectWithClassName:@"ModificationDates"];
+                modDate[@"userEmail"] = currentUser.email;
+                modDate[@"waterDate"] = @"";
+                modDate[@"fruitDate"] = @"";
+                modDate[@"vegDate"] = @"";
+                modDate[@"proDate"] = @"";
+                modDate[@"challengeDate"] = dateString;
+                [modDate saveInBackground];
+            } else { // alter mod date
+                for (PFObject *object in objects) {
+                    object[@"challengeDate"] = dateString;
+                    [object saveInBackground];
+                }
+            }
+            
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
     _seventy.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
     [_seventy setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
     trackCount = trackCount + 1;
 }
 
 - (IBAction)track8:(id)sender {
+    
+    //set current user
+    PFUser *currentUser = [PFUser currentUser];
+    
+    //get todays date
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
+    NSString *dateString = [dateFormat stringFromDate:today];
+    NSLog(@"date: %@", dateString);
+    
+    //change modification date
+    PFQuery *query = [PFQuery queryWithClassName:@"ModificationDates"];
+    [query whereKey:@"userEmail" equalTo:currentUser.email];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d scores.", objects.count);
+            
+            //if there is no modification date, create one
+            if (objects.count == 0) {
+                PFObject *modDate = [PFObject objectWithClassName:@"ModificationDates"];
+                modDate[@"userEmail"] = currentUser.email;
+                modDate[@"waterDate"] = @"";
+                modDate[@"fruitDate"] = @"";
+                modDate[@"vegDate"] = @"";
+                modDate[@"proDate"] = @"";
+                modDate[@"challengeDate"] = dateString;
+                [modDate saveInBackground];
+            } else { // alter mod date
+                for (PFObject *object in objects) {
+                    object[@"challengeDate"] = dateString;
+                    [object saveInBackground];
+                }
+            }
+            
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
     _eighty.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
     [_eighty setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
     trackCount = trackCount + 1;
 }
 
 - (IBAction)track9:(id)sender {
+    
+    //set current user
+    PFUser *currentUser = [PFUser currentUser];
+    
+    //get todays date
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
+    NSString *dateString = [dateFormat stringFromDate:today];
+    NSLog(@"date: %@", dateString);
+    
+    //change modification date
+    PFQuery *query = [PFQuery queryWithClassName:@"ModificationDates"];
+    [query whereKey:@"userEmail" equalTo:currentUser.email];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d scores.", objects.count);
+            
+            //if there is no modification date, create one
+            if (objects.count == 0) {
+                PFObject *modDate = [PFObject objectWithClassName:@"ModificationDates"];
+                modDate[@"userEmail"] = currentUser.email;
+                modDate[@"waterDate"] = @"";
+                modDate[@"fruitDate"] = @"";
+                modDate[@"vegDate"] = @"";
+                modDate[@"proDate"] = @"";
+                modDate[@"challengeDate"] = dateString;
+                [modDate saveInBackground];
+            } else { // alter mod date
+                for (PFObject *object in objects) {
+                    object[@"challengeDate"] = dateString;
+                    [object saveInBackground];
+                }
+            }
+            
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
     _ninty.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
     [_ninty setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
     trackCount = trackCount + 1;
 }
 
 - (IBAction)track10:(id)sender {
+    
+    //set current user
+    PFUser *currentUser = [PFUser currentUser];
+    
+    //get todays date
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
+    NSString *dateString = [dateFormat stringFromDate:today];
+    NSLog(@"date: %@", dateString);
+    
+    //change modification date
+    PFQuery *query = [PFQuery queryWithClassName:@"ModificationDates"];
+    [query whereKey:@"userEmail" equalTo:currentUser.email];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %d scores.", objects.count);
+            
+            //if there is no modification date, create one
+            if (objects.count == 0) {
+                PFObject *modDate = [PFObject objectWithClassName:@"ModificationDates"];
+                modDate[@"userEmail"] = currentUser.email;
+                modDate[@"waterDate"] = @"";
+                modDate[@"fruitDate"] = @"";
+                modDate[@"vegDate"] = @"";
+                modDate[@"proDate"] = @"";
+                modDate[@"challengeDate"] = dateString;
+                [modDate saveInBackground];
+            } else { // alter mod date
+                for (PFObject *object in objects) {
+                    object[@"challengeDate"] = dateString;
+                    [object saveInBackground];
+                }
+            }
+            
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
     _oneHundred.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
     [_oneHundred setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
     trackCount = trackCount + 1;

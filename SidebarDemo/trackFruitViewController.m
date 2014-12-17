@@ -290,6 +290,7 @@ int fruitCount;
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
         }];
+    
     _threeServings.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
     [_threeServings setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
       fruitCount = fruitCount + 1;

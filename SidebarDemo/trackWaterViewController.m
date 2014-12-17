@@ -78,7 +78,7 @@ NSDate *today;
                         //do not clear information
                     }else{
                         //clear selected water
-                        waterCount = 1;
+                        waterCount = 0;
                     }
                 }
             }
