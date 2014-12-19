@@ -172,6 +172,9 @@
     [newUser setObject:weightNum forKey:@"weight"];
         
         
+    [newUser setObject:@"" forKey:@"challengeComplete"];
+        
+        
       
         
         [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {

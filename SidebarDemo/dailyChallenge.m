@@ -70,6 +70,27 @@ int thisChallenger;
     _trackReps.layer.masksToBounds = YES;
     _trackReps.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
     
+    //get todays date
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
+    NSString *dateString = [dateFormat stringFromDate:today];
+    NSLog(@"date: %@", dateString);
+    
+    PFQuery *query = [PFUser query];
+    [query whereKey:@"username" equalTo:[[PFUser currentUser]username]];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error){
+        NSString *retrievedDate = [object objectForKey:@"challengeComplete"];
+        NSLog(@"recieved date: %@", retrievedDate);
+        if ([retrievedDate isEqualToString:dateString]) {
+            _completeBtn.hidden=TRUE;
+            _challenge.text = @"Challenge Complete!";
+        } else{
+            //do nothing
+        }
+        }];
+
+    
     
     // outputs day of week :)
 
@@ -177,62 +198,60 @@ int thisChallenger;
 
 - (IBAction)complete:(id)sender {
     
-    PFQuery *query= [PFUser query];
+    //get todays date
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
+    NSString *dateString = [dateFormat stringFromDate:today];
+    NSLog(@"date: %@", dateString);
     
+    PFQuery *query = [PFUser query];
     [query whereKey:@"username" equalTo:[[PFUser currentUser]username]];
-    
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error){
-        NSNumber *challengeTemp = [object objectForKey:@"challenges"];
-        self.thisChallenger = [challengeTemp integerValue] + 1;
-        
-        if (self.thisChallenger >= 100){
+        NSString *retrievedDate = [object objectForKey:@"challengeComplete"];
+        NSLog(@"recieved date: %@", retrievedDate);
+        if ([retrievedDate isEqualToString:dateString]) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Challenge has been completed" message:@"You can only complete the daily challenge once a day, try again tomorrow!" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil]; [alert show];
             
-            //creation of email
-            // Email Subject
-            NSString *emailTitle = @"100 Challenges Complete";
-            // Email Content
-            NSString *messageBody = @"I've completed the 100 day daily challenges from the Humber Fitness app!";
-            // To address
-            NSArray *toRecipents = [NSArray arrayWithObject:@"leanne.henwoodadam@humber.ca"];
-            
-            MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
-            mc.mailComposeDelegate = self;
-            [mc setSubject:emailTitle];
-            [mc setMessageBody:messageBody isHTML:NO];
-            [mc setToRecipients:toRecipents];
-            
-            // Present mail view controller on screen
-            [self presentViewController:mc animated:YES completion:NULL];
-            object[@"challenges"] = @0;
+        } else{
+            NSNumber *challengeTemp = [object objectForKey:@"challenges"];
+            self.thisChallenger = [challengeTemp integerValue] + 1;
+            object[@"challengeComplete"] = dateString;
             [object saveInBackground];
             
-        } else {
-            object[@"challenges"] = @(self.thisChallenger);
-            [object saveInBackground];
+            if (self.thisChallenger >= 100){
+                
+                //creation of email
+                // Email Subject
+                NSString *emailTitle = @"100 Challenges Complete";
+                // Email Content
+                NSString *messageBody = @"I've completed the 100 day daily challenges from the Humber Fitness app!";
+                // To address
+                NSArray *toRecipents = [NSArray arrayWithObject:@"leanne.henwoodadam@humber.ca"];
+                
+                MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+                mc.mailComposeDelegate = self;
+                [mc setSubject:emailTitle];
+                [mc setMessageBody:messageBody isHTML:NO];
+                [mc setToRecipients:toRecipents];
+                
+                // Present mail view controller on screen
+                [self presentViewController:mc animated:YES completion:NULL];
+                object[@"challenges"] = @0;
+                [object saveInBackground];
+                
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You did it!" message:@"You finished the 100 day challenge!" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil]; [alert show];
+                count = 0;
+                
+            } else {
+                object[@"challenges"] = @(self.thisChallenger);
+                [object saveInBackground];
+                
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Way to go!" message:@"You successfully finished today's daily challenge!" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil]; [alert show];
+            }
+
         }
-        
-        
     }];
-    
-    
-    
-    NSLog(@"button has been clicked");
-    
-    if(count == 100){
-        NSLog(@"100 times!");
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You did it!" message:@"You finished the 100 day challenge!" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil]; [alert show];
-        count = 0;
-        // needs to email leanne at this point
-     
-        NSLog(@"%d",count);
-        
-        
-    }else{
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Way to go!" message:@"You successfully finished today's daily challenge!" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil]; [alert show];
-        
-    }
-    
 }
 
 

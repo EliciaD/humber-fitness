@@ -13,6 +13,7 @@
 @end
 
 @implementation trackProteinViewController
+int protein;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +28,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,15 +39,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)minusProtein:(id)sender {
+    if(protein >= 1){
+        protein = protein - 1;
+        NSString *proteinString = [NSString stringWithFormat:@"%d",protein];
+        NSString *gramSubText = @" g";
+        NSString *combined = [NSString stringWithFormat:@"%@%@", proteinString, gramSubText];
+        _gramLabel.text = combined;
+    } else {
+        //do nothing
+    }
 }
-*/
 
+- (IBAction)addProtein:(id)sender {
+    protein = protein + 1;
+    NSString *proteinString = [NSString stringWithFormat:@"%d",protein];
+    NSString *gramSubText = @" g";
+    NSString *combined = [NSString stringWithFormat:@"%@%@", proteinString, gramSubText];
+    _gramLabel.text = combined;
+}
 @end

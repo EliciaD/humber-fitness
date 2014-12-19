@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface trackProteinViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIButton *addProteinBtn;
+@property (strong, nonatomic) IBOutlet UIButton *minusProteinBtn;
+@property (strong, nonatomic) IBOutlet UILabel *gramLabel;
+- (IBAction)minusProtein:(id)sender;
+- (IBAction)addProtein:(id)sender;
 
 @end

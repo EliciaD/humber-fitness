@@ -62,7 +62,6 @@
     
     // Buttons
     
-
     _trackWater.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
     
 
@@ -75,9 +74,35 @@
 
     _trackProtein.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
     
+    
+    //sedentary
     _sedentary.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
+    UIBezierPath *maskPath;
+    maskPath = [UIBezierPath bezierPathWithRoundedRect:_sedentary.bounds
+                                     byRoundingCorners:(UIRectCornerBottomLeft | UIRectCornerTopLeft)
+                                           cornerRadii:CGSizeMake(4.0, 4.0)];
+    
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = _sedentary.bounds;
+    maskLayer.path = maskPath.CGPath;
+    _sedentary.layer.mask = maskLayer;
+    
+    
+    //moderate
     _moderatlyActive.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
+    
+    
+    //very
     _veryActive.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
+    UIBezierPath *maskPath2;
+    maskPath2 = [UIBezierPath bezierPathWithRoundedRect:_veryActive.bounds
+                                      byRoundingCorners:(UIRectCornerBottomRight | UIRectCornerTopRight)
+                                            cornerRadii:CGSizeMake(4.0, 4.0)];
+    
+    CAShapeLayer *maskLayer2 = [[CAShapeLayer alloc] init];
+    maskLayer2.frame = _veryActive.bounds;
+    maskLayer2.path = maskPath2.CGPath;
+    _veryActive.layer.mask = maskLayer2;
 
    
  
