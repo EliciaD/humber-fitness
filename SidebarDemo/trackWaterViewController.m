@@ -27,8 +27,8 @@ int waterCount;
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
  
     self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg-7.jpg"]];
@@ -67,8 +67,9 @@ int waterCount;
         if ( i < 5 ) {
             UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
             [button addTarget:self action:@selector(myCustomFunction:) forControlEvents:UIControlEventTouchUpInside];
-
+ 
             [button setTitle:cupTitle forState:UIControlStateNormal];
+            button.tag = i+1;
             button.frame = CGRectMake((10.0+60*i), 90.0, 50.0, 50.0);
             button.layer.cornerRadius = 25;
             button.layer.masksToBounds = YES;
@@ -83,9 +84,10 @@ int waterCount;
             
             UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
             [button addTarget:self action:@selector(myCustomFunction:) forControlEvents:UIControlEventTouchUpInside];
-
+            
             [button setTitle:cupTitle forState:UIControlStateNormal];
             button.frame = CGRectMake(((10.0+60*i)-300), 160.0, 50.0, 50.0);
+            button.tag = i+1;
             button.layer.cornerRadius = 25;
             button.layer.masksToBounds = YES;
             button.layer.borderWidth=3.0f;
@@ -101,6 +103,7 @@ int waterCount;
 
             [button setTitle:cupTitle forState:UIControlStateNormal];
             button.frame = CGRectMake(((10.0+60*i)-600), 230.0, 50.0, 50.0);
+            button.tag = i+1;
             button.layer.cornerRadius = 25;
             button.layer.masksToBounds = YES;
             button.layer.borderWidth=3.0f;
@@ -119,6 +122,7 @@ int waterCount;
             
             [button setTitle:cupTitle forState:UIControlStateNormal];
             button.frame = CGRectMake(((10.0+60*i)-900), 300.0, 50.0, 50.0);
+            button.tag = i+1;
             button.layer.cornerRadius = 25;
             button.layer.masksToBounds = YES;
             button.layer.borderWidth=3.0f;
@@ -127,17 +131,28 @@ int waterCount;
             [self.view addSubview:button];
             
         }
+    }
+    
+    }
+
+- (void)viewDidAppear:(BOOL)animated {
+    //Style for waters already clicked
+    if (waterCount > 0) {
+        UIButton* btn = (UIButton*)[self.view viewWithTag:1];
+        btn.layer.borderColor=[[UIColor redColor] CGColor];
+        btn.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
+        //[btn setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
 
     }
     
-    //[_button sendActionsForControlEvents:UIControlEventTouchUpInside];
-    
-
-
+    for(int i = 1; i < waterCount; i++){
+        NSLog(@"TAG: %d", i);
+        UIButton* btn = (UIButton*)[self.view viewWithTag:i];
+        btn.layer.borderColor=[[UIColor redColor] CGColor];
+        btn.layer.borderColor=[[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] CGColor];
+        //[btn setTitleColor:[UIColor colorWithRed:0.106 green:0.173 blue:0.357 alpha:1] forState:UIControlStateNormal];
+    }
 }
-
-
-    
 
 
 - (void)myCustomFunction:(id)sender{
@@ -158,16 +173,5 @@ int waterCount;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
