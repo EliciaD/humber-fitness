@@ -71,6 +71,7 @@
     myWorkouts[@"location"] = [passedArray objectAtIndex:2];
     myWorkouts[@"time"] = [passedArray objectAtIndex:3];
     myWorkouts[@"description"] = [passedArray objectAtIndex:4];
+    myWorkouts[@"user"] = currentUser.email;
     [myWorkouts saveInBackground];
     
    }

@@ -8,6 +8,7 @@
 
 #import "myWorkoutsViewController.h"
 #import "SWRevealViewController.h"
+#import "TableViewCell.h"
 #import <Parse/Parse.h>
 
 
@@ -47,18 +48,53 @@
     _sidebarButton.tintColor = [UIColor whiteColor];
 
     // Do any additional setup after loading the view.
-
-    PFQuery *query = [PFQuery queryWithClassName:@"myWorkouts"];
-    [query getObjectInBackgroundWithId:@"xWMyZ4YEGZ" block:^(PFObject *gameScore, NSError *error) {
-        
-        
-        
-        
-        
-        
+    
+    self.titlesArray = [[NSMutableArray alloc] init];
+    self.dateArray = [[NSMutableArray alloc] init];
+    self.timeArray = [[NSMutableArray alloc] init];
+    self.locationArray = [[NSMutableArray alloc] init];
+    self.descriptionArray = [[NSMutableArray alloc] init];
+    
+    self.contentArray = [[NSMutableArray alloc] init];
+    
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:
+                              @"day == 'Monday'"
+                              ];
+    
+    PFUser *currentUser = [PFUser currentUser];
+    
+    PFQuery *updateTableArray = [PFQuery queryWithClassName:@"myWorkouts" predicate:predicate];
+    [updateTableArray whereKey:@"user" equalTo:currentUser.email];
+    [updateTableArray findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                //Init variables from parse
+                
+                NSString *titleString = object[@"workoutName"];
+                NSString *dateString = object[@"day"];
+                NSString *timeString = object[@"time"];
+                NSString *locationString = object[@"location"];
+                NSString *descriptionString = object[@"description"];
+                
+                
+                //add initialized vars into appropriate arrays
+                [self.titlesArray addObject:titleString];
+                [self.dateArray addObject:dateString];
+                [self.timeArray addObject:timeString];
+                [self.locationArray addObject:locationString];
+                [self.descriptionArray addObject:descriptionString];
+                
+                
+            }
+            [self.tableView reloadData];
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
     }];
-
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,16 +112,62 @@
         cell.backgroundColor = [UIColor whiteColor];
     }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
-*/
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return [self.titlesArray count];
+    
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    static NSString *jobCellIdentifier = @"TableViewCell";
+    
+    TableViewCell *cell = (TableViewCell *)[tableView dequeueReusableCellWithIdentifier:jobCellIdentifier];
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TableViewCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
+    cell.titleLabel.text = [self.titlesArray objectAtIndex:indexPath.row];
+    cell.timeLabel.text = [self.timeArray objectAtIndex:indexPath.row];
+    cell.locationLabel.text = [self.locationArray objectAtIndex:indexPath.row];
+    
+    return cell;
+    
+}
+
+
+
+// Tap on table Row
+- (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath {
+    
+    [self.contentArray addObject:[self.titlesArray objectAtIndex:indexPath.row]];
+    [self.contentArray addObject:[self.dateArray objectAtIndex:indexPath.row]];
+    [self.contentArray addObject:[self.timeArray objectAtIndex:indexPath.row]];
+    [self.contentArray addObject:[self.locationArray objectAtIndex:indexPath.row]];
+    [self.contentArray addObject:[self.descriptionArray objectAtIndex:indexPath.row]];
+    [self performSegueWithIdentifier: @"classClicked" sender: self];
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"classClicked"]) {
+        addClassViewController *transferViewController = segue.destinationViewController;
+        transferViewController.passedArray = [[NSMutableArray alloc]init];
+        transferViewController.passedArray = contentArray;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 90;
+}
 
 @end
