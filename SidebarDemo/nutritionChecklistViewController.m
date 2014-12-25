@@ -59,53 +59,25 @@
 
    
     
+    _trackWater.titleLabel.font = [UIFont systemFontOfSize:16];
+    
+    [_trackWater.titleLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:16.0]];
     
     // Buttons
     
-    _trackWater.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
+    [_trackVegetables setTitle:@" " forState:UIControlStateNormal];
+    
+    _trackWater.backgroundColor = [UIColor colorWithRed:0 green:0.608 blue:0.878 alpha:1]; /*#009be0*/
     
 
-    _trackVegetables.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
+    _trackVegetables.backgroundColor = [UIColor colorWithRed:0.706 green:0.784 blue:0 alpha:1]; /*#b4c800*/
     
    
-    _trackFruit.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
-    
+    _trackFruit.backgroundColor = [UIColor colorWithRed:0.875 green:0.275 blue:0.38 alpha:1]; /*#df4661*/
     
 
-    _trackProtein.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
-    
-    
-    //sedentary
-    _sedentary.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
-    UIBezierPath *maskPath;
-    maskPath = [UIBezierPath bezierPathWithRoundedRect:_sedentary.bounds
-                                     byRoundingCorners:(UIRectCornerBottomLeft | UIRectCornerTopLeft)
-                                           cornerRadii:CGSizeMake(4.0, 4.0)];
-    
-    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
-    maskLayer.frame = _sedentary.bounds;
-    maskLayer.path = maskPath.CGPath;
-    _sedentary.layer.mask = maskLayer;
-    
-    
-    //moderate
-    _moderatlyActive.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
-    
-    
-    //very
-    _veryActive.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
-    UIBezierPath *maskPath2;
-    maskPath2 = [UIBezierPath bezierPathWithRoundedRect:_veryActive.bounds
-                                      byRoundingCorners:(UIRectCornerBottomRight | UIRectCornerTopRight)
-                                            cornerRadii:CGSizeMake(4.0, 4.0)];
-    
-    CAShapeLayer *maskLayer2 = [[CAShapeLayer alloc] init];
-    maskLayer2.frame = _veryActive.bounds;
-    maskLayer2.path = maskPath2.CGPath;
-    _veryActive.layer.mask = maskLayer2;
+    _trackProtein.backgroundColor = [UIColor colorWithRed:0 green:0.592 blue:0.663 alpha:1]; /*#0097a9*/
 
-   
- 
     NSNumber *weight = [[PFUser currentUser] objectForKey:@"weight"];
     NSNumber *kgConvert = @2.2046;
     NSNumber *mlConversion = @0.0043994;
@@ -193,30 +165,10 @@
     
 }
 
-
-
-
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-
-
-
 
 @end

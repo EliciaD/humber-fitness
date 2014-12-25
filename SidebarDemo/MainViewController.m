@@ -36,7 +36,10 @@
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
     _sidebarButton.tintColor = [UIColor whiteColor];
- 
+    
+    UIColor *humberBlue = [UIColor colorWithRed:0 green:0 blue:0.2 alpha:1]; /*#000033*/
+    self.navigationController.navigationBar.barTintColor = humberBlue;
+
 
 }
 

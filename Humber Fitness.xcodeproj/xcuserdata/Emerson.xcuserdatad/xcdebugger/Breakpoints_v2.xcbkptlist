@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SidebarDemo/trackProteinViewController.m"
-            timestampString = "440560390.846996"
+            timestampString = "441148395.232223"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "-minusProtein:"
             landmarkType = "5">
          </BreakpointContent>

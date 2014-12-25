@@ -20,6 +20,8 @@
      // Override point for customization after application launch.
 
     // Change the background color of navigation bar
+    
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
    
     
     

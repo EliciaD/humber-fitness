@@ -29,6 +29,33 @@ int protein;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    NSString *proteinString = [NSString stringWithFormat:@"%d",protein];
+    NSString *gramSubText = @" g";
+    NSString *combined = [NSString stringWithFormat:@"%@%@", proteinString, gramSubText];
+    _gramLabel.text = combined;
+    
+    //plus button
+    UIBezierPath *maskPath3;
+    maskPath3 = [UIBezierPath bezierPathWithRoundedRect:_minusProteinBtn.bounds
+                                      byRoundingCorners:(UIRectCornerBottomRight | UIRectCornerTopRight)
+                                            cornerRadii:CGSizeMake(22.0, 22.0)];
+    
+    CAShapeLayer *maskLayer3 = [[CAShapeLayer alloc] init];
+    maskLayer3.frame = _minusProteinBtn.bounds;
+    maskLayer3.path = maskPath3.CGPath;
+    _minusProteinBtn.layer.mask = maskLayer3;
+    
+    //minus button
+    UIBezierPath *maskPath2;
+    maskPath2 = [UIBezierPath bezierPathWithRoundedRect:_addProteinBtn.bounds
+                                      byRoundingCorners:(UIRectCornerBottomLeft | UIRectCornerTopLeft)
+                                            cornerRadii:CGSizeMake(22.0, 22.0)];
+    
+    CAShapeLayer *maskLayer2 = [[CAShapeLayer alloc] init];
+    maskLayer2.frame = _addProteinBtn.bounds;
+    maskLayer2.path = maskPath2.CGPath;
+    _addProteinBtn.layer.mask = maskLayer2;
+    
     
     
 }
