@@ -34,7 +34,7 @@
     // Do any additional setup after loading the view=['_{:view.backgroundColor = [UIColor colorWithRed:0.667 green:0.796 blue:0.655 alpha:1.0];
     
     self.view.backgroundColor=[UIColor colorWithRed:0.933 green:0.953 blue:0.961 alpha:1];
-    self.title = @"Nutrition Must Haves";
+    self.title = @"";
    // self.subtitle = @"for Healthy Living ";
     [[UINavigationBar appearance] setBarTintColor:[UIColor yellowColor]];
 
@@ -77,6 +77,15 @@
     
 
     _trackProtein.backgroundColor = [UIColor colorWithRed:0 green:0.592 blue:0.663 alpha:1]; /*#0097a9*/
+    
+    _sedentary.backgroundColor = [UIColor colorWithRed:0.008 green:0.671 blue:0.757 alpha:1]; /*#02abc1*/
+    _sedentary.layer.cornerRadius = 10;
+    
+    _moderatlyActive.backgroundColor = [UIColor colorWithRed:0.008 green:0.671 blue:0.757 alpha:1]; /*#02abc1*/
+    _moderatlyActive.layer.cornerRadius = 10;
+    
+    _veryActive.backgroundColor = [UIColor colorWithRed:0.008 green:0.671 blue:0.757 alpha:1]; /*#02abc1*/
+    _veryActive.layer.cornerRadius = 10;
 
     NSNumber *weight = [[PFUser currentUser] objectForKey:@"weight"];
     NSNumber *kgConvert = @2.2046;
@@ -99,11 +108,33 @@
     
 
   //outputs in textfield amount of water that user should drink daily
-    self.glassesOfWater.text = [NSString stringWithFormat:@"%d", cups];
+    
+    NSString *cupsLabel = @" c.";
+    NSString *combined = [NSString stringWithFormat:@"%d%@", cups, cupsLabel];
+    
+    self.glassesOfWater.text = combined;
+    
+    //outputs number of grams
+    
+    weight = [[PFUser currentUser] objectForKey:@"weight"];
+    kgConvert = @2.2046;
+    
+    x = [weight doubleValue];
+    y = [kgConvert doubleValue];
+    
+    // calculates weight of user in kg
+    calc_result = x / y;
+    
+    //calculates number of grams user should eat
+    int grams = calc_result * 1.28;
+    
+    self.gramsOfProtien.text = [NSString stringWithFormat:@"%d%@", grams, @" g"];
    
     
 
 }
+
+
 - (IBAction)sedentary:(id)sender {
     
     NSNumber *weight = [[PFUser currentUser] objectForKey:@"weight"];
@@ -119,7 +150,7 @@
     int grams = calc_result * 0.8;
     
     //outputs number of grams
-      self.gramsOfProtien.text = [NSString stringWithFormat:@"%d%@", grams, @" grams of protein"];
+    self.gramsOfProtien.text = [NSString stringWithFormat:@"%d%@", grams, @" g"];
 
     
     
@@ -140,7 +171,7 @@
     int grams = calc_result * 1.28;
     
     //outputs number of grams
-    self.gramsOfProtien.text = [NSString stringWithFormat:@"%d%@", grams, @" grams of protein"];
+    self.gramsOfProtien.text = [NSString stringWithFormat:@"%d%@", grams, @" g"];
     
     
 }
@@ -160,7 +191,7 @@
     int grams = calc_result * 1.88;
     
     //outputs number of grams
-       self.gramsOfProtien.text = [NSString stringWithFormat:@"%d%@", grams, @" grams of protein"];
+       self.gramsOfProtien.text = [NSString stringWithFormat:@"%d%@", grams, @" g"];
     
     
 }
