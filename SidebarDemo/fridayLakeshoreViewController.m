@@ -149,6 +149,8 @@
 // Tap on table Row
 - (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath {
     
+    self.contentArray = [[NSMutableArray alloc] init];
+    
     [self.contentArray addObject:[self.titlesArray objectAtIndex:indexPath.row]];
     [self.contentArray addObject:[self.dateArray objectAtIndex:indexPath.row]];
     [self.contentArray addObject:[self.timeArray objectAtIndex:indexPath.row]];

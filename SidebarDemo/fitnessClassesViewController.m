@@ -61,11 +61,6 @@
     
     
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
-    _sidebarButton.target = self.modalViewController;
-    _sidebarButton.action = @selector(revealToggle:);
-    _sidebarButton.tintColor = [UIColor whiteColor];
-    
-    
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:
                               @"day == 'Monday'"
@@ -144,6 +139,8 @@
 
 // Tap on table Row
 - (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath {
+    
+    self.contentArray = [[NSMutableArray alloc] init];
     
     [self.contentArray addObject:[self.titlesArray objectAtIndex:indexPath.row]];
     [self.contentArray addObject:[self.dateArray objectAtIndex:indexPath.row]];
