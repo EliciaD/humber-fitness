@@ -9,6 +9,7 @@
 #import "myWorkoutsViewController.h"
 #import "SWRevealViewController.h"
 #import "TableViewCell.h"
+#import "addClassViewController.h"
 #import <Parse/Parse.h>
 
 
@@ -54,6 +55,7 @@
     self.timeArray = [[NSMutableArray alloc] init];
     self.locationArray = [[NSMutableArray alloc] init];
     self.descriptionArray = [[NSMutableArray alloc] init];
+    self.objectArray = [[NSMutableArray alloc] init];
     
     self.contentArray = [[NSMutableArray alloc] init];
     
@@ -78,6 +80,7 @@
                 NSString *timeString = object[@"time"];
                 NSString *locationString = object[@"location"];
                 NSString *descriptionString = object[@"description"];
+                NSString *objectString = object.objectId;
                 
                 
                 //add initialized vars into appropriate arrays
@@ -86,6 +89,7 @@
                 [self.timeArray addObject:timeString];
                 [self.locationArray addObject:locationString];
                 [self.descriptionArray addObject:descriptionString];
+                [self.objectArray addObject:objectString];
                 
                 
             }
@@ -95,6 +99,10 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -148,22 +156,29 @@
 // Tap on table Row
 - (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath {
     
+    self.contentArray = [[NSMutableArray alloc] init];
+    
+    NSString *myWorkout = @"true";
+    
     [self.contentArray addObject:[self.titlesArray objectAtIndex:indexPath.row]];
     [self.contentArray addObject:[self.dateArray objectAtIndex:indexPath.row]];
     [self.contentArray addObject:[self.timeArray objectAtIndex:indexPath.row]];
     [self.contentArray addObject:[self.locationArray objectAtIndex:indexPath.row]];
     [self.contentArray addObject:[self.descriptionArray objectAtIndex:indexPath.row]];
-    [self performSegueWithIdentifier: @"classDetail" sender: self];
+    [self.contentArray addObject:myWorkout];
+    [self.contentArray addObject:[self.objectArray objectAtIndex:indexPath.row]];
+    [self performSegueWithIdentifier: @"classClicked" sender: self];
     
 }
 
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-//    if([segue.identifier isEqualToString:@"classDetail"]) {
-//        addClassViewController *transferViewController = segue.destinationViewController;
-//        transferViewController.passedArray = [[NSMutableArray alloc]init];
-//        transferViewController.passedArray = self.contentArray;
-//    }
-//}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"classClicked"]) {
+        
+        addClassViewController *transferViewController = segue.destinationViewController;
+        transferViewController.passedArray = [[NSMutableArray alloc]init];
+        transferViewController.passedArray = self.contentArray;
+    }
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

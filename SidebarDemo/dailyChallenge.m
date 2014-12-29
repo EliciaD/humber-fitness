@@ -41,7 +41,6 @@ int thisChallenger;
 {
     [super viewDidLoad];
     self.title = @"";
-    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg-7.jpg"]];
     // Do any additional setup after loading the view=['_{:view.backgroundColor = [UIColor colorWithRed:0.667 green:0.796 blue:0.655 alpha:1.0];
     UIBarButtonItem* _sidebarButton = [[UIBarButtonItem alloc] initWithTitle:@"Menu"
                                                                        style:UIBarButtonItemStylePlain
@@ -59,17 +58,6 @@ int thisChallenger;
     // grabs the daily challenge if complete or not
     PFUser *currentUser = [PFUser currentUser];
     
-    _challenge.layer.borderWidth=5.0f;
-    _challenge.layer.borderColor=[[UIColor blackColor] CGColor];
-    
-    _completeBtn.layer.cornerRadius = 5;
-    _completeBtn.layer.masksToBounds = YES;
-    _completeBtn.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
-    
-    _trackReps.layer.cornerRadius = 5;
-    _trackReps.layer.masksToBounds = YES;
-    _trackReps.backgroundColor = [UIColor colorWithRed:0 green:0.176 blue:0.384 alpha:1];
-    
     //get todays date
     NSDate *today = [NSDate date];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
@@ -84,6 +72,9 @@ int thisChallenger;
         NSLog(@"recieved date: %@", retrievedDate);
         if ([retrievedDate isEqualToString:dateString]) {
             _completeBtn.hidden=TRUE;
+            _completeimg.hidden=TRUE;
+            _trackimage.hidden=TRUE;
+            _trackReps.hidden=TRUE;
             _challenge.text = @"Challenge Complete!";
         } else{
             //do nothing
@@ -204,6 +195,11 @@ int thisChallenger;
     [dateFormat setDateFormat:@"dd/MM/yyyy"];
     NSString *dateString = [dateFormat stringFromDate:today];
     NSLog(@"date: %@", dateString);
+    
+    _completeBtn.hidden=TRUE;
+    _completeimg.hidden=TRUE;
+    _trackimage.hidden=TRUE;
+    _trackReps.hidden=TRUE;
     
     PFQuery *query = [PFUser query];
     [query whereKey:@"username" equalTo:[[PFUser currentUser]username]];

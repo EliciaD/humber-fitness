@@ -16,6 +16,8 @@
 @property (nonatomic, assign) int thisChallenger;
 @property (strong, nonatomic) IBOutlet UIButton *trackReps;
 - (IBAction)trackReps:(id)sender;
+@property (strong, nonatomic) IBOutlet UIImageView *completeimg;
+@property (strong, nonatomic) IBOutlet UIImageView *trackimage;
 
 
 @property(readonly, copy) NSDate *date;
