@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="WEs-t0-tjJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="WEs-t0-tjJ">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -1644,18 +1644,18 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="iJ8-CR-wDM"/>
+        <segue reference="G7s-MP-aXS"/>
+        <segue reference="3BT-DX-gzV"/>
+        <segue reference="2Mb-wj-9nA"/>
+        <segue reference="JQb-h8-k02"/>
+        <segue reference="ffz-2m-rLf"/>
         <segue reference="pbR-UC-xfk"/>
         <segue reference="xJ4-9E-dhH"/>
         <segue reference="mv5-JT-BpU"/>
         <segue reference="Ton-VF-YLY"/>
         <segue reference="B8K-2J-L6U"/>
         <segue reference="6l4-aR-Yso"/>
-        <segue reference="ffz-2m-rLf"/>
-        <segue reference="JQb-h8-k02"/>
-        <segue reference="hUl-Ii-nvv"/>
-        <segue reference="G7s-MP-aXS"/>
-        <segue reference="fug-Sw-NHW"/>
-        <segue reference="8MG-ml-HBr"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

@@ -60,13 +60,15 @@
     self.contentArray = [[NSMutableArray alloc] init];
     
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:
+    /* NSPredicate *predicate = [NSPredicate predicateWithFormat:
                               @"day == 'Monday'"
+                              
+                            
                               ];
-    
+    */
     PFUser *currentUser = [PFUser currentUser];
     
-    PFQuery *updateTableArray = [PFQuery queryWithClassName:@"myWorkouts" predicate:predicate];
+    PFQuery *updateTableArray = [PFQuery queryWithClassName:@"myWorkouts" /*predicate:predicate*/];
     [updateTableArray whereKey:@"user" equalTo:currentUser.email];
     [updateTableArray findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
