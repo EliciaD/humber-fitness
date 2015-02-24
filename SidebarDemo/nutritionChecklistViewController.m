@@ -78,15 +78,7 @@
 
     _trackProtein.backgroundColor = [UIColor colorWithRed:0 green:0.592 blue:0.663 alpha:1]; /*#0097a9*/
     
-    _sedentary.backgroundColor = [UIColor colorWithRed:0.008 green:0.671 blue:0.757 alpha:1]; /*#02abc1*/
-    _sedentary.layer.cornerRadius = 10;
     
-    _moderatlyActive.backgroundColor = [UIColor colorWithRed:0.008 green:0.671 blue:0.757 alpha:1]; /*#02abc1*/
-    _moderatlyActive.layer.cornerRadius = 10;
-    
-    _veryActive.backgroundColor = [UIColor colorWithRed:0.008 green:0.671 blue:0.757 alpha:1]; /*#02abc1*/
-    _veryActive.layer.cornerRadius = 10;
-
     NSNumber *weight = [[PFUser currentUser] objectForKey:@"weight"];
     NSNumber *kgConvert = @2.2046;
     NSNumber *mlConversion = @0.0043994;
