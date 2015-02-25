@@ -47,6 +47,7 @@
 		653CEA1719F0933200E9A3FD /* nutritionChecklistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653CEA1619F0933200E9A3FD /* nutritionChecklistViewController.m */; };
 		65B10F8519F5C70900DA8091 /* bkg-7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65B10F8419F5C70900DA8091 /* bkg-7.jpg */; };
 		65CAF0DA19F720E100AD22CB /* hawk_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CAF0D919F720E100AD22CB /* hawk_logo.png */; };
+		65CEB4131A9D43C700AEFCF6 /* sorry.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CEB4121A9D43C700AEFCF6 /* sorry.png */; };
 		65D06FD619FC063E00E500C8 /* trackVegetablesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D06FD519FC063E00E500C8 /* trackVegetablesViewController.m */; };
 		65D06FD919FC184E00E500C8 /* trackFruitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D06FD819FC184E00E500C8 /* trackFruitViewController.m */; };
 		65DC39311A056FD700C2AB9A /* trackProteinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DC39301A056FD700C2AB9A /* trackProteinViewController.m */; };
@@ -133,6 +134,7 @@
 		653CEA1619F0933200E9A3FD /* nutritionChecklistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nutritionChecklistViewController.m; sourceTree = "<group>"; };
 		65B10F8419F5C70900DA8091 /* bkg-7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bkg-7.jpg"; sourceTree = "<group>"; };
 		65CAF0D919F720E100AD22CB /* hawk_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hawk_logo.png; sourceTree = "<group>"; };
+		65CEB4121A9D43C700AEFCF6 /* sorry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sorry.png; sourceTree = "<group>"; };
 		65D06FD419FC063E00E500C8 /* trackVegetablesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trackVegetablesViewController.h; sourceTree = "<group>"; };
 		65D06FD519FC063E00E500C8 /* trackVegetablesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = trackVegetablesViewController.m; sourceTree = "<group>"; };
 		65D06FD719FC184E00E500C8 /* trackFruitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trackFruitViewController.h; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 		653CEA0A19F085DB00E9A3FD /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				65CEB4121A9D43C700AEFCF6 /* sorry.png */,
 				63E4EE651A50FF7C00EBF3FE /* moderate.png */,
 				63E4EE661A50FF7C00EBF3FE /* sedentary.png */,
 				63E4EE671A50FF7C00EBF3FE /* very.png */,
@@ -438,6 +441,7 @@
 				636D6CDB1A12C06D00D0AC73 /* TableViewCell.xib in Resources */,
 				63E4EE501A50CE9400EBF3FE /* Default-568h@2x.png in Resources */,
 				F4EECF2B177C99F400778578 /* MainStoryboard.storyboard in Resources */,
+				65CEB4131A9D43C700AEFCF6 /* sorry.png in Resources */,
 				63E4EE511A50CE9400EBF3FE /* Default.png in Resources */,
 				63E4EE521A50CE9400EBF3FE /* Default@2x.png in Resources */,
 				63E4EE691A50FF7C00EBF3FE /* sedentary.png in Resources */,

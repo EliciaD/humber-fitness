@@ -56,14 +56,16 @@
     self.locationArray = [[NSMutableArray alloc] init];
     self.descriptionArray = [[NSMutableArray alloc] init];
     self.objectArray = [[NSMutableArray alloc] init];
+    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"sorry.png"]];
     
     self.contentArray = [[NSMutableArray alloc] init];
     
+   
     
     /* NSPredicate *predicate = [NSPredicate predicateWithFormat:
                               @"day == 'Monday'"
                               
-                            
+     
                               ];
     */
     PFUser *currentUser = [PFUser currentUser];
