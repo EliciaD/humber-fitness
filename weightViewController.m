@@ -49,17 +49,28 @@
     NSNumber *weightNew;
     weightNew = [NSNumber numberWithInteger: [updatedWeight intValue]];
     
-    // save 
-
+    // save
+    PFUser *currentUser = [PFUser currentUser];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"User"];
-    
-    // Retrieve the object by id
-    [query getObjectInBackgroundWithId:@"xWMyZ4YEGZ" block:^(PFObject *weight, NSError *error) {
+    PFQuery *query = [PFUser query];
+    [query whereKey:@"email" equalTo:currentUser.email];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         
-        weight[@"weight"] = weightNew;
-        [weight saveInBackground];
-        
+        if (!error) {
+                
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                
+                // Now let's update it with some new data. In this case, only cheatMode and score
+                // will get sent to the cloud. playerName hasn't changed.
+                object[@"weight"] = weightNew;
+                [object saveInBackground];
+                
+            }
+        }
+            else{
+                //do nothing
+            }
     }];
 }
 @end
