@@ -29,6 +29,7 @@
 		63AAC79A1A1907A6002EA809 /* wednesdayLakeshoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AAC7991A1907A6002EA809 /* wednesdayLakeshoreViewController.m */; };
 		63AAC79D1A190807002EA809 /* thursdayLakeshoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AAC79C1A190807002EA809 /* thursdayLakeshoreViewController.m */; };
 		63AAC7A01A190830002EA809 /* fridayLakeshoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AAC79F1A190830002EA809 /* fridayLakeshoreViewController.m */; };
+		63C6AB171A9F8DBD00FF95EC /* weightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C6AB161A9F8DBD00FF95EC /* weightViewController.m */; };
 		63CF6F161A4B8822007442B7 /* track.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CF6F151A4B8822007442B7 /* track.png */; };
 		63E4EE4C1A5084A100EBF3FE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63E4EE4B1A5084A100EBF3FE /* Images.xcassets */; };
 		63E4EE501A50CE9400EBF3FE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63E4EE4D1A50CE9400EBF3FE /* Default-568h@2x.png */; };
@@ -114,6 +115,8 @@
 		63AAC79C1A190807002EA809 /* thursdayLakeshoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = thursdayLakeshoreViewController.m; sourceTree = "<group>"; };
 		63AAC79E1A190830002EA809 /* fridayLakeshoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fridayLakeshoreViewController.h; sourceTree = "<group>"; };
 		63AAC79F1A190830002EA809 /* fridayLakeshoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fridayLakeshoreViewController.m; sourceTree = "<group>"; };
+		63C6AB151A9F8DBD00FF95EC /* weightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = weightViewController.h; path = ../weightViewController.h; sourceTree = "<group>"; };
+		63C6AB161A9F8DBD00FF95EC /* weightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = weightViewController.m; path = ../weightViewController.m; sourceTree = "<group>"; };
 		63CF6F151A4B8822007442B7 /* track.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = track.png; sourceTree = "<group>"; };
 		63E4EE4B1A5084A100EBF3FE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Humber Fitness/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		63E4EE4D1A50CE9400EBF3FE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -307,6 +310,8 @@
 				63AA5AF21A17E52700383A03 /* Humber North Schedule */,
 				636D6CD81A12C06C00D0AC73 /* TableViewCell.m */,
 				636D6CD71A12C06C00D0AC73 /* TableViewCell.h */,
+				63C6AB151A9F8DBD00FF95EC /* weightViewController.h */,
+				63C6AB161A9F8DBD00FF95EC /* weightViewController.m */,
 				F4EECF20177C99F400778578 /* AppDelegate.h */,
 				F4EECF21177C99F400778578 /* AppDelegate.m */,
 				F4EECF29177C99F400778578 /* MainStoryboard.storyboard */,
@@ -472,6 +477,7 @@
 				63A05C7C1A16B698005A0CA0 /* trackWaterViewController.m in Sources */,
 				63A877621A2EDADD00905C4D /* myWorkoutsViewController.m in Sources */,
 				63AA5AF91A17EF9000383A03 /* lakeshoreFitnessClassesViewController.m in Sources */,
+				63C6AB171A9F8DBD00FF95EC /* weightViewController.m in Sources */,
 				63AA5AF61A17E5D800383A03 /* northorLakeViewController.m in Sources */,
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,
 				63AAC7A01A190830002EA809 /* fridayLakeshoreViewController.m in Sources */,

@@ -41,7 +41,7 @@
     
     
 
-    menuItems = @[@"dailyChallenge", @"nutritionCheck", @"fitnessClasses", @"myWorkouts"];
+    menuItems = @[@"dailyChallenge", @"nutritionCheck", @"fitnessClasses", @"myWorkouts", @"myWeight"];
      self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg-7.jpg"]];
   
 }

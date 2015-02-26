@@ -1,0 +1,65 @@
+//
+//  weightViewController+Weight.m
+//  Humber Fitness
+//
+//  Created by Elicia Durtnall on 2015-02-26.
+//  Copyright (c) 2015 Appcoda. All rights reserved.
+//
+
+#import "weightViewController.h"
+#import "SWRevealViewController.h"
+#import <Parse/Parse.h>
+
+@implementation weightViewController
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.title = @"";
+    
+    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg-7.jpg"]];
+    // Do any additional setup after loading the view=['_{:view.backgroundColor = [UIColor colorWithRed:0.667 green:0.796 blue:0.655 alpha:1.0];
+    UIBarButtonItem* _sidebarButton = [[UIBarButtonItem alloc] initWithTitle:@"Menu"
+                                                                       style:UIBarButtonItemStylePlain
+                                                                      target:self
+                                                                      action:@selector(infoButtonSelected:)];
+    self.navigationItem.leftBarButtonItem = _sidebarButton;
+    
+    
+    
+    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
+    _sidebarButton.target = self.revealViewController;
+    _sidebarButton.action = @selector(revealToggle:);
+    _sidebarButton.tintColor = [UIColor whiteColor];
+    
+    // Display Current Weight
+     NSNumber *weight = [[PFUser currentUser] objectForKey:@"weight"];
+    self.currentWeight.text = [NSString stringWithFormat:@"%@", weight];
+    
+    
+    
+}
+
+- (IBAction)savedWeight:(id)sender {
+    // retrieves new weight
+    NSString *updatedWeight = [self.updatedWeight.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+   // logs new weight
+    NSLog(@"%@",updatedWeight);
+
+    // convert to int
+    NSNumber *weightNew;
+    weightNew = [NSNumber numberWithInteger: [updatedWeight intValue]];
+    
+    // save 
+
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+    
+    // Retrieve the object by id
+    [query getObjectInBackgroundWithId:@"xWMyZ4YEGZ" block:^(PFObject *weight, NSError *error) {
+        
+        weight[@"weight"] = weightNew;
+        [weight saveInBackground];
+        
+    }];
+}
+@end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="WEs-t0-tjJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="WEs-t0-tjJ">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -1035,7 +1035,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="sK9-kb-r1z">
-                                <rect key="frame" x="0.0" y="104" width="320" height="464"/>
+                                <rect key="frame" x="0.0" y="104" width="320" height="470"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="8z8-T9-fgc" id="NVM-Qe-iEk"/>
@@ -1171,7 +1171,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wor-at-RG8">
-                                <rect key="frame" x="0.0" y="104" width="320" height="464"/>
+                                <rect key="frame" x="0.0" y="104" width="320" height="470"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Wuu-uJ-Fcf" id="Woc-Li-k5e"/>
@@ -1475,7 +1475,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kCJ-IA-YQb">
-                                <rect key="frame" x="0.0" y="101" width="320" height="474"/>
+                                <rect key="frame" x="0.0" y="94" width="320" height="474"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Ng7-GO-M9p" id="19E-Gg-OU6"/>
@@ -1576,6 +1576,24 @@
                                     <segue destination="tIi-wt-TKJ" kind="custom" customClass="SWRevealViewControllerSegue" id="YyZ-pj-63O"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myWeight" id="V80-Eu-EFE">
+                                <rect key="frame" x="0.0" y="154" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V80-Eu-EFE" id="HDj-sc-Gs2">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Change Weight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TF3-nX-7xg">
+                                            <rect key="frame" x="20" y="7" width="174" height="29"/>
+                                            <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="nW9-Qr-Efn" kind="custom" customClass="SWRevealViewControllerSegue" id="ULl-iQ-gqh"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Meq-yH-YF6" id="RWc-6V-1hN"/>
@@ -1585,7 +1603,64 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pan-AZ-D0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141" y="-394"/>
+            <point key="canvasLocation" x="-63" y="-394"/>
+        </scene>
+        <!--Weight View Controller-->
+        <scene sceneID="0uC-tf-0MH">
+            <objects>
+                <viewController id="nW9-Qr-Efn" customClass="weightViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="irS-4J-X6t"/>
+                        <viewControllerLayoutGuide type="bottom" id="ziy-bU-NYb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y7Y-FC-Vwl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Weight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxU-fM-XmI">
+                                <rect key="frame" x="16" y="150" width="92" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06V-Fq-DEc">
+                                <rect key="frame" x="127" y="315" width="34" height="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="savedWeight:" destination="nW9-Qr-Efn" eventType="touchUpInside" id="3iL-II-eWq"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zm6-fT-CTH">
+                                <rect key="frame" x="180" y="147" width="124" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Weight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ql-gk-Gcr">
+                                <rect key="frame" x="16" y="121" width="115" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Weight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZV-jp-oIh">
+                                <rect key="frame" x="180" y="121" width="124" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="currentWeight" destination="OZV-jp-oIh" id="CuO-zF-oJC"/>
+                        <outlet property="updatedWeight" destination="Zm6-fT-CTH" id="7DF-gi-AcZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jmd-4D-KDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="500" y="-397"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Z6-ag-ZQ1">
@@ -1648,18 +1723,18 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="pbR-UC-xfk"/>
-        <segue reference="JQb-h8-k02"/>
-        <segue reference="hUl-Ii-nvv"/>
-        <segue reference="G7s-MP-aXS"/>
-        <segue reference="2Mb-wj-9nA"/>
-        <segue reference="ffz-2m-rLf"/>
-        <segue reference="fug-Sw-NHW"/>
-        <segue reference="OEg-lH-Jto"/>
-        <segue reference="PIc-Bn-FxU"/>
-        <segue reference="hBT-l9-rhI"/>
-        <segue reference="61c-J2-hji"/>
-        <segue reference="qIw-sq-Clr"/>
+        <segue reference="Q5s-fo-o3D"/>
+        <segue reference="6l4-aR-Yso"/>
+        <segue reference="B8K-2J-L6U"/>
+        <segue reference="Ton-VF-YLY"/>
+        <segue reference="upQ-vz-IBd"/>
+        <segue reference="mv5-JT-BpU"/>
+        <segue reference="iJ8-CR-wDM"/>
+        <segue reference="mB3-f4-gUS"/>
+        <segue reference="8MG-ml-HBr"/>
+        <segue reference="mEo-TQ-QWD"/>
+        <segue reference="mu5-kH-H4D"/>
+        <segue reference="2CJ-rt-x3k"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
