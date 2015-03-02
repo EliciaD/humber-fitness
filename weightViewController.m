@@ -48,6 +48,12 @@
     // convert to int
     NSNumber *weightNew;
     weightNew = [NSNumber numberWithInteger: [updatedWeight intValue]];
+    // alert
+    UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Saved"
+                                                       message:@"Your weight has been updated."
+                                                      delegate:self
+                                             cancelButtonTitle:@"OK"
+                                             otherButtonTitles:nil];
     
     // save
     PFUser *currentUser = [PFUser currentUser];
@@ -65,7 +71,7 @@
                 // will get sent to the cloud. playerName hasn't changed.
                 object[@"weight"] = weightNew;
                 [object saveInBackground];
-                
+                [theAlert show];
             }
         }
             else{
