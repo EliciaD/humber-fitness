@@ -8,7 +8,7 @@
 
 
 
-@interface weightViewController : UIViewController
+@interface weightViewController : UIViewController<UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *currentWeight;
 
 @property (strong, nonatomic) IBOutlet UITextField *updatedWeight;

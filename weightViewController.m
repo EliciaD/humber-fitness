@@ -9,12 +9,15 @@
 #import "weightViewController.h"
 #import "SWRevealViewController.h"
 #import <Parse/Parse.h>
+#import <UIKit/UIKit.h>
 
 @implementation weightViewController
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.title = @"";
+    
+    self.updatedWeight.delegate = self;
     
     self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"bkg-7.jpg"]];
     // Do any additional setup after loading the view=['_{:view.backgroundColor = [UIColor colorWithRed:0.667 green:0.796 blue:0.655 alpha:1.0];
@@ -79,4 +82,38 @@
             }
     }];
 }
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+
+// moves view when keyboard is displayed
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self animateTextField: textField up: YES];
+}
+
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [self animateTextField: textField up: NO];
+}
+
+- (void) animateTextField: (UITextField *)textField up: (BOOL) up
+{
+    const int movementDistance = 30;
+    const float movementDuration = 0.3f;
+    int movement = (up ? -movementDistance : movementDistance);
+    
+    [UIView beginAnimations: @"anim" context: nil];
+    [UIView setAnimationBeginsFromCurrentState: YES];
+    [UIView setAnimationDuration: movementDuration];
+    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
+    [UIView commitAnimations];
+}
+
+
 @end
